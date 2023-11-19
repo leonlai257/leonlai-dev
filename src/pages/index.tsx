@@ -82,7 +82,6 @@ const Contact = () => {
         <Box args={[100, 100, 100]}>
           <meshBasicMaterial color={quaternaryColor} side={THREE.DoubleSide} />
           <group
-            position={[2, 2, 0]}
             // rotation={[
             //     (Math.PI * -2) / 16,
             //     (Math.PI * -2) / 16,

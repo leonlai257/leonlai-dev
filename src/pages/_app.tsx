@@ -15,9 +15,10 @@ export default function App({ pageProps }: AppProps) {
                 width: '100%',
                 height: '100%',
                 overflow: 'hidden',
-            }}>
+            }}
+        >
             <Head>
-                <title>React three.js Boilerplate</title>
+                <title>Leon Lai</title>
                 <meta
                     name="React three.js Boilerplate"
                     content="React three.js Boilerplate by Leon"
