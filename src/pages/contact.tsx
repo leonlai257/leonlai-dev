@@ -32,6 +32,7 @@ const Contact = (props: ContactProps) => {
                         {contact.map((item, index) => {
                             return (
                                 <TransitionWord
+                                    key={`${item.name}`}
                                     onClick={() =>
                                         window.open(item.url, '_blank')
                                     }

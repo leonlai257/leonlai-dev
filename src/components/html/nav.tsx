@@ -9,7 +9,10 @@ export const NavBar = ({ nav }: { nav: NavItem[] }) => {
                     {nav &&
                         nav.map((item) => {
                             return (
-                                <div className="hover:opacity-75 text-tertiary">
+                                <div
+                                    key={`${item.name}`}
+                                    className="hover:opacity-75 text-tertiary"
+                                >
                                     <Link href={item.url}>{item.name}</Link>
                                 </div>
                             );
