@@ -1,16 +1,12 @@
 import { CoreConfig } from '@config/app';
 import {
-    Box,
     Html,
-    Line,
     PerspectiveCamera,
     Scroll,
     ScrollControls,
-    Text,
     useCursor,
 } from '@react-three/drei';
 import { Suspense, useState } from 'react';
-import * as THREE from 'three';
 
 export interface ProjectProps extends CoreConfig {}
 

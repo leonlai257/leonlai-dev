@@ -5,7 +5,9 @@ import { Route, Switch, useLocation } from 'wouter';
 import Main from '.';
 import '../styles/globals.css';
 import Projects from './projects';
-import { Room } from '@src/components';
+import { Room, NavBar } from '@src/components';
+import { Html } from '@react-three/drei';
+import Contact from './contact';
 
 export default function App({ pageProps }: AppProps) {
     const globalStates = {
@@ -15,6 +17,37 @@ export default function App({ pageProps }: AppProps) {
             tertiaryColor: '#DBDFEA',
             quaternaryColor: '#FFEAD2',
         },
+        nav: [
+            {
+                name: 'Home',
+                url: '/',
+            },
+            {
+                name: 'Contact',
+                url: '/contact',
+            },
+            // {
+            //     name: 'Projects',
+            //     url: '/projects',
+            // },
+        ],
+        contact: [
+            {
+                name: 'Github',
+                url: 'https://github.com/leonlai257',
+                alias: 'leonlai257',
+            },
+            {
+                name: 'LinkedIn',
+                url: 'https://www.linkedin.com/in/leonlai257/',
+                alias: 'leonlai257',
+            },
+            {
+                name: 'Email',
+                url: 'mailto:leonlai257@gmail.com',
+                alias: 'leonlai257@gmail.com',
+            },
+        ],
     };
 
     pageProps = {
@@ -36,13 +69,34 @@ export default function App({ pageProps }: AppProps) {
             <Head>
                 <title>Leon Lai</title>
                 <meta name="Leon Lai" content="Leon Lai" />
+                <link rel="icon" href="/favicon.ico" />
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto+Mono:wght@600&display=swap"
+                    rel="stylesheet"
+                />
             </Head>
+
             <Canvas>
                 <ambientLight castShadow intensity={0.1} />
                 <Room colorProfile={pageProps.color} />
+                <Html
+                    fullscreen
+                    center
+                    style={{
+                        top: 0,
+                        left: 0,
+                    }}
+                >
+                    <NavBar nav={pageProps.nav} />
+                </Html>
                 <Switch>
                     <Route path="/">
                         <Main {...pageProps} />
+                    </Route>
+                    <Route path="/contact">
+                        <Contact {...pageProps} />
                     </Route>
                     <Route path="/projects">
                         <Projects {...pageProps} />

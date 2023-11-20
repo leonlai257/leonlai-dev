@@ -1,9 +1,9 @@
 import { Text } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
+import { ThreeElements, useFrame } from '@react-three/fiber';
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
-export const Word = ({
+export const TransitionWord = ({
     children,
     originalColor,
     transitionColor,
@@ -12,9 +12,7 @@ export const Word = ({
     children: ReactNode;
     originalColor: THREE.ColorRepresentation;
     transitionColor?: THREE.ColorRepresentation;
-    outlineWidth?: number;
-    outlineColor?: string;
-}) => {
+} & any) => {
     const color = new THREE.Color();
     const ref = useRef<any>();
     const [hovered, setHovered] = useState(false);
@@ -49,11 +47,20 @@ export const Word = ({
     return (
         <Text
             ref={ref}
+            font={'/fonts/NotoSans-Regular.ttf'}
             onPointerOver={over}
             onPointerOut={out}
             onClick={() => console.log('clicked')}
             {...props}
         >
+            {children}
+        </Text>
+    );
+};
+
+export const Word = ({ children, ...props }: { children: ReactNode } & any) => {
+    return (
+        <Text font={'/fonts/NotoSans-Regular.ttf'} {...props}>
             {children}
         </Text>
     );
