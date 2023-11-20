@@ -24,7 +24,7 @@ export default function App({ pageProps }: AppProps) {
                     content="React three.js Boilerplate by Leon"
                 />
             </Head>
-            <Canvas shadows={'soft'}>
+            <Canvas>
                 <ambientLight castShadow intensity={0.1} />
 
                 <directionalLight
