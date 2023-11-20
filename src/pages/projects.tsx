@@ -1,19 +1,21 @@
-import { CoreConfig } from '@config/app';
 import {
     Box,
     Html,
     Line,
+    OrbitControls,
     PerspectiveCamera,
     Text,
     useCursor,
 } from '@react-three/drei';
-import { Word } from '@src/components';
-import { Suspense, useState } from 'react';
+import { ThreeElements, useFrame } from '@react-three/fiber';
+import { CoreConfig } from '@config/app';
+import type { NextPage } from 'next';
+import { ReactNode, Suspense, useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
-export interface MainProps extends CoreConfig {}
+export interface ProjectProps extends CoreConfig {}
 
-const Main = (props: MainProps) => {
+const Projects = (props: ProjectProps) => {
     const { primaryColor, secondaryColor, tertiaryColor, quaternaryColor } =
         props;
 
@@ -29,20 +31,9 @@ const Main = (props: MainProps) => {
                         side={THREE.DoubleSide}
                     />
                     <group
-                        // rotation={[
-                        //     (Math.PI * -2) / 16,
-                        //     (Math.PI * -2) / 16,
-                        //     (Math.PI * -1) / 16,
-                        // ]}
                         onPointerOver={(e) => setHoverStatus(true)}
                         onPointerOut={(e) => setHoverStatus(false)}
                     >
-                        <Word
-                            originalColor={primaryColor}
-                            transitionColor={secondaryColor}
-                        >
-                            Leon Lai
-                        </Word>
                         <group position={[0.05, 0.05, 0.00001]}>
                             <Text
                                 color={quaternaryColor}
@@ -66,6 +57,7 @@ const Main = (props: MainProps) => {
                     <group scale={0.4} position={[0, -0.7, -0.2]}>
                         <Text
                             color={primaryColor}
+                            // outlineWidth={0.02}
                             outlineColor={
                                 hovered ? secondaryColor : primaryColor
                             }
@@ -80,4 +72,4 @@ const Main = (props: MainProps) => {
     );
 };
 
-export default Main;
+export default Projects;

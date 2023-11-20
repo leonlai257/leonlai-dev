@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-export interface Main {
+export interface CoreConfig {
     primaryColor: THREE.ColorRepresentation;
     secondaryColor: THREE.ColorRepresentation;
     tertiaryColor: THREE.ColorRepresentation;

@@ -4,8 +4,21 @@ import Head from 'next/head';
 import { Route, Switch } from 'wouter';
 import Main from '.';
 import '../styles/globals.css';
+import Projects from './projects';
 
 export default function App({ pageProps }: AppProps) {
+    const globalStates = {
+        primaryColor: '#8294C4',
+        secondaryColor: '#ACB1D6',
+        tertiaryColor: '#DBDFEA',
+        quaternaryColor: '#FFEAD2',
+    };
+
+    pageProps = {
+        ...pageProps,
+        ...globalStates,
+    };
+
     return (
         <div
             style={{
@@ -19,23 +32,16 @@ export default function App({ pageProps }: AppProps) {
         >
             <Head>
                 <title>Leon Lai</title>
-                <meta
-                    name="React three.js Boilerplate"
-                    content="React three.js Boilerplate by Leon"
-                />
+                <meta name="Leon Lai" content="Leon Lai" />
             </Head>
             <Canvas>
                 <ambientLight castShadow intensity={0.1} />
-
-                <directionalLight
-                    intensity={0.5}
-                    castShadow
-                    shadow-mapSize-height={512}
-                    shadow-mapSize-width={512}
-                />
                 <Switch>
                     <Route path="/">
                         <Main {...pageProps} />
+                    </Route>
+                    <Route path="/projects">
+                        <Projects {...pageProps} />
                     </Route>
                 </Switch>
             </Canvas>
