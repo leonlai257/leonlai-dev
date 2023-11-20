@@ -1,17 +1,20 @@
 import { Canvas } from '@react-three/fiber';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { Route, Switch } from 'wouter';
+import { Route, Switch, useLocation } from 'wouter';
 import Main from '.';
 import '../styles/globals.css';
 import Projects from './projects';
+import { Room } from '@src/components';
 
 export default function App({ pageProps }: AppProps) {
     const globalStates = {
-        primaryColor: '#8294C4',
-        secondaryColor: '#ACB1D6',
-        tertiaryColor: '#DBDFEA',
-        quaternaryColor: '#FFEAD2',
+        color: {
+            primaryColor: '#8294C4',
+            secondaryColor: '#ACB1D6',
+            tertiaryColor: '#DBDFEA',
+            quaternaryColor: '#FFEAD2',
+        },
     };
 
     pageProps = {
@@ -36,6 +39,7 @@ export default function App({ pageProps }: AppProps) {
             </Head>
             <Canvas>
                 <ambientLight castShadow intensity={0.1} />
+                <Room colorProfile={pageProps.color} />
                 <Switch>
                     <Route path="/">
                         <Main {...pageProps} />
