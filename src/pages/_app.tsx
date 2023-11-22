@@ -6,7 +6,7 @@ import Main from '.';
 import '../styles/globals.css';
 import Projects from './projects';
 import { Room, NavBar } from '@src/components';
-import { Html } from '@react-three/drei';
+import { Html, OrbitControls, Loader } from '@react-three/drei';
 import Contact from './contact';
 
 export default function App({ pageProps }: AppProps) {
@@ -26,10 +26,10 @@ export default function App({ pageProps }: AppProps) {
                 name: 'Contact',
                 url: '/contact',
             },
-            // {
-            //     name: 'Projects',
-            //     url: '/projects',
-            // },
+            {
+                name: 'Projects',
+                url: '/projects',
+            },
         ],
         contact: [
             {
@@ -77,20 +77,19 @@ export default function App({ pageProps }: AppProps) {
                     rel="stylesheet"
                 />
             </Head>
+            <Loader />
+
+            <NavBar />
 
             <Canvas>
                 <ambientLight castShadow intensity={0.1} />
                 <Room colorProfile={pageProps.color} />
-                <Html
-                    fullscreen
-                    center
-                    style={{
-                        top: 0,
-                        left: 0,
-                    }}
-                >
-                    <NavBar nav={pageProps.nav} />
-                </Html>
+                {/* <fog
+                    attach="fog"
+                    args={[pageProps.color.primaryColor, 10, 160]}
+                /> */}
+                {/* <OrbitControls /> */}
+
                 <Switch>
                     <Route path="/">
                         <Main {...pageProps} />

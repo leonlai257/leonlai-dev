@@ -32,20 +32,7 @@ const Config = {
         tertiaryColor: '#DBDFEA',
         quaternaryColor: '#FFEAD2',
     },
-    nav: [
-        {
-            name: 'Home',
-            url: '/',
-        },
-        {
-            name: 'Contact',
-            url: '/contact',
-        },
-        {
-            name: 'Projects',
-            url: '/projects',
-        },
-    ],
+
     contact: [
         {
             name: 'Github',

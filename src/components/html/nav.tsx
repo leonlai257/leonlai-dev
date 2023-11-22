@@ -1,7 +1,21 @@
-import { NavItem } from '@src/config/app';
-import { Link } from 'wouter';
+import Link from 'next/link';
 
-export const NavBar = ({ nav }: { nav: NavItem[] }) => {
+const nav = [
+    {
+        name: 'Home',
+        url: '/',
+    },
+    {
+        name: 'Contact',
+        url: '/contact',
+    },
+    {
+        name: 'Projects',
+        url: '/projects',
+    },
+];
+
+export const NavBar = () => {
     return (
         <>
             <div className="absolute z-[100] flex h-full w-full flex-col justify-end pointer-events-none">
@@ -9,10 +23,7 @@ export const NavBar = ({ nav }: { nav: NavItem[] }) => {
                     {nav &&
                         nav.map((item) => {
                             return (
-                                <div
-                                    key={`${item.name}`}
-                                    className="hover:opacity-75 text-tertiary"
-                                >
+                                <div className="hover:opacity-75 text-tertiary">
                                     <Link href={item.url}>{item.name}</Link>
                                 </div>
                             );
