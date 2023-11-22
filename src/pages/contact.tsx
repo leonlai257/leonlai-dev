@@ -20,12 +20,18 @@ const Contact = (props: ContactProps) => {
     const [hovered, setHoverStatus] = useState(false);
     useCursor(hovered);
 
+    const gapHeight = 0.6;
+
     return (
         <>
             <Suspense fallback={<Html></Html>}>
                 <group position={[0, 0.2, 0]}>
                     <group
-                        position={[0, ((contact.length - 1) * 0.5) / 2, 0]}
+                        position={[
+                            0,
+                            ((contact.length - 1) * gapHeight) / 2,
+                            0,
+                        ]}
                         onPointerOver={(e) => setHoverStatus(true)}
                         onPointerOut={(e) => setHoverStatus(false)}
                     >
@@ -39,7 +45,7 @@ const Contact = (props: ContactProps) => {
                                     originalColor={primaryColor}
                                     transitionColor={secondaryColor}
                                     fontSize={0.4}
-                                    position={[0, 0 - 0.5 * index, 0]}
+                                    position={[0, 0 - gapHeight * index, 0]}
                                 >
                                     {item.name}
                                 </TransitionWord>
