@@ -6,7 +6,7 @@ import Main from '.';
 import '../styles/globals.css';
 import Projects from './projects';
 import { Room, NavBar } from '@src/components';
-import { Html, OrbitControls, Loader } from '@react-three/drei';
+import { Html, OrbitControls, Loader, Box } from '@react-three/drei';
 import Contact from './contact';
 
 export default function App({ pageProps }: AppProps) {
@@ -16,6 +16,7 @@ export default function App({ pageProps }: AppProps) {
             secondaryColor: '#ACB1D6',
             tertiaryColor: '#DBDFEA',
             quaternaryColor: '#FFEAD2',
+            projectColor: '#F5F5F5',
         },
         nav: [
             {

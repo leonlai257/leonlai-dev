@@ -9,6 +9,7 @@ import {
     Image,
     Box,
     Text,
+    Plane,
 } from '@react-three/drei';
 import { Suspense, useState, useRef } from 'react';
 import { proxy, useSnapshot } from 'valtio';
@@ -25,128 +26,239 @@ const geometry = new THREE.BufferGeometry().setFromPoints([
 ]);
 const state = proxy({
     clicked: null,
-    urls: [1, 2, 3, 4].map((u) => `/${u}.jpg`),
+    projects: [
+        {
+            title: 'Jarvix Pay',
+            time: 'Feb 2023 - Present',
+        },
+        {
+            title: 'Project 1',
+            time: 'Feb 2023 - Present',
+        },
+        {
+            title: 'Project 1',
+            time: 'Feb 2023 - Present',
+        },
+        {
+            title: 'CNS',
+            time: 'Feb 2023 - Present',
+        },
+    ],
 });
 
-function Item({ index, position, scale, c = new THREE.Color(), ...props }) {
-    const ref = useRef();
-    const scroll = useScroll();
-    const { clicked, urls } = useSnapshot(state);
-    const [hovered, hover] = useState(false);
-    const click = () => (state.clicked = index === clicked ? null : index);
-    const over = () => hover(true);
-    const out = () => hover(false);
-    useFrame((state, delta) => {
-        const y = scroll.curve(
-            index / urls.length - 1.5 / urls.length,
-            4 / urls.length
-        );
-        // easing.damp3(
-        //     ref.current.scale,
-        //     [
-        //         clicked === index ? 4.7 : scale[0],
-        //         clicked === index ? 5 : 4 + y,
-        //         1,
-        //     ],
-        //     0.15,
-        //     delta
-        // );
-        // ref.current.material.scale[0] = ref.current.scale.x;
-        // ref.current.material.scale[1] = ref.current.scale.y;
-        // if (clicked !== null && index < clicked)
-        //     easing.damp(
-        //         ref.current.position,
-        //         'x',
-        //         position[0] - 2,
-        //         0.15,
-        //         delta
-        //     );
-        // if (clicked !== null && index > clicked)
-        //     easing.damp(
-        //         ref.current.position,
-        //         'x',
-        //         position[0] + 2,
-        //         0.15,
-        //         delta
-        //     );
-        // if (clicked === null || clicked === index)
-        //     easing.damp(ref.current.position, 'x', position[0], 0.15, delta);
-        // easing.damp(
-        //     ref.current.material,
-        //     'grayscale',
-        //     hovered || clicked === index ? 0 : Math.max(0, 1 - y),
-        //     0.15,
-        //     delta
-        // );
-        // easing.dampC(
-        //     ref.current.material.color,
-        //     hovered || clicked === index ? 'white' : '#aaa',
-        //     hovered ? 0.3 : 0.15,
-        //     delta
-        // );
-    });
-    return (
-        <group
-            position={[2, 0, 0]}
-            scale={scale}
-            onClick={click}
-            onPointerOver={over}
-            onPointerOut={out}
-        >
-            {/* <Image
-                ref={ref}
-                {...props}
-                position={position}
-                scale={scale}
-                onClick={click}
-                onPointerOver={over}
-                onPointerOut={out}
-            > */}
-            <Html center>
-                Cat <div>123</div>
-            </Html>
+type ItemProps = {
+    index: number;
+    project: {
+        title: string;
+        time: string;
+    };
+    gap: number;
+    position: [number, number, number];
+    scale: [number, number, number];
+    largeScale: [number, number, number];
+    url: string;
+    color: string;
+    setTarget: (target: [number, number, number]) => void;
+} & any;
 
-            {/* </Image> */}
-        </group>
+// const Item = ({
+//     index,
+//     project,
+//     gap,
+//     position,
+//     scale,
+//     largeScale,
+//     setTarget,
+//     color = '#aaa',
+//     ...props
+// }: ItemProps) => {
+//     const ref = useRef<THREE.Mesh>(null!);
+//     const scroll = useScroll();
+//     const { clicked, projects } = useSnapshot(state);
+//     const [hovered, hover] = useState(false);
+//     const click = () => {
+//         state.clicked = index === clicked ? null : index;
+//         setTarget(index === clicked ? [0, 0, 0] : [0, position[1], 0]);
+//     };
+//     const over = () => hover(true);
+//     const out = () => hover(false);
+//     useFrame((state, delta) => {
+//         const y = scroll.curve(
+//             index / projects.length - 1.5 / projects.length,
+//             4 / projects.length
+//         );
+
+//         easing.damp3(
+//             ref.current.scale,
+//             [
+//                 clicked === index ? largeScale[0] : scale[0],
+//                 clicked === index ? largeScale[1] : scale[1],
+//                 1,
+//             ],
+//             0.15,
+//             delta
+//         );
+//         if (clicked !== null && index < clicked)
+//             easing.damp(
+//                 ref.current.position,
+//                 'y',
+//                 position[1] - (largeScale[1] / 2 + gap),
+//                 0.15,
+//                 delta
+//             );
+//         if (clicked !== null && index > clicked)
+//             easing.damp(
+//                 ref.current.position,
+//                 'y',
+//                 position[1] + (largeScale[1] / 2 + gap),
+//                 0.15,
+//                 delta
+//             );
+//         if (clicked === null || clicked === index)
+//             easing.damp(ref.current.position, 'y', position[1], 0.15, delta);
+
+//         easing.dampC(
+//             ref.current.material.color,
+//             hovered || clicked === index ? 'white' : color,
+//             hovered ? 0.3 : 0.15,
+//             delta
+//         );
+//     });
+//     return (
+//         <>
+//             <Plane
+//                 ref={ref}
+//                 {...props}
+//                 position={position}
+//                 scale={scale}
+//                 onClick={click}
+//                 onPointerOver={over}
+//                 onPointerOut={out}
+//             >
+//                 <meshBasicMaterial attach="material" color="white" />
+//                 {clicked != index && (
+//                     <Text
+//                         position={[-scale[0] / 10, -scale[1] / 10, 0]}
+//                         anchorX="left"
+//                         scale={[
+//                             clicked === index ? 1 : scale[1],
+//                             clicked === index ? 1 : scale[0],
+//                             1,
+//                         ]}
+//                         font={'/fonts/NotoSans-Bold.ttf'}
+//                         color={'black'}
+//                         fontSize={0.12}
+//                     >
+//                         {project.title}
+//                     </Text>
+//                 )}
+//                 {clicked === index && (
+//                     <Html>
+//                         <h1>{project.title}</h1>
+//                     </Html>
+//                     // <group>
+//                     //     <Text>clicked</Text>
+//                     // </group>
+//                 )}
+//             </Plane>
+//         </>
+//     );
+// };
+
+const ProjectItem = ({
+    index,
+    project,
+    gap,
+    position,
+    scale,
+    largeScale,
+    setTarget,
+    color = '#aaa',
+}: ItemProps) => {
+    return (
+        <>
+            <div className="flex cursor-pointer item-center bg-transparent border-secondary border-[1px] px-4 py-2">
+                {project.title}
+            </div>
+        </>
     );
-}
+};
 
 const Projects = (props: ProjectProps) => {
     const { color } = props;
     const { primaryColor, secondaryColor, tertiaryColor, quaternaryColor } =
         color;
     const [hovered, setHoverStatus] = useState(false);
+    const [target, setTarget] = useState([0, 0, 0]);
     useCursor(hovered);
 
-    const { urls } = useSnapshot(state);
+    const { projects } = useSnapshot(state);
     const { height } = useThree((state) => state.viewport);
-    const h = 0.7;
+    const scale = [4.6, 0.7, 1];
+    const largeScale = [scale[0] * 1.16, (height * 9) / 10, 1];
     const gap = 0.15;
-    const xH = h + gap;
+    const xH = scale[1] + gap;
+    const camera = useThree((state) => state.camera);
+
+    useFrame(() => {
+        if (target[1] !== 0 && camera.position.y !== target[1]) {
+            console.log(target);
+            camera.position.y = THREE.MathUtils.lerp(
+                camera.position.y,
+                target[1],
+                0.05
+            );
+            if (camera.position.y > target[1] - 0.1) {
+                camera.position.y = target[1];
+                setTarget([0, target[1], 0]);
+            }
+        }
+    });
 
     return (
         <>
-            <Suspense fallback={<Html></Html>}>
+            <Html fullscreen>
+                <div className="w-4/5 mt-12 m-auto">
+                    <div className="flex flex-col">
+                        {projects.map((project, i) => (
+                            <ProjectItem
+                                key={i}
+                                index={i}
+                                gap={gap}
+                                position={[0, -2.4 * scale[1] + i * xH, 0]}
+                                scale={scale}
+                                largeScale={largeScale}
+                                setTarget={setTarget}
+                                color={quaternaryColor}
+                                project={project}
+                            />
+                        ))}
+                    </div>
+                </div>
+            </Html>
+            {/* <Suspense fallback={<Html></Html>}>
                 <PerspectiveCamera near={0.1} far={1000} />
                 <ScrollControls
                     damping={0.1}
-                    pages={(height - xH + urls.length * xH) / height}
+                    pages={(height - xH + projects.length * xH) / height}
                 >
-                    <Html>123</Html>
-                    <Text>123</Text>
                     <Scroll>
-                        {urls.map((url, i) => (
+                        {projects.map((project, i) => (
                             <Item
                                 key={i}
                                 index={i}
-                                position={[i * xH, 0, 0]}
-                                scale={[h, 4, 1]}
-                                url={url}
+                                gap={gap}
+                                position={[0, -2.4 * scale[1] + i * xH, 0]}
+                                scale={scale}
+                                largeScale={largeScale}
+                                setTarget={setTarget}
+                                color={quaternaryColor}
+                                project={project}
                             />
                         ))}
                     </Scroll>
                 </ScrollControls>
-            </Suspense>
+            </Suspense> */}
         </>
     );
 };
