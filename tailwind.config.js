@@ -22,6 +22,10 @@ module.exports = {
                 circle: '50%',
             },
             keyframes: {
+                projectFade: {
+                    '0%': { backgroundColor: '#8294C4' },
+                    '100%': { backgroundColor: 'transparent', color: 'white' },
+                },
                 fadeOut: {
                     '0%': { opacity: 1 },
                     '100%': { opacity: 0 },
@@ -32,6 +36,7 @@ module.exports = {
                 },
             },
             animation: {
+                projectFade: 'projectFade 0.24s ease-in-out forwards',
                 bgFadeOut: 'fadeOut 3s forwards',
                 textBgFadeOut: 'fadeOut 1s forwards',
                 textFadeIn: 'fadeIn 1s forwards',

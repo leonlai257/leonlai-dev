@@ -28,19 +28,19 @@ const state = proxy({
     clicked: null,
     projects: [
         {
+            title: 'Cardano Naming Service',
+            time: 'Feb 2023 - Present',
+        },
+        {
+            title: 'Gusto Collective website',
+            time: 'Feb 2023 - Present',
+        },
+        {
+            title: 'Bubstal websites',
+            time: 'Feb 2023 - Present',
+        },
+        {
             title: 'Jarvix Pay',
-            time: 'Feb 2023 - Present',
-        },
-        {
-            title: 'Project 1',
-            time: 'Feb 2023 - Present',
-        },
-        {
-            title: 'Project 1',
-            time: 'Feb 2023 - Present',
-        },
-        {
-            title: 'CNS',
             time: 'Feb 2023 - Present',
         },
     ],
@@ -177,7 +177,7 @@ const ProjectItem = ({
 }: ItemProps) => {
     return (
         <>
-            <div className="flex cursor-pointer item-center bg-transparent border-secondary border-[1px] px-4 py-2">
+            <div className="flex cursor-pointer item-center hover:animate-projectFade text-black bg-secondary  border-secondary border-[1px] px-4 py-2">
                 {project.title}
             </div>
         </>
@@ -219,7 +219,7 @@ const Projects = (props: ProjectProps) => {
         <>
             <Html fullscreen>
                 <div className="w-4/5 mt-12 m-auto">
-                    <div className="flex flex-col">
+                    <div className="flex flex-col gap-2">
                         {projects.map((project, i) => (
                             <ProjectItem
                                 key={i}
