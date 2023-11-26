@@ -217,8 +217,14 @@ const Projects = (props: ProjectProps) => {
 
     return (
         <>
-            <Html fullscreen>
-                <div className="w-4/5 mt-12 m-auto">
+            <Html
+                fullscreen
+                zIndexRange={[100, 0]}
+                style={{
+                    pointerEvents: 'none',
+                }}
+            >
+                <div className="w-4/5 mt-12 m-auto pointer-events-auto">
                     <div className="flex flex-col gap-2">
                         {projects.map((project, i) => (
                             <ProjectItem

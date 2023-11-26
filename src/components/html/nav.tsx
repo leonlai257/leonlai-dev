@@ -18,7 +18,7 @@ const nav = [
 export const NavBar = () => {
     return (
         <>
-            <div className="absolute z-[100] flex h-full w-full flex-col justify-end pointer-events-none">
+            <div className="absolute z-[999] flex h-full w-full flex-col justify-end pointer-events-none">
                 <div className="flex w-full justify-end p-8 gap-6 pointer-events-auto">
                     {nav &&
                         nav.map((item) => {
