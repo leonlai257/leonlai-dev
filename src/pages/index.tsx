@@ -17,8 +17,13 @@ export interface MainProps extends CoreConfig {}
 const Main = (props: MainProps) => {
     const { color } = props;
 
-    const { primaryColor, secondaryColor, tertiaryColor, quaternaryColor } =
-        color;
+    const {
+        textColor,
+        backgroundColor,
+        primaryColor,
+        secondaryColor,
+        accentColor,
+    } = color;
 
     const [hovered, setHoverStatus] = useState(false);
     const [clicked, setClicked] = useState(false);
@@ -79,7 +84,7 @@ const Main = (props: MainProps) => {
                         </TransitionWord>
                         <group position={[0.05, 0.05, 0.02]}>
                             <Word
-                                color={quaternaryColor}
+                                color={backgroundColor}
                                 outlineWidth={0.02}
                                 outlineColor={
                                     hovered ? secondaryColor : primaryColor

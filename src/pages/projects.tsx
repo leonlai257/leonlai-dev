@@ -186,8 +186,13 @@ const ProjectItem = ({
 
 const Projects = (props: ProjectProps) => {
     const { color } = props;
-    const { primaryColor, secondaryColor, tertiaryColor, quaternaryColor } =
-        color;
+    const {
+        textColor,
+        backgroundColor,
+        primaryColor,
+        secondaryColor,
+        accentColor,
+    } = color;
     const [hovered, setHoverStatus] = useState(false);
     const [target, setTarget] = useState([0, 0, 0]);
     useCursor(hovered);
@@ -235,7 +240,7 @@ const Projects = (props: ProjectProps) => {
                                 scale={scale}
                                 largeScale={largeScale}
                                 setTarget={setTarget}
-                                color={quaternaryColor}
+                                color={backgroundColor}
                                 project={project}
                             />
                         ))}

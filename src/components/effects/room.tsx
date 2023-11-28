@@ -6,16 +6,20 @@ import * as THREE from 'three';
 import { useLocation } from 'wouter';
 
 const getRoomColor = (colorProfile: ColorProfile, room: string) => {
-    const { primaryColor, secondaryColor, tertiaryColor, quaternaryColor } =
-        colorProfile;
-
-    console.log(room);
+    const {
+        textColor,
+        backgroundColor,
+        primaryColor,
+        secondaryColor,
+        accentColor,
+    } = colorProfile;
+    console.log(backgroundColor);
     switch (room) {
         case '/projects':
             return '#222232';
         case '/':
         default:
-            return quaternaryColor;
+            return backgroundColor;
     }
 };
 
@@ -26,7 +30,6 @@ interface RoomProps {
 
 export const Room = ({ colorProfile }: RoomProps) => {
     const [location, setLocation] = useLocation();
-
     return (
         <Box args={[100, 100, 100]}>
             <meshBasicMaterial

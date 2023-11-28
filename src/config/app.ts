@@ -8,10 +8,11 @@ export interface CoreConfig {
 }
 
 export type ColorProfile = {
+    textColor: THREE.ColorRepresentation;
+    backgroundColor: THREE.ColorRepresentation;
     primaryColor: THREE.ColorRepresentation;
     secondaryColor: THREE.ColorRepresentation;
-    tertiaryColor: THREE.ColorRepresentation;
-    quaternaryColor: THREE.ColorRepresentation;
+    accentColor: THREE.ColorRepresentation;
 };
 
 export type NavItem = {
@@ -27,10 +28,11 @@ export type ContactItem = {
 
 const Config = {
     color: {
-        primaryColor: '#8294C4',
-        secondaryColor: '#ACB1D6',
-        tertiaryColor: '#DBDFEA',
-        quaternaryColor: '#FFEAD2',
+        textColor: '#0E081E',
+        backgroundColor: '#F8F7F2',
+        primaryColor: '#9797D3',
+        secondaryColor: '#C9E8E5',
+        accentColor: '#4545A1',
     },
 
     contact: [

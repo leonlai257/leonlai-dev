@@ -41,9 +41,6 @@ module.exports = {
                 textBgFadeOut: 'fadeOut 1s forwards',
                 textFadeIn: 'fadeIn 1s forwards',
             },
-            space: {
-                0.25: '0.675rem',
-            },
             opacity: {
                 hover: 0.8,
             },
@@ -53,20 +50,20 @@ module.exports = {
                     light: '#333333',
                     pure: '#000000',
                 },
+                text: {
+                    DEFAULT: '#090a06',
+                },
+                background: {
+                    DEFAULT: '#f4f1ec',
+                },
                 primary: {
-                    DEFAULT: '#8294C4',
+                    DEFAULT: '#6662a3',
                 },
                 secondary: {
-                    DEFAULT: '#ACB1D6',
+                    DEFAULT: '#C2DBD5',
                 },
-                tertiary: {
-                    DEFAULT: '#A7A7A7',
-                },
-                quaternary: {
-                    DEFAULT: '#FFEAD2',
-                },
-                fifth: {
-                    DEFAULT: '#4858A4',
+                accent: {
+                    DEFAULT: '#504d84',
                 },
             },
         },
