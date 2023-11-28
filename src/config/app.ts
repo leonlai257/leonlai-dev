@@ -28,11 +28,11 @@ export type ContactItem = {
 
 const Config = {
     color: {
-        textColor: '#0E081E',
-        backgroundColor: '#F8F7F2',
-        primaryColor: '#9797D3',
-        secondaryColor: '#C9E8E5',
-        accentColor: '#4545A1',
+        textColor: '#090a06',
+        backgroundColor: '#FFEAD2',
+        primaryColor: '#8294C4',
+        secondaryColor: '#ACB1D6',
+        accentColor: '#C9E8E5',
     },
 
     contact: [

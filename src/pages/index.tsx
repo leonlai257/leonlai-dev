@@ -1,12 +1,5 @@
 import { CoreConfig } from '@config/app';
-import {
-    Box,
-    Html,
-    Line,
-    PerspectiveCamera,
-    Text,
-    useCursor,
-} from '@react-three/drei';
+import { Html, Line, PerspectiveCamera, useCursor } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import { TransitionWord, Word } from '@src/components';
 import { Suspense, useRef, useState } from 'react';

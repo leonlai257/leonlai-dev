@@ -52,18 +52,19 @@ module.exports = {
                 },
                 text: {
                     DEFAULT: '#090a06',
+                    grayscale: '#554855',
                 },
                 background: {
-                    DEFAULT: '#f4f1ec',
+                    DEFAULT: '#FFEAD2',
                 },
                 primary: {
-                    DEFAULT: '#6662a3',
+                    DEFAULT: '#8294C4',
                 },
                 secondary: {
-                    DEFAULT: '#C2DBD5',
+                    DEFAULT: '#ACB1D6',
                 },
                 accent: {
-                    DEFAULT: '#504d84',
+                    DEFAULT: '#C9E8E5',
                 },
             },
         },

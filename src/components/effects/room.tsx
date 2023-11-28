@@ -13,7 +13,6 @@ const getRoomColor = (colorProfile: ColorProfile, room: string) => {
         secondaryColor,
         accentColor,
     } = colorProfile;
-    console.log(backgroundColor);
     switch (room) {
         case '/projects':
             return '#222232';

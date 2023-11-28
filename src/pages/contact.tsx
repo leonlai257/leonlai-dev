@@ -14,8 +14,7 @@ export interface ContactProps extends CoreConfig {}
 const Contact = (props: ContactProps) => {
     const { color, contact } = props;
 
-    const { primaryColor, secondaryColor, tertiaryColor, quaternaryColor } =
-        color;
+    const { primaryColor, secondaryColor } = color;
 
     const [hovered, setHoverStatus] = useState(false);
     useCursor(hovered);

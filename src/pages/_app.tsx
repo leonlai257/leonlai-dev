@@ -12,11 +12,11 @@ import Contact from './contact';
 export default function App({ pageProps }: AppProps) {
     const globalStates = {
         color: {
-            textColor: '#0E081E',
-            backgroundColor: '#FDFCF8',
-            primaryColor: '#9F8DB6',
-            secondaryColor: '#9797D3',
-            accentColor: '#4545A1',
+            textColor: '#090a06',
+            backgroundColor: '#FFEAD2',
+            primaryColor: '#8294C4',
+            secondaryColor: '#ACB1D6',
+            accentColor: '#C9E8E5',
         },
         nav: [
             {
