@@ -47,134 +47,13 @@ const state = proxy({
 });
 
 type ItemProps = {
-    index: number;
     project: {
         title: string;
         time: string;
     };
-    gap: number;
-    position: [number, number, number];
-    scale: [number, number, number];
-    largeScale: [number, number, number];
-    url: string;
-    color: string;
-    setTarget: (target: [number, number, number]) => void;
-} & any;
+};
 
-// const Item = ({
-//     index,
-//     project,
-//     gap,
-//     position,
-//     scale,
-//     largeScale,
-//     setTarget,
-//     color = '#aaa',
-//     ...props
-// }: ItemProps) => {
-//     const ref = useRef<THREE.Mesh>(null!);
-//     const scroll = useScroll();
-//     const { clicked, projects } = useSnapshot(state);
-//     const [hovered, hover] = useState(false);
-//     const click = () => {
-//         state.clicked = index === clicked ? null : index;
-//         setTarget(index === clicked ? [0, 0, 0] : [0, position[1], 0]);
-//     };
-//     const over = () => hover(true);
-//     const out = () => hover(false);
-//     useFrame((state, delta) => {
-//         const y = scroll.curve(
-//             index / projects.length - 1.5 / projects.length,
-//             4 / projects.length
-//         );
-
-//         easing.damp3(
-//             ref.current.scale,
-//             [
-//                 clicked === index ? largeScale[0] : scale[0],
-//                 clicked === index ? largeScale[1] : scale[1],
-//                 1,
-//             ],
-//             0.15,
-//             delta
-//         );
-//         if (clicked !== null && index < clicked)
-//             easing.damp(
-//                 ref.current.position,
-//                 'y',
-//                 position[1] - (largeScale[1] / 2 + gap),
-//                 0.15,
-//                 delta
-//             );
-//         if (clicked !== null && index > clicked)
-//             easing.damp(
-//                 ref.current.position,
-//                 'y',
-//                 position[1] + (largeScale[1] / 2 + gap),
-//                 0.15,
-//                 delta
-//             );
-//         if (clicked === null || clicked === index)
-//             easing.damp(ref.current.position, 'y', position[1], 0.15, delta);
-
-//         easing.dampC(
-//             ref.current.material.color,
-//             hovered || clicked === index ? 'white' : color,
-//             hovered ? 0.3 : 0.15,
-//             delta
-//         );
-//     });
-//     return (
-//         <>
-//             <Plane
-//                 ref={ref}
-//                 {...props}
-//                 position={position}
-//                 scale={scale}
-//                 onClick={click}
-//                 onPointerOver={over}
-//                 onPointerOut={out}
-//             >
-//                 <meshBasicMaterial attach="material" color="white" />
-//                 {clicked != index && (
-//                     <Text
-//                         position={[-scale[0] / 10, -scale[1] / 10, 0]}
-//                         anchorX="left"
-//                         scale={[
-//                             clicked === index ? 1 : scale[1],
-//                             clicked === index ? 1 : scale[0],
-//                             1,
-//                         ]}
-//                         font={'/fonts/NotoSans-Bold.ttf'}
-//                         color={'black'}
-//                         fontSize={0.12}
-//                     >
-//                         {project.title}
-//                     </Text>
-//                 )}
-//                 {clicked === index && (
-//                     <Html>
-//                         <h1>{project.title}</h1>
-//                     </Html>
-//                     // <group>
-//                     //     <Text>clicked</Text>
-//                     // </group>
-//                 )}
-//             </Plane>
-//         </>
-//     );
-// };
-
-const ProjectItem = ({
-    index,
-    project,
-    gap,
-    position,
-    scale,
-    largeScale,
-    setTarget,
-    color = '#aaa',
-}: ItemProps) => {
+const ProjectItem = ({ project }: ItemProps) => {
     return (
         <>
             <div className="flex cursor-pointer item-center hover:animate-projectFade text-black bg-secondary  border-secondary border-[1px] px-4 py-2">
@@ -232,44 +111,11 @@ const Projects = (props: ProjectProps) => {
                 <div className="w-4/5 mt-12 m-auto pointer-events-auto">
                     <div className="flex flex-col gap-2">
                         {projects.map((project, i) => (
-                            <ProjectItem
-                                key={i}
-                                index={i}
-                                gap={gap}
-                                position={[0, -2.4 * scale[1] + i * xH, 0]}
-                                scale={scale}
-                                largeScale={largeScale}
-                                setTarget={setTarget}
-                                color={backgroundColor}
-                                project={project}
-                            />
+                            <ProjectItem key={i} project={project} />
                         ))}
                     </div>
                 </div>
             </Html>
-            {/* <Suspense fallback={<Html></Html>}>
-                <PerspectiveCamera near={0.1} far={1000} />
-                <ScrollControls
-                    damping={0.1}
-                    pages={(height - xH + projects.length * xH) / height}
-                >
-                    <Scroll>
-                        {projects.map((project, i) => (
-                            <Item
-                                key={i}
-                                index={i}
-                                gap={gap}
-                                position={[0, -2.4 * scale[1] + i * xH, 0]}
-                                scale={scale}
-                                largeScale={largeScale}
-                                setTarget={setTarget}
-                                color={quaternaryColor}
-                                project={project}
-                            />
-                        ))}
-                    </Scroll>
-                </ScrollControls>
-            </Suspense> */}
         </>
     );
 };

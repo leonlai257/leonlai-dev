@@ -52,10 +52,11 @@ module.exports = {
                 },
                 text: {
                     DEFAULT: '#090a06',
-                    grayscale: '#554855',
+                    grayscale: '#A292A4',
                 },
                 background: {
                     DEFAULT: '#FFEAD2',
+                    dark: '#222232',
                 },
                 primary: {
                     DEFAULT: '#8294C4',

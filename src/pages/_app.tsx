@@ -14,6 +14,7 @@ export default function App({ pageProps }: AppProps) {
         color: {
             textColor: '#090a06',
             backgroundColor: '#FFEAD2',
+            backgroundDark: '#222232',
             primaryColor: '#8294C4',
             secondaryColor: '#ACB1D6',
             accentColor: '#C9E8E5',

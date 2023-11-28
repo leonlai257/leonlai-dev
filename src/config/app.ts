@@ -10,6 +10,7 @@ export interface CoreConfig {
 export type ColorProfile = {
     textColor: THREE.ColorRepresentation;
     backgroundColor: THREE.ColorRepresentation;
+    backgroundDark: THREE.ColorRepresentation;
     primaryColor: THREE.ColorRepresentation;
     secondaryColor: THREE.ColorRepresentation;
     accentColor: THREE.ColorRepresentation;
@@ -30,6 +31,7 @@ const Config = {
     color: {
         textColor: '#090a06',
         backgroundColor: '#FFEAD2',
+        backgroundDark: '#222232',
         primaryColor: '#8294C4',
         secondaryColor: '#ACB1D6',
         accentColor: '#C9E8E5',

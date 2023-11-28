@@ -31,23 +31,41 @@ const Main = (props: MainProps) => {
         if (clicked) {
             ref.current.position.x = THREE.MathUtils.lerp(
                 ref.current.position.x,
-                -8,
+                -3,
                 0.02
             );
             ref.current.position.y = THREE.MathUtils.lerp(
                 ref.current.position.y,
-                8,
+                4,
                 0.02
             );
 
             camera.position.z = THREE.MathUtils.lerp(
                 camera.position.z,
-                20,
+                12,
                 0.02
             );
 
-            if (camera.position.z > 19.9) {
-                camera.position.z = 20;
+            ref.current.rotation.x = THREE.MathUtils.lerp(
+                ref.current.rotation.x,
+                Math.PI / 16,
+                0.02
+            );
+
+            ref.current.rotation.y = THREE.MathUtils.lerp(
+                ref.current.rotation.x,
+                Math.PI / 16,
+                0.02
+            );
+
+            ref.current.rotation.z = THREE.MathUtils.lerp(
+                ref.current.rotation.x,
+                Math.PI / 16,
+                0.02
+            );
+
+            if (camera.position.z > 11.99) {
+                camera.position.z = 12;
             }
         }
     });
@@ -62,9 +80,9 @@ const Main = (props: MainProps) => {
                 >
                     <group
                         // rotation={[
-                        //     (Math.PI * -2) / 16,
-                        //     (Math.PI * -2) / 16,
-                        //     (Math.PI * -1) / 16,
+                        //     (Math.PI * 1) / 16,
+                        //     (Math.PI * 1) / 16,
+                        //     (Math.PI * 1) / 16,
                         // ]}
                         onPointerOver={(e) => setHoverStatus(true)}
                         onPointerOut={(e) => setHoverStatus(false)}

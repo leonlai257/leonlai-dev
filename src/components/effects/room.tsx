@@ -9,13 +9,14 @@ const getRoomColor = (colorProfile: ColorProfile, room: string) => {
     const {
         textColor,
         backgroundColor,
+        backgroundDark,
         primaryColor,
         secondaryColor,
         accentColor,
     } = colorProfile;
     switch (room) {
         case '/projects':
-            return '#222232';
+            return backgroundDark;
         case '/':
         default:
             return backgroundColor;
