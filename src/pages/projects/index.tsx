@@ -16,6 +16,8 @@ import { proxy, useSnapshot } from 'valtio';
 import { easing } from 'maath';
 import * as THREE from 'three';
 import { useFrame, useThree } from '@react-three/fiber';
+import { useRouter } from 'next/router';
+import { useLocation, useRoute } from 'wouter';
 
 export interface ProjectProps extends CoreConfig {}
 
@@ -28,20 +30,36 @@ const state = proxy({
     clicked: null,
     projects: [
         {
+            title: 'MeshJS MeshTxBuilder API documentation',
+            to: 'mesh',
+        },
+        {
             title: 'Cardano Naming Service',
-            time: 'Feb 2023 - Present',
+            to: 'cns',
         },
         {
-            title: 'Gusto Collective website',
-            time: 'Feb 2023 - Present',
+            title: 'Bubstal.io',
+            to: 'bubstal',
         },
         {
-            title: 'Bubstal websites',
-            time: 'Feb 2023 - Present',
+            title: 'Foodiverse',
+            to: 'foodiverse',
+        },
+        {
+            title: 'thisisgusto.com',
+            to: 'gusto',
+        },
+        {
+            title: 'CoReality',
+            to: 'coreality',
         },
         {
             title: 'Jarvix Pay',
-            time: 'Feb 2023 - Present',
+            to: 'jarvix-pay',
+        },
+        {
+            title: 'Mixed Reality laboratory',
+            to: 'mr-lab',
         },
     ],
 });
@@ -49,15 +67,21 @@ const state = proxy({
 type ItemProps = {
     project: {
         title: string;
-        time: string;
+        to: string;
     };
 };
 
 const ProjectItem = ({ project }: ItemProps) => {
+    const { title, to } = project;
+    const [location, push] = useLocation();
+
     return (
         <>
-            <div className="flex cursor-pointer item-center hover:animate-projectFade text-black bg-secondary  border-secondary border-[1px] px-4 py-2">
-                {project.title}
+            <div
+                onClick={() => push('/projects/' + to)}
+                className="flex cursor-pointer item-center hover:animate-projectFade text-black bg-secondary  border-secondary border-[1px] px-4 py-2"
+            >
+                {title}
             </div>
         </>
     );
