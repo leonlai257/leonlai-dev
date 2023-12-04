@@ -1,28 +1,24 @@
+import { Loader } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
+import { NavBar, Room } from '@src/components';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { Route, Switch, useLocation } from 'wouter';
+import { Route, Switch } from 'wouter';
 import Main from '.';
 import '../styles/globals.css';
-import Projects from './projects';
-import { Room, NavBar } from '@src/components';
-import { Html, OrbitControls, Loader, Box } from '@react-three/drei';
 import Contact from './contact';
+import Projects from './projects';
 import * as THREE from 'three';
 
 export default function App({ pageProps }: AppProps) {
     const globalStates = {
         color: {
-            textColor: new THREE.Color('#090a06').convertSRGBToLinear(),
-            backgroundColor: new THREE.Color(
-                255,
-                234,
-                210
-            ).convertSRGBToLinear(),
-            backgroundDark: new THREE.Color('#222232').convertSRGBToLinear(),
-            primaryColor: new THREE.Color('#8294C4').convertSRGBToLinear(),
-            secondaryColor: new THREE.Color('#ACB1D6').convertSRGBToLinear(),
-            accentColor: new THREE.Color('#C9E8E5').convertSRGBToLinear(),
+            textColor: '#090a06', // '#090a06',
+            backgroundColor: '#FEEBD6', // '#FEEBD6',
+            backgroundDark: '#222232', // '#222232',
+            primaryColor: '#8294C4', // '#8294C4',
+            secondaryColor: '#ACB1D6', // '#ACB1D6',
+            accentColor: '#C9E8E5', // '#C9E8E5',
         },
         nav: [
             {
@@ -88,8 +84,12 @@ export default function App({ pageProps }: AppProps) {
 
             <NavBar />
 
-            <Canvas>
-                <ambientLight intensity={0} />
+            <Canvas
+                gl={{
+                    toneMapping: THREE.NoToneMapping,
+                }}
+            >
+                <ambientLight intensity={0.1} />
                 <Room colorProfile={pageProps.color} />
 
                 {/* <OrbitControls /> */}

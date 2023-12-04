@@ -75,7 +75,7 @@ type ProjectItemProps = {
     };
     gap: number;
     textSize: number;
-    color: THREE.ColorRepresentation;
+    color: THREE.Color;
 } & any;
 
 const ProjectItem = ({

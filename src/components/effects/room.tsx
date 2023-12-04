@@ -1,19 +1,10 @@
-import { Box, Text } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
+import { Box } from '@react-three/drei';
 import { ColorProfile } from '@src/config/app';
-import { ReactNode, useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { useLocation } from 'wouter';
 
 const getRoomColor = (colorProfile: ColorProfile, room: string) => {
-    const {
-        textColor,
-        backgroundColor,
-        backgroundDark,
-        primaryColor,
-        secondaryColor,
-        accentColor,
-    } = colorProfile;
+    const { backgroundColor, backgroundDark } = colorProfile;
 
     if (room.includes('projects')) {
         return backgroundDark;
@@ -31,7 +22,7 @@ interface RoomProps {
 }
 
 export const Room = ({ colorProfile }: RoomProps) => {
-    const [location, setLocation] = useLocation();
+    const [location] = useLocation();
     return (
         <Box args={[100, 100, 100]}>
             <meshBasicMaterial

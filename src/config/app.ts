@@ -8,12 +8,12 @@ export interface CoreConfig {
 }
 
 export type ColorProfile = {
-    textColor: THREE.ColorRepresentation;
-    backgroundColor: THREE.ColorRepresentation;
-    backgroundDark: THREE.ColorRepresentation;
-    primaryColor: THREE.ColorRepresentation;
-    secondaryColor: THREE.ColorRepresentation;
-    accentColor: THREE.ColorRepresentation;
+    textColor: THREE.Color;
+    backgroundColor: THREE.Color;
+    backgroundDark: THREE.Color;
+    primaryColor: THREE.Color;
+    secondaryColor: THREE.Color;
+    accentColor: THREE.Color;
 };
 
 export type NavItem = {

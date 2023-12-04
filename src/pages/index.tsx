@@ -1,11 +1,5 @@
 import { CoreConfig } from '@config/app';
-import {
-    Center,
-    Html,
-    Line,
-    PerspectiveCamera,
-    useCursor,
-} from '@react-three/drei';
+import { Html, Line, PerspectiveCamera, useCursor } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
 import { TransitionWord, Word } from '@src/components';
 import { Suspense, useRef, useState } from 'react';
@@ -167,7 +161,6 @@ const Main = (props: MainProps) => {
                     near={0.1}
                     far={1000}
                     position={[0, 0, 10]}
-                    // position={[0, 0, clicked ? 20 : 10]}
                 />
             </Suspense>
         </>
