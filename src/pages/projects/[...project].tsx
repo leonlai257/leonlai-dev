@@ -1,28 +1,13 @@
 import { CoreConfig } from '@config/app';
-import {
-    Html,
-    PerspectiveCamera,
-    Scroll,
-    ScrollControls,
-    useCursor,
-    useScroll,
-    Image,
-    Box,
-    Text,
-    Plane,
-} from '@react-three/drei';
-import { Suspense, useState, useRef } from 'react';
-import { proxy, useSnapshot } from 'valtio';
-import { easing } from 'maath';
-import * as THREE from 'three';
-import { useFrame, useThree } from '@react-three/fiber';
+import { Html } from '@react-three/drei';
 import { useRouter } from 'next/router';
 
 export interface ProjectProps extends CoreConfig {}
 
 const Project = (props: ProjectProps) => {
-    const { project } = useRouter().query;
-
+    const router = useRouter();
+    const { project } = router.query;
+    console.log(project);
     return (
         <>
             <Html
@@ -32,8 +17,8 @@ const Project = (props: ProjectProps) => {
                     pointerEvents: 'none',
                 }}
             >
-                <div className="w-4/5 mt-12 m-auto pointer-events-auto">
-                    <div className="flex flex-col gap-2">{project}</div>
+                <div className="w-4/5 m-auto pointer-events-auto">
+                    <div>{project}</div>
                 </div>
             </Html>
         </>

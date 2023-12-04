@@ -14,9 +14,11 @@ const getRoomColor = (colorProfile: ColorProfile, room: string) => {
         secondaryColor,
         accentColor,
     } = colorProfile;
+
+    if (room.includes('projects')) {
+        return backgroundDark;
+    }
     switch (room) {
-        case '/projects':
-            return backgroundDark;
         case '/':
         default:
             return backgroundColor;

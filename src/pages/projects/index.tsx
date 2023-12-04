@@ -10,14 +10,17 @@ import {
     Box,
     Text,
     Plane,
+    Center,
+    Line,
 } from '@react-three/drei';
 import { Suspense, useState, useRef } from 'react';
-import { proxy, useSnapshot } from 'valtio';
+import { proxy, ref, useSnapshot } from 'valtio';
 import { easing } from 'maath';
 import * as THREE from 'three';
 import { useFrame, useThree } from '@react-three/fiber';
 import { useRouter } from 'next/router';
 import { useLocation, useRoute } from 'wouter';
+import { TransitionWord } from '@src/components';
 
 export interface ProjectProps extends CoreConfig {}
 
@@ -30,7 +33,7 @@ const state = proxy({
     clicked: null,
     projects: [
         {
-            title: 'MeshJS MeshTxBuilder API documentation',
+            title: 'MeshJS - Contributor',
             to: 'mesh',
         },
         {
@@ -64,30 +67,69 @@ const state = proxy({
     ],
 });
 
-type ItemProps = {
+type ProjectItemProps = {
+    index: number;
     project: {
         title: string;
         to: string;
     };
-};
+    gap: number;
+    textSize: number;
+    color: THREE.ColorRepresentation;
+} & any;
 
-const ProjectItem = ({ project }: ItemProps) => {
-    const { title, to } = project;
-    const [location, push] = useLocation();
+const ProjectItem = ({
+    index,
+    project,
+    gap,
+    color,
+    textSize,
+    ...props
+}: ProjectItemProps) => {
+    const { title = '', to } = project;
+    const [_, push] = useLocation();
+
+    const ref = useRef<THREE.Mesh>(null!);
+
+    const [hovered, setHover] = useState(false);
+
+    useFrame(() => {
+        if (hovered) {
+        }
+    });
 
     return (
         <>
-            <div
-                onClick={() => push('/projects/' + to)}
-                className="flex cursor-pointer item-center hover:animate-projectFade text-black bg-secondary  border-secondary border-[1px] px-4 py-2"
+            <group
+                {...props}
+                position={[0, index * (textSize + gap), 0]}
+                onPointerOver={() => setHover(true)}
+                onPointerOut={() => setHover(false)}
             >
-                {title}
-            </div>
+                <TransitionWord
+                    ref={ref}
+                    anchorX="left"
+                    primaryColor={'white'}
+                    transitionColor={color}
+                    scale={textSize}
+                    onClick={() => push('/projects/' + to)}
+                >
+                    {title}
+                </TransitionWord>
+                <Line
+                    color={'white'}
+                    lineWidth={2}
+                    points={[
+                        [-0.04, (textSize + gap) * 0.48, 0],
+                        [10, (textSize + gap) * 0.48, 0],
+                    ]}
+                />
+            </group>
         </>
     );
 };
 
-const Projects = (props: ProjectProps) => {
+const ProjectList = (props: ProjectProps) => {
     const { color } = props;
     const {
         textColor,
@@ -101,31 +143,14 @@ const Projects = (props: ProjectProps) => {
     useCursor(hovered);
 
     const { projects } = useSnapshot(state);
-    const { height } = useThree((state) => state.viewport);
-    const scale = [4.6, 0.7, 1];
-    const largeScale = [scale[0] * 1.16, (height * 9) / 10, 1];
-    const gap = 0.15;
-    const xH = scale[1] + gap;
-    const camera = useThree((state) => state.camera);
+    const gap = 0.2;
+    const textSize = 0.24;
 
-    useFrame(() => {
-        if (target[1] !== 0 && camera.position.y !== target[1]) {
-            console.log(target);
-            camera.position.y = THREE.MathUtils.lerp(
-                camera.position.y,
-                target[1],
-                0.05
-            );
-            if (camera.position.y > target[1] - 0.1) {
-                camera.position.y = target[1];
-                setTarget([0, target[1], 0]);
-            }
-        }
-    });
+    const camera = useThree((state) => state.camera);
 
     return (
         <>
-            <Html
+            {/* <Html
                 fullscreen
                 zIndexRange={[100, 0]}
                 style={{
@@ -133,15 +158,25 @@ const Projects = (props: ProjectProps) => {
                 }}
             >
                 <div className="w-4/5 mt-12 m-auto pointer-events-auto">
-                    <div className="flex flex-col gap-2">
-                        {projects.map((project, i) => (
-                            <ProjectItem key={i} project={project} />
-                        ))}
-                    </div>
+                    <div className="flex flex-col gap-2"> */}
+            <group position={[0.2, -3, 0]}>
+                {projects.toReversed().map((project, i) => (
+                    <ProjectItem
+                        key={i}
+                        index={i}
+                        project={project}
+                        gap={gap}
+                        textSize={textSize}
+                        color={primaryColor}
+                    />
+                ))}
+            </group>
+
+            {/* </div>
                 </div>
-            </Html>
+            </Html> */}
         </>
     );
 };
 
-export default Projects;
+export default ProjectList;

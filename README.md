@@ -1,8 +1,8 @@
-# React three Boilerplate
+# Leon Lai portfolio
 
 ## Introduction
 
-This boilerplate could be used for building websites with 3d graphic elements, using react three and related libraries
+Hi, I am Leon Lai and this is my portfolio website.
 
 ## Technical Stack
 

@@ -23,7 +23,10 @@ export const NavBar = () => {
                     {nav &&
                         nav.map((item) => {
                             return (
-                                <div className="hover:opacity-75 text-text-grayscale">
+                                <div
+                                    key={`${item.name}`}
+                                    className="hover:opacity-75 text-text-grayscale"
+                                >
                                     <Link href={item.url}>{item.name}</Link>
                                 </div>
                             );

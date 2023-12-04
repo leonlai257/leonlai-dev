@@ -8,16 +8,21 @@ import Projects from './projects';
 import { Room, NavBar } from '@src/components';
 import { Html, OrbitControls, Loader, Box } from '@react-three/drei';
 import Contact from './contact';
+import * as THREE from 'three';
 
 export default function App({ pageProps }: AppProps) {
     const globalStates = {
         color: {
-            textColor: '#090a06',
-            backgroundColor: '#FFEAD2',
-            backgroundDark: '#222232',
-            primaryColor: '#8294C4',
-            secondaryColor: '#ACB1D6',
-            accentColor: '#C9E8E5',
+            textColor: new THREE.Color('#090a06').convertSRGBToLinear(),
+            backgroundColor: new THREE.Color(
+                255,
+                234,
+                210
+            ).convertSRGBToLinear(),
+            backgroundDark: new THREE.Color('#222232').convertSRGBToLinear(),
+            primaryColor: new THREE.Color('#8294C4').convertSRGBToLinear(),
+            secondaryColor: new THREE.Color('#ACB1D6').convertSRGBToLinear(),
+            accentColor: new THREE.Color('#C9E8E5').convertSRGBToLinear(),
         },
         nav: [
             {
@@ -84,12 +89,9 @@ export default function App({ pageProps }: AppProps) {
             <NavBar />
 
             <Canvas>
-                <ambientLight castShadow intensity={0.1} />
+                <ambientLight intensity={0} />
                 <Room colorProfile={pageProps.color} />
-                {/* <fog
-                    attach="fog"
-                    args={[pageProps.color.primaryColor, 10, 160]}
-                /> */}
+
                 {/* <OrbitControls /> */}
 
                 <Switch>

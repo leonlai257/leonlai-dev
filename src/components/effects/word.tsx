@@ -7,11 +7,13 @@ export const TransitionWord = ({
     children,
     originalColor,
     transitionColor,
+    enable = true,
     ...props
 }: {
     children: ReactNode;
     originalColor: THREE.ColorRepresentation;
     transitionColor?: THREE.ColorRepresentation;
+    enable?: boolean;
 } & any) => {
     const color = new THREE.Color();
     const ref = useRef<any>();
