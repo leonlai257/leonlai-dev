@@ -29,43 +29,41 @@ const geometry = new THREE.BufferGeometry().setFromPoints([
     new THREE.Vector3(0, -0.5, 0),
     new THREE.Vector3(0, 0.5, 0),
 ]);
-const state = proxy({
-    clicked: null,
-    projects: [
-        {
-            title: 'MeshJS - Contributor',
-            to: 'mesh',
-        },
-        {
-            title: 'Cardano Naming Service',
-            to: 'cns',
-        },
-        {
-            title: 'Bubstal.io',
-            to: 'bubstal',
-        },
-        {
-            title: 'Foodiverse',
-            to: 'foodiverse',
-        },
-        {
-            title: 'thisisgusto.com',
-            to: 'gusto',
-        },
-        {
-            title: 'CoReality',
-            to: 'coreality',
-        },
-        {
-            title: 'Jarvix Pay',
-            to: 'jarvix-pay',
-        },
-        {
-            title: 'Mixed Reality laboratory',
-            to: 'mr-lab',
-        },
-    ],
-});
+
+const projects = [
+    {
+        title: 'MeshJS - Contributor',
+        to: 'mesh',
+    },
+    {
+        title: 'Cardano Naming Service',
+        to: 'cns',
+    },
+    {
+        title: 'Bubstal.io',
+        to: 'bubstal',
+    },
+    {
+        title: 'Foodiverse',
+        to: 'foodiverse',
+    },
+    {
+        title: 'thisisgusto.com',
+        to: 'gusto',
+    },
+    {
+        title: 'CoReality',
+        to: 'coreality',
+    },
+    {
+        title: 'Jarvix Pay',
+        to: 'jarvix-pay',
+    },
+    {
+        title: 'Mixed Reality laboratory',
+        to: 'mr-lab',
+    },
+];
 
 type ProjectItemProps = {
     index: number;
@@ -102,7 +100,7 @@ const ProjectItem = ({
         <>
             <group
                 {...props}
-                position={[0, index * (textSize + gap), 0]}
+                position={[0, -index * (textSize + gap), 0]}
                 onPointerOver={() => setHover(true)}
                 onPointerOut={() => setHover(false)}
             >
@@ -139,10 +137,8 @@ const ProjectList = (props: ProjectProps) => {
         accentColor,
     } = color;
     const [hovered, setHoverStatus] = useState(false);
-    const [target, setTarget] = useState([0, 0, 0]);
     useCursor(hovered);
 
-    const { projects } = useSnapshot(state);
     const gap = 0.2;
     const textSize = 0.24;
 
@@ -159,8 +155,8 @@ const ProjectList = (props: ProjectProps) => {
             >
                 <div className="w-4/5 mt-12 m-auto pointer-events-auto">
                     <div className="flex flex-col gap-2"> */}
-            <group position={[0.2, -3, 0]}>
-                {projects.toReversed().map((project, i) => (
+            <group position={[0.2, 0, 0]}>
+                {projects.map((project, i) => (
                     <ProjectItem
                         key={i}
                         index={i}
