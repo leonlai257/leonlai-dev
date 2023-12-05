@@ -1,34 +1,12 @@
 import { CoreConfig } from '@config/app';
-import {
-    Html,
-    PerspectiveCamera,
-    Scroll,
-    ScrollControls,
-    useCursor,
-    useScroll,
-    Image,
-    Box,
-    Text,
-    Plane,
-    Center,
-    Line,
-} from '@react-three/drei';
-import { Suspense, useState, useRef } from 'react';
-import { proxy, ref, useSnapshot } from 'valtio';
-import { easing } from 'maath';
-import * as THREE from 'three';
+import { Line } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
-import { useRouter } from 'next/router';
-import { useLocation, useRoute } from 'wouter';
 import { TransitionWord } from '@src/components';
+import { useRef, useState } from 'react';
+import * as THREE from 'three';
+import { useLocation } from 'wouter';
 
 export interface ProjectProps extends CoreConfig {}
-
-const material = new THREE.LineBasicMaterial({ color: 'white' });
-const geometry = new THREE.BufferGeometry().setFromPoints([
-    new THREE.Vector3(0, -0.5, 0),
-    new THREE.Vector3(0, 0.5, 0),
-]);
 
 const projects = [
     {
@@ -136,8 +114,6 @@ const ProjectList = (props: ProjectProps) => {
         secondaryColor,
         accentColor,
     } = color;
-    const [hovered, setHoverStatus] = useState(false);
-    useCursor(hovered);
 
     const gap = 0.2;
     const textSize = 0.24;
@@ -146,15 +122,6 @@ const ProjectList = (props: ProjectProps) => {
 
     return (
         <>
-            {/* <Html
-                fullscreen
-                zIndexRange={[100, 0]}
-                style={{
-                    pointerEvents: 'none',
-                }}
-            >
-                <div className="w-4/5 mt-12 m-auto pointer-events-auto">
-                    <div className="flex flex-col gap-2"> */}
             <group position={[0.2, 0, 0]}>
                 {projects.map((project, i) => (
                     <ProjectItem
@@ -167,10 +134,6 @@ const ProjectList = (props: ProjectProps) => {
                     />
                 ))}
             </group>
-
-            {/* </div>
-                </div>
-            </Html> */}
         </>
     );
 };

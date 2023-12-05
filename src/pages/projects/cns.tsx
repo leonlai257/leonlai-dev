@@ -1,19 +1,18 @@
 import { CoreConfig } from '@config/app';
-import { Html } from '@react-three/drei';
+import { Box, Html, OrbitControls, PerspectiveCamera } from '@react-three/drei';
 
 export interface ProjectProps extends CoreConfig {}
 
 const ProjectCNS = (props: ProjectProps) => {
     return (
         <>
-            <Html
-                // fullscreen
-                center
-                style={{
-                    pointerEvents: 'none',
-                }}
-            >
-                <div className="m-auto pointer-events-auto inset-0">
+            <Html fullscreen center zIndexRange={[1, 100]}>
+                <div className="m-auto flex flex-col pointer-events-auto w-[80%] max-w-[1440px]">
+                    <div>cns</div>
+                    <div>cns</div>
+                    <div>cns</div>
+                    <div>cns</div>
+                    <div>cns</div>
                     <div>cns</div>
                 </div>
             </Html>

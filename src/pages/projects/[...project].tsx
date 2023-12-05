@@ -15,9 +15,11 @@ const Project = (props: ProjectProps) => {
                 zIndexRange={[100, 0]}
                 style={{
                     pointerEvents: 'none',
+                    height: '100vh',
+                    width: '100vw',
                 }}
             >
-                <div className="w-4/5 m-auto pointer-events-auto">
+                <div className="scroll- m-auto flex flex-col pointer-events-auto w-[80%] max-w-[1440px]">
                     <div>{project}</div>
                 </div>
             </Html>
