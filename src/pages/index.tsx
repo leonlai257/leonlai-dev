@@ -25,15 +25,11 @@ const Main = (props: MainProps) => {
 
     useCursor(hovered);
 
-    // const camera = useThree((state) => state.camera);
-
     const groupRef = useRef<THREE.Group>(null!);
     const postRef = useRef<THREE.Group>(null!);
 
     const { height, width } = useThree((state) => state.viewport);
 
-    const camZ = 20;
-    // const textX = -4.8;
     const textX = -width / 4.4;
     const textY = height / 3.4;
     const postY = -0.8;

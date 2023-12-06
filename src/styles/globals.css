@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .text-welcome {
+      @apply text-welcome-sm md:text-welcome-md lg:text-welcome-lg;
+  }
+  .text-display {
+      @apply text-display-sm md:text-display-md lg:text-display-lg;
+  }
+  .text-headline {
+      @apply text-headline-sm md:text-headline-md lg:text-headline-lg;
+  }
+  .text-title {
+      @apply text-title-sm md:text-title-md lg:text-title-lg;
+  }
+  .text-body {
+      @apply text-body-sm md:text-body-md lg:text-body-lg;
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;

@@ -1,26 +1,34 @@
-import { CoreConfig } from '@config/app';
 import { Html } from '@react-three/drei';
 import { useRouter } from 'next/router';
-
-export interface ProjectProps extends CoreConfig {}
+import { ProjectProps } from '.';
+import { useFrame } from '@react-three/fiber';
+import { useParams } from 'wouter';
 
 const Project = (props: ProjectProps) => {
-    const router = useRouter();
-    const { project } = router.query;
-    console.log(project);
+    const { project } = useParams();
+
     return (
         <>
             <Html
                 fullscreen
-                zIndexRange={[100, 0]}
+                zIndexRange={[1000, 100]}
                 style={{
                     pointerEvents: 'none',
-                    height: '100vh',
-                    width: '100vw',
+                    overflow: 'scroll',
                 }}
             >
-                <div className="scroll- m-auto flex flex-col pointer-events-auto w-[80%] max-w-[1440px]">
-                    <div>{project}</div>
+                <div className="m-auto flex flex-col pointer-events-auto pt-20 px-12 gap-y-8">
+                    <div className="flex flex-col justify-start">
+                        <div className="text-display uppercase">{project}</div>
+                        <div className="flex w-full justify-between">
+                            <div className="text-title uppercase italic">
+                                Full Stack Developer
+                            </div>
+                            {/* <div className="text-label uppercase italic">
+                                May 2023 - Nov 2023
+                            </div> */}
+                        </div>
+                    </div>
                 </div>
             </Html>
         </>
