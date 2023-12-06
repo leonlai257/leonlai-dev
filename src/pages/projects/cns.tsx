@@ -41,6 +41,7 @@ const ProjectCNS = ({ projects }: ProjectProps) => {
                         {links.map((link) => {
                             return (
                                 <a
+                                    key={link.name}
                                     href={link.url}
                                     target="_blank"
                                     className="hover:opacity-hover text-label uppercase bg-white text-primary rounded-lg px-2 py-1"
