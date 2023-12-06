@@ -8,47 +8,10 @@ import { useLocation } from 'wouter';
 
 export interface ProjectProps extends CoreConfig {}
 
-const projects = [
-    {
-        title: 'MeshJS - Contributor',
-        to: 'mesh',
-    },
-    {
-        title: 'Cardano Naming Service',
-        to: 'cns',
-    },
-    {
-        title: 'Bubstal.io',
-        to: 'bubstal',
-    },
-    {
-        title: 'Foodiverse',
-        to: 'foodiverse',
-    },
-    {
-        title: 'thisisgusto.com',
-        to: 'gusto',
-    },
-    {
-        title: 'CoReality',
-        to: 'coreality',
-    },
-    {
-        title: 'Jarvix Pay',
-        to: 'jarvix-pay',
-    },
-    {
-        title: 'Mixed Reality laboratory',
-        to: 'mr-lab',
-    },
-];
-
 type ProjectItemProps = {
     index: number;
-    project: {
-        title: string;
-        to: string;
-    };
+    display: string;
+    to: string;
     gap: number;
     textSize: number;
     color: THREE.Color;
@@ -56,13 +19,13 @@ type ProjectItemProps = {
 
 const ProjectItem = ({
     index,
-    project,
+    display,
+    to,
     gap,
     color,
     textSize,
     ...props
 }: ProjectItemProps) => {
-    const { title = '', to } = project;
     const [_, push] = useLocation();
 
     const ref = useRef<THREE.Mesh>(null!);
@@ -90,7 +53,7 @@ const ProjectItem = ({
                     scale={textSize}
                     onClick={() => push('/projects/' + to)}
                 >
-                    {title}
+                    {display}
                 </TransitionWord>
                 <Line
                     color={'white'}
@@ -105,8 +68,7 @@ const ProjectItem = ({
     );
 };
 
-const ProjectList = (props: ProjectProps) => {
-    const { color } = props;
+const ProjectList = ({ projects = [], color }: ProjectProps) => {
     const {
         textColor,
         backgroundColor,
@@ -127,7 +89,8 @@ const ProjectList = (props: ProjectProps) => {
                     <ProjectItem
                         key={i}
                         index={i}
-                        project={project}
+                        display={project.navTitle}
+                        to={project.to}
                         gap={gap}
                         textSize={textSize}
                         color={primaryColor}

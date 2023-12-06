@@ -1,7 +1,18 @@
 import { Html } from '@react-three/drei';
 import { ProjectProps } from '.';
 
-const ProjectCNS = (props: ProjectProps) => {
+const ProjectCNS = ({ projects }: ProjectProps) => {
+    const info = projects.find((p) => p.to === 'cns');
+    const {
+        title = '',
+        date = '',
+        links = [],
+        description = '',
+        role = '',
+        image = '',
+        tags = [],
+    } = info || {};
+
     return (
         <>
             <Html
@@ -26,11 +37,24 @@ const ProjectCNS = (props: ProjectProps) => {
                             </div>
                         </div>
                     </div>
-                    {/* <div className="flex text-body gap-x-1">
+                    <div className="flex gap-x-2">
+                        {links.map((link) => {
+                            return (
+                                <a
+                                    href={link.url}
+                                    target="_blank"
+                                    className="hover:opacity-hover text-label uppercase bg-white text-primary rounded-lg px-2 py-1"
+                                >
+                                    {link.name}
+                                </a>
+                            );
+                        })}
+                    </div>
+                    <div className="flex flex-col text-body gap-x-1">
                         <div className="text-title uppercase italic">
                             Summary
                         </div>
-                    </div> */}
+                    </div>
                 </div>
             </Html>
         </>

@@ -11,6 +11,7 @@ import Projects from './projects';
 import * as THREE from 'three';
 import Project from './projects/[...project]';
 import ProjectCNS from './projects/cns';
+import { baseConfig } from '@src/config/app';
 
 export default function App({ pageProps }: AppProps) {
     const globalStates = {
@@ -56,7 +57,7 @@ export default function App({ pageProps }: AppProps) {
     };
 
     pageProps = {
-        ...pageProps,
+        ...baseConfig,
         ...globalStates,
     };
 
