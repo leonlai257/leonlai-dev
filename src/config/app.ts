@@ -116,6 +116,12 @@ export const baseConfig = {
             to: 'foodiverse',
             role: 'Full Stack Developer',
             date: 'May 2023 - July 2023',
+            links: [
+                {
+                    name: 'News article',
+                    url: 'https://metrodaily.hk/posts/52505',
+                },
+            ],
         },
         {
             navTitle: 'Gusto Collective website',
