@@ -25,14 +25,14 @@ const ProjectCNS = ({ projects }: ProjectProps) => {
             >
                 <div className="m-auto flex flex-col pointer-events-auto pt-20 px-12 gap-y-8">
                     <div className="flex flex-col justify-start">
-                        <div className="text-display uppercase">
+                        <div className="text-display uppercase text-white">
                             Cardano Naming Service
                         </div>
                         <div className="flex w-full justify-between">
-                            <div className="text-title uppercase italic">
+                            <div className="text-title uppercase italic text-secondary">
                                 Full Stack Developer
                             </div>
-                            <div className="text-label uppercase italic">
+                            <div className="text-label uppercase italic text-secondary">
                                 May 2023 - Nov 2023
                             </div>
                         </div>
@@ -51,11 +51,12 @@ const ProjectCNS = ({ projects }: ProjectProps) => {
                             );
                         })}
                     </div>
-                    <div className="flex flex-col text-body gap-x-1">
-                        <div className="text-title uppercase italic">
+                    {/* <div className="flex flex-col text-body gap-x-1 w-fit">
+                        <div className="text-title uppercase text-secondary">
                             Summary
                         </div>
-                    </div>
+                        <div className="w-full h-[2px] bg-text-grayscale" />
+                    </div> */}
                 </div>
             </Html>
         </>
