@@ -71,6 +71,8 @@ export const baseConfig = {
             navTitle: 'MeshJS contribution',
             title: 'MeshJS',
             to: 'mesh',
+            role: 'Contributor',
+            date: 'Nov 2023',
             links: [
                 {
                     name: 'Live site',
@@ -86,6 +88,8 @@ export const baseConfig = {
             navTitle: 'Cardano Naming Service',
             title: 'Cardano Naming Service',
             to: 'cns',
+            role: 'Full Stack Developer',
+            date: 'May 2023 - Nov 2023',
             links: [
                 {
                     name: 'Live site',
@@ -97,6 +101,8 @@ export const baseConfig = {
             navTitle: 'Bubstal website',
             title: 'Bubstal.io',
             to: 'bubstal',
+            role: 'Full Stack Developer',
+            date: 'Feb 2023 - May 2023',
             links: [
                 {
                     name: 'Live site',
@@ -108,11 +114,15 @@ export const baseConfig = {
             navTitle: 'Foodiverse',
             title: 'Foodiverse',
             to: 'foodiverse',
+            role: 'Full Stack Developer',
+            date: 'May 2023 - July 2023',
         },
         {
             navTitle: 'Gusto Collective website',
             title: 'Gusto Collective website',
             to: 'gusto',
+            role: 'Full Stack Developer',
+            date: 'March 2023 - July 2023',
             links: [
                 {
                     name: 'Live site',
@@ -124,11 +134,15 @@ export const baseConfig = {
             navTitle: 'CoReality',
             title: 'CoReality',
             to: 'coreality',
+            role: 'Full Stack Developer (Lead)',
+            date: 'Feb 2023 - May 2023',
         },
         {
             navTitle: 'Jarvix Pay',
             title: 'Jarvix Pay',
             to: 'jarvix-pay',
+            role: 'Full Stack Developer',
+            date: 'Sep 2021 - Oct 2022',
             links: [
                 {
                     name: 'Live site',
@@ -140,6 +154,8 @@ export const baseConfig = {
             navTitle: 'Mixed Reality laboratory',
             title: 'Mixed Reality laboratory',
             to: 'mr-lab',
+            role: 'Mixed Reality Developer',
+            date: 'Oct 2019 - Feb 2022',
         },
     ],
 };

@@ -31,6 +31,14 @@ const Project = ({ projects }: ProjectProps) => {
                 <div className="m-auto flex flex-col pointer-events-auto pt-20 px-12 gap-y-8">
                     <div className="flex flex-col justify-start">
                         <div className="text-display uppercase">{title}</div>
+                        <div className="flex w-full justify-between">
+                            <div className="text-title uppercase italic text-secondary">
+                                {role}
+                            </div>
+                            <div className="text-label uppercase italic text-secondary">
+                                {date}
+                            </div>
+                        </div>
                     </div>
                     <div className="flex gap-x-2">
                         {links.map((link) => {
