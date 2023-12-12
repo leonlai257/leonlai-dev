@@ -152,6 +152,41 @@ const Main = (props: MainProps) => {
                     </group>
                 </group>
 
+                {transition && (
+                    <group>
+                        <TransitionWord
+                            anchorX="right"
+                            originalColor={primaryColor}
+                            transitionColor={secondaryColor}
+                            fontSize={0.4}
+                            fontWeight={'bold'}
+                            position={[-textX, 0.5, 0]}
+                        >
+                            FRONTEND
+                        </TransitionWord>
+                        <TransitionWord
+                            anchorX="right"
+                            originalColor={primaryColor}
+                            transitionColor={secondaryColor}
+                            fontSize={0.4}
+                            fontWeight={'bold'}
+                            position={[-textX, 0, 0]}
+                        >
+                            BACKEND
+                        </TransitionWord>
+                        <TransitionWord
+                            anchorX="right"
+                            originalColor={primaryColor}
+                            transitionColor={secondaryColor}
+                            fontSize={0.4}
+                            fontWeight={'bold'}
+                            position={[-textX, -0.5, 0]}
+                        >
+                            GAME DEV
+                        </TransitionWord>
+                    </group>
+                )}
+
                 <PerspectiveCamera
                     makeDefault
                     near={0.1}
