@@ -7,6 +7,7 @@ import {
     useCursor,
 } from '@react-three/drei';
 import { TransitionWord } from '@src/components';
+import { RenderSocialMediaLogo } from '@src/libs';
 import { Suspense, useState } from 'react';
 
 export interface ContactProps extends CoreConfig {}
@@ -46,6 +47,9 @@ const Contact = (props: ContactProps) => {
                                     fontSize={0.4}
                                     position={[0, 0 - gapHeight * index, 0]}
                                 >
+                                    {/* <Html>
+                                        {RenderSocialMediaLogo(item.name)}
+                                    </Html> */}
                                     {item.name}
                                 </TransitionWord>
                             );
