@@ -16,7 +16,7 @@
       @apply text-title-sm md:text-title-md lg:text-title-lg;
   }
   .text-label {
-    @apply text-label-sm md:text-label-md lg:text-label-lg;
+      @apply text-label-sm md:text-label-md lg:text-label-lg;
   }
   .text-body {
       @apply text-body-sm md:text-body-md lg:text-body-lg;
@@ -24,7 +24,6 @@
   .btn {
       @apply hover:opacity-hover cursor-pointer;
   }
-
 }
 
 :root {

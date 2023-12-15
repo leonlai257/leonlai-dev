@@ -1,7 +1,7 @@
 import { CoreConfig } from '@config/app';
 import { Html, Line, PerspectiveCamera, useCursor } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
-import { TransitionWord, Word } from '@src/components';
+import { Hover, TransitionWord, Word } from '@src/components';
 import { Suspense, useRef, useState } from 'react';
 import * as THREE from 'three';
 
@@ -152,40 +152,38 @@ const Main = (props: MainProps) => {
                     </group>
                 </group>
 
-                {transition && (
-                    <group>
-                        <TransitionWord
-                            anchorX="right"
-                            originalColor={primaryColor}
-                            transitionColor={secondaryColor}
-                            fontSize={0.4}
-                            fontWeight={'bold'}
-                            position={[-textX, 0.5, 0]}
-                        >
-                            FRONTEND
-                        </TransitionWord>
-                        <TransitionWord
-                            anchorX="right"
-                            originalColor={primaryColor}
-                            transitionColor={secondaryColor}
-                            fontSize={0.4}
-                            fontWeight={'bold'}
-                            position={[-textX, 0, 0]}
-                        >
-                            BACKEND
-                        </TransitionWord>
-                        <TransitionWord
-                            anchorX="right"
-                            originalColor={primaryColor}
-                            transitionColor={secondaryColor}
-                            fontSize={0.4}
-                            fontWeight={'bold'}
-                            position={[-textX, -0.5, 0]}
-                        >
-                            GAME DEV
-                        </TransitionWord>
-                    </group>
-                )}
+                {/* {transition && ( */}
+                <group>
+                    <Hover
+                        display="FRONTEND"
+                        originalColor={primaryColor}
+                        transitionColor={secondaryColor}
+                        position={[-textX, 0.5, 0]}
+                    >
+                        React
+                    </Hover>
+                    <TransitionWord
+                        anchorX="right"
+                        originalColor={primaryColor}
+                        transitionColor={secondaryColor}
+                        fontSize={0.4}
+                        fontWeight={'bold'}
+                        position={[-textX, 0, 0]}
+                    >
+                        BACKEND
+                    </TransitionWord>
+                    <TransitionWord
+                        anchorX="right"
+                        originalColor={primaryColor}
+                        transitionColor={secondaryColor}
+                        fontSize={0.4}
+                        fontWeight={'bold'}
+                        position={[-textX, -0.5, 0]}
+                    >
+                        GAME DEV
+                    </TransitionWord>
+                </group>
+                {/* )} */}
 
                 <PerspectiveCamera
                     makeDefault
