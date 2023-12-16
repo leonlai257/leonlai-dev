@@ -21,7 +21,7 @@ export default function App({ pageProps }: AppProps) {
             backgroundDark: '#222232', // '#222232',
             primaryColor: '#8294C4', // '#8294C4',
             secondaryColor: '#ACB1D6', // '#ACB1D6',
-            accentColor: '#C9E8E5', // '#C9E8E5',
+            accentColor: '#82b5c4', // '#C9E8E5',
         },
         nav: [
             {

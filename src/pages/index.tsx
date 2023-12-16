@@ -1,7 +1,7 @@
 import { CoreConfig } from '@config/app';
 import { Html, Line, PerspectiveCamera, useCursor } from '@react-three/drei';
 import { useFrame, useThree } from '@react-three/fiber';
-import { Hover, TransitionWord, Word } from '@src/components';
+import { Category, TransitionWord, Word } from '@src/components';
 import { Suspense, useRef, useState } from 'react';
 import * as THREE from 'three';
 
@@ -34,7 +34,7 @@ const Main = (props: MainProps) => {
     const textY = height / 3.4;
     const postY = -0.8;
     const postX = 0.5;
-    const transitionSpeed = 0.04;
+    const transitionSpeed = 0.05;
     const offset = 0.02;
 
     useFrame(() => {
@@ -152,38 +152,31 @@ const Main = (props: MainProps) => {
                     </group>
                 </group>
 
-                {/* {transition && ( */}
-                <group>
-                    <Hover
-                        display="FRONTEND"
-                        originalColor={primaryColor}
-                        transitionColor={secondaryColor}
-                        position={[-textX, 0.5, 0]}
-                    >
-                        React
-                    </Hover>
-                    <TransitionWord
-                        anchorX="right"
-                        originalColor={primaryColor}
-                        transitionColor={secondaryColor}
-                        fontSize={0.4}
-                        fontWeight={'bold'}
-                        position={[-textX, 0, 0]}
-                    >
-                        BACKEND
-                    </TransitionWord>
-                    <TransitionWord
-                        anchorX="right"
-                        originalColor={primaryColor}
-                        transitionColor={secondaryColor}
-                        fontSize={0.4}
-                        fontWeight={'bold'}
-                        position={[-textX, -0.5, 0]}
-                    >
-                        GAME DEV
-                    </TransitionWord>
-                </group>
-                {/* )} */}
+                {transition && (
+                    <group>
+                        <Category
+                            display="FRONTEND"
+                            color={color}
+                            position={[-textX / 2, 0.5, 0]}
+                        >
+                            {`React|Vue|Angular|PHP`}
+                        </Category>
+                        <Category
+                            display="BACKEND"
+                            color={color}
+                            position={[-textX / 2, 0, 0]}
+                        >
+                            {`Express|Nest|AWS|SQL`}
+                        </Category>
+                        <Category
+                            display="GAME DEV"
+                            color={color}
+                            position={[-textX / 2, -0.5, 0]}
+                        >
+                            {`Unity|C#|MTRK`}
+                        </Category>
+                    </group>
+                )}
 
                 <PerspectiveCamera
                     makeDefault
