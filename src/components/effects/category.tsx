@@ -8,12 +8,14 @@ export type CategoryProps = {
     children: ReactNode;
     display: string;
     color: ColorProfile;
+    offset: number;
 } & any;
 
 export const Category = ({
     children,
     display,
     color,
+    offset,
     ...props
 }: CategoryProps) => {
     const {
@@ -27,7 +29,7 @@ export const Category = ({
     const ref = useRef<THREE.Group>(null!);
     const [show, setShow] = useState(false);
 
-    const offsetX = -4;
+    const offsetX = offset;
 
     useFrame(() => {
         if (
@@ -62,7 +64,7 @@ export const Category = ({
                     transitionColor={secondaryColor}
                     fontSize={0.4}
                     fontWeight={'bold'}
-                    position={[-offsetX, 0, 0]}
+                    position={[offsetX / -2, 0, 0]}
                 >
                     {children}
                 </TransitionWord>

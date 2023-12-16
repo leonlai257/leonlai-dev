@@ -3,10 +3,24 @@ import * as THREE from 'three';
 
 export interface CoreConfig {
     color: ColorProfile;
+    categories: CategoryItem[];
     nav: NavItem[];
     contact: ContactItem[];
     projects: ProjectItem[];
 }
+export type ColorProfile = {
+    textColor: THREE.Color;
+    backgroundColor: THREE.Color;
+    backgroundDark: THREE.Color;
+    primaryColor: THREE.Color;
+    secondaryColor: THREE.Color;
+    accentColor: THREE.Color;
+};
+
+export type CategoryItem = {
+    name: string;
+    skills: string[];
+};
 
 export type ProjectItem = {
     navTitle: string;
@@ -18,15 +32,6 @@ export type ProjectItem = {
     description?: string;
     image?: string;
     tags?: string[];
-};
-
-export type ColorProfile = {
-    textColor: THREE.Color;
-    backgroundColor: THREE.Color;
-    backgroundDark: THREE.Color;
-    primaryColor: THREE.Color;
-    secondaryColor: THREE.Color;
-    accentColor: THREE.Color;
 };
 
 export type NavItem = {
@@ -49,6 +54,24 @@ export const baseConfig = {
         secondaryColor: '#ACB1D6',
         accentColor: '#C9E8E5',
     },
+    categories: [
+        {
+            name: 'FRONTEND',
+            skills: ['React', 'Vue', 'Angular', 'PHP'],
+        },
+        {
+            name: 'BACKEND',
+            skills: ['Nest', 'Express', 'AWS', 'NoSQL'],
+        },
+        {
+            name: 'GAME DEV',
+            skills: ['Unity', 'C#', 'Java', 'Mrtk'],
+        },
+        // {
+        //     name: 'WEB3',
+        //     skills: ['Cardano', 'Blockchain'],
+        // },
+    ],
     contact: [
         {
             name: 'Github',

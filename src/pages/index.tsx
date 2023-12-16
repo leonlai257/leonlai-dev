@@ -8,7 +8,7 @@ import * as THREE from 'three';
 export interface MainProps extends CoreConfig {}
 
 const Main = (props: MainProps) => {
-    const { color } = props;
+    const { color, categories } = props;
 
     const {
         textColor,
@@ -34,7 +34,7 @@ const Main = (props: MainProps) => {
     const textY = height / 3.4;
     const postY = -0.8;
     const postX = 0.5;
-    const transitionSpeed = 0.05;
+    const transitionSpeed = 0.1;
     const offset = 0.02;
 
     useFrame(() => {
@@ -154,27 +154,21 @@ const Main = (props: MainProps) => {
 
                 {transition && (
                     <group>
-                        <Category
-                            display="FRONTEND"
-                            color={color}
-                            position={[-textX / 2, 0.5, 0]}
-                        >
-                            {`React|Vue|Angular|PHP`}
-                        </Category>
-                        <Category
-                            display="BACKEND"
-                            color={color}
-                            position={[-textX / 2, 0, 0]}
-                        >
-                            {`Express|Nest|AWS|SQL`}
-                        </Category>
-                        <Category
-                            display="GAME DEV"
-                            color={color}
-                            position={[-textX / 2, -0.5, 0]}
-                        >
-                            {`Unity|C#|MTRK`}
-                        </Category>
+                        {categories.map((category, index) => {
+                            return (
+                                <Category
+                                    key={category.name}
+                                    display={category.name}
+                                    color={color}
+                                    offset={textX * 2}
+                                    position={[-textX, 0.5 - index * 0.5, 0]}
+                                >
+                                    {category.skills.map((skill) => {
+                                        return `${skill}|`;
+                                    })}
+                                </Category>
+                            );
+                        })}
                     </group>
                 )}
 
