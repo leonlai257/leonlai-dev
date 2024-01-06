@@ -29,7 +29,7 @@ const Project = ({ projects }: ProjectProps) => {
                     overflow: 'scroll',
                 }}
             >
-                <div className="m-auto flex flex-col pointer-events-auto pt-20 px-12 gap-y-8">
+                <div className="m-auto flex flex-col pointer-events-auto pt-20 px-12 gap-y-8 w-full">
                     <div className="flex flex-col justify-start">
                         <div className="text-display uppercase">{title}</div>
                         <div className="flex w-full justify-between">
@@ -55,17 +55,20 @@ const Project = ({ projects }: ProjectProps) => {
                             );
                         })}
                     </div>
-                    {image && (
-                        <Image
-                            alt="Image"
-                            src={image}
-                            width={500}
-                            height={500}
-                            style={{
-                                width: '100%',
-                            }}
-                        />
-                    )}
+                    <div>
+                        {image && (
+                            <Image
+                                alt="Image"
+                                src={'/projects/cns.png'}
+                                width={2000}
+                                height={2000}
+                                style={{
+                                    width: '100%',
+                                    height: 'auto',
+                                }}
+                            />
+                        )}
+                    </div>
                 </div>
             </Html>
         </>

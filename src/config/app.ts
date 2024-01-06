@@ -94,7 +94,7 @@ export const baseConfig = {
             navTitle: 'MeshJS contribution',
             title: 'MeshJS',
             to: 'mesh',
-            role: 'Contributor',
+            role: 'Contributor - Frontend',
             date: 'Nov 2023',
             links: [
                 {
@@ -110,6 +110,8 @@ export const baseConfig = {
         {
             navTitle: 'Cardano Naming Service',
             title: 'Cardano Naming Service',
+            description:
+                'Cardano Naming Service (CNS) is a domain name service built on the Cardano network. I was responsible for the majority (95%+) of the frontend development.',
             to: 'cns',
             role: 'Full Stack Developer',
             date: 'May 2023 - Nov 2023',
