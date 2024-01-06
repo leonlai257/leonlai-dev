@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { ProjectProps } from '.';
 import { useFrame } from '@react-three/fiber';
 import { useParams } from 'wouter';
+import Image from 'next/image';
 
 const Project = ({ projects }: ProjectProps) => {
     const { project } = useParams();
@@ -54,6 +55,17 @@ const Project = ({ projects }: ProjectProps) => {
                             );
                         })}
                     </div>
+                    {image && (
+                        <Image
+                            alt="Image"
+                            src={image}
+                            width={500}
+                            height={500}
+                            style={{
+                                width: '100%',
+                            }}
+                        />
+                    )}
                 </div>
             </Html>
         </>

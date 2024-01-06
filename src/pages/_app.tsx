@@ -14,47 +14,7 @@ import ProjectCNS from './projects/cns';
 import { baseConfig } from '@src/config/app';
 
 export default function App({ pageProps }: AppProps) {
-    const globalStates = {
-        color: {
-            textColor: '#090a06', // '#090a06',
-            backgroundColor: '#FEEBD6', // '#FEEBD6',
-            backgroundDark: '#222232', // '#222232',
-            primaryColor: '#8294C4', // '#8294C4',
-            secondaryColor: '#ACB1D6', // '#ACB1D6',
-            accentColor: '#82b5c4', // '#C9E8E5',
-        },
-        nav: [
-            {
-                name: 'Home',
-                url: '/',
-            },
-            {
-                name: 'Contact',
-                url: '/contact',
-            },
-            {
-                name: 'Projects',
-                url: '/projects',
-            },
-        ],
-        contact: [
-            {
-                name: 'Github',
-                url: 'https://github.com/leonlai257',
-                alias: 'leonlai257',
-            },
-            {
-                name: 'LinkedIn',
-                url: 'https://www.linkedin.com/in/leonlai257/',
-                alias: 'leonlai257',
-            },
-            {
-                name: 'Email',
-                url: 'mailto:leonlai257@gmail.com',
-                alias: 'leonlai257@gmail.com',
-            },
-        ],
-    };
+    const globalStates = {};
 
     pageProps = {
         ...baseConfig,

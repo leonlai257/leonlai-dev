@@ -47,12 +47,12 @@ export type ContactItem = {
 
 export const baseConfig = {
     color: {
-        textColor: '#090a06',
-        backgroundColor: '#FFEAD2',
-        backgroundDark: '#222232',
-        primaryColor: '#8294C4',
-        secondaryColor: '#ACB1D6',
-        accentColor: '#C9E8E5',
+        textColor: '#090a06', // '#090a06',
+        backgroundColor: '#FEEBD6', // '#FEEBD6',
+        backgroundDark: '#222232', // '#222232',
+        primaryColor: '#8294C4', // '#8294C4',
+        secondaryColor: '#ACB1D6', // '#ACB1D6',
+        accentColor: '#82b5c4', // '#82b5c4',
     },
     categories: [
         {
@@ -113,6 +113,7 @@ export const baseConfig = {
             to: 'cns',
             role: 'Full Stack Developer',
             date: 'May 2023 - Nov 2023',
+            image: '/projects/cns.png',
             links: [
                 {
                     name: 'Live site',
