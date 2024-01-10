@@ -55,20 +55,35 @@ const Project = ({ projects }: ProjectProps) => {
                             );
                         })}
                     </div>
-                    <div>
-                        {image && (
+                    {image && (
+                        <div className="flex justify-center">
                             <Image
                                 alt="Image"
-                                src={'/projects/cns.png'}
+                                src={image}
                                 width={2000}
                                 height={2000}
                                 style={{
-                                    width: '100%',
-                                    height: 'auto',
+                                    height: '100%',
+                                    width: 'auto',
+                                    maxHeight: '100vh',
                                 }}
                             />
-                        )}
-                    </div>
+                        </div>
+                    )}
+
+                    {description && (
+                        <div className="flex flex-col text-body gap-y-2 w-fit">
+                            <div className="flex flex-col text-body gap-x-1 w-fit">
+                                <div className="text-title uppercase text-secondary">
+                                    Summary
+                                </div>
+                                <div className="w-full h-[2px] bg-text-grayscale" />
+                            </div>
+                            <div className="text-description">
+                                {description}
+                            </div>
+                        </div>
+                    )}
                 </div>
             </Html>
         </>

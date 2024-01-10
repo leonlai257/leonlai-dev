@@ -52,8 +52,8 @@ const ProjectCNS = ({ projects }: ProjectProps) => {
                             );
                         })}
                     </div>
-                    <div className="flex justify-center">
-                        {image && (
+                    {image && (
+                        <div className="flex justify-center">
                             <Image
                                 alt="Image"
                                 src={image}
@@ -64,17 +64,21 @@ const ProjectCNS = ({ projects }: ProjectProps) => {
                                     height: 'auto',
                                 }}
                             />
-                        )}
-                    </div>
-                    <div className="flex flex-col text-body gap-y-2 w-fit">
-                        <div className="flex flex-col text-body gap-x-1 w-fit">
-                            <div className="text-title uppercase text-secondary">
-                                Summary
-                            </div>
-                            <div className="w-full h-[2px] bg-text-grayscale" />
                         </div>
-                        <div className="text-description">{description}</div>
-                    </div>
+                    )}
+                    {description && (
+                        <div className="flex flex-col text-body gap-y-2 w-fit">
+                            <div className="flex flex-col text-body gap-x-1 w-fit">
+                                <div className="text-title uppercase text-secondary">
+                                    Summary
+                                </div>
+                                <div className="w-full h-[2px] bg-text-grayscale" />
+                            </div>
+                            <div className="text-description">
+                                {description}
+                            </div>
+                        </div>
+                    )}
                 </div>
             </Html>
         </>

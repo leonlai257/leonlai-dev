@@ -31,6 +31,7 @@ export type ProjectItem = {
     links?: NavItem[];
     description?: string;
     image?: string;
+    video?: string;
     tags?: string[];
 };
 
@@ -129,6 +130,7 @@ export const baseConfig = {
             to: 'bubstal',
             role: 'Full Stack Developer',
             date: 'Feb 2023 - May 2023',
+            image: '/projects/bubstal.png',
             links: [
                 {
                     name: 'Live site',
@@ -142,6 +144,7 @@ export const baseConfig = {
             to: 'foodiverse',
             role: 'Full Stack Developer',
             date: 'May 2023 - July 2023',
+            image: '/projects/foodiverse.jpg',
             links: [
                 {
                     name: 'News article',
@@ -155,6 +158,7 @@ export const baseConfig = {
             to: 'gusto',
             role: 'Full Stack Developer',
             date: 'March 2023 - July 2023',
+            image: '/projects/gusto.png',
             links: [
                 {
                     name: 'Live site',
