@@ -31,7 +31,7 @@ export type ProjectItem = {
     links?: NavItem[];
     description?: string;
     image?: string;
-    video?: string;
+    gif?: string;
     tags?: string[];
 };
 
@@ -97,6 +97,7 @@ export const baseConfig = {
             to: 'mesh',
             role: 'Contributor - Frontend',
             date: 'Nov 2023',
+            image: '/projects/mesh.png',
             links: [
                 {
                     name: 'Live site',
@@ -145,6 +146,7 @@ export const baseConfig = {
             role: 'Full Stack Developer',
             date: 'May 2023 - July 2023',
             image: '/projects/foodiverse.jpg',
+            gif: '/projects/foodiverse.gif',
             links: [
                 {
                     name: 'News article',

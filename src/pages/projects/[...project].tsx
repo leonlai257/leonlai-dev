@@ -16,6 +16,7 @@ const Project = ({ projects }: ProjectProps) => {
         description = '',
         role = '',
         image = '',
+        gif = '',
         tags = [],
     } = info || {};
 
@@ -55,8 +56,8 @@ const Project = ({ projects }: ProjectProps) => {
                             );
                         })}
                     </div>
-                    {image && (
-                        <div className="flex justify-center">
+                    <div className="flex justify-center">
+                        {image && (
                             <Image
                                 alt="Image"
                                 src={image}
@@ -68,8 +69,8 @@ const Project = ({ projects }: ProjectProps) => {
                                     maxHeight: '100vh',
                                 }}
                             />
-                        </div>
-                    )}
+                        )}
+                    </div>
 
                     {description && (
                         <div className="flex flex-col text-body gap-y-2 w-fit">
