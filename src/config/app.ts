@@ -132,6 +132,8 @@ export const baseConfig = {
             role: 'Full Stack Developer',
             date: 'Feb 2023 - May 2023',
             image: '/projects/bubstal.png',
+            description:
+                'Bubstal is a Hong Kong Metaverse startup. I developed majority of their company website and some of the gameplay logic using Babylon.js.',
             links: [
                 {
                     name: 'Live site',
