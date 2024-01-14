@@ -25,7 +25,7 @@ const ProjectMR = ({ projects }: ProjectProps) => {
                     overflow: 'scroll',
                 }}
             >
-                <div className="m-auto flex flex-col pointer-events-auto pt-20 px-12 gap-y-8 w-full">
+                <div className="m-auto flex flex-col pointer-events-auto py-20 px-12 gap-y-8 w-full">
                     <div className="flex flex-col justify-start">
                         <div className="text-display uppercase">{title}</div>
                         <div className="flex w-full justify-between">
@@ -76,7 +76,7 @@ const ProjectMR = ({ projects }: ProjectProps) => {
                                 </div>
                                 <div className="w-full h-[2px] bg-text-grayscale" />
                             </div>
-                            <div className="text-description">
+                            <div className="text-description whitespace-pre-line">
                                 {description}
                             </div>
                         </div>

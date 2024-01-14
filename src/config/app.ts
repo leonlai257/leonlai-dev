@@ -196,6 +196,16 @@ export const baseConfig = {
             to: 'mr',
             role: 'Mixed Reality Developer',
             date: 'Oct 2019 - Feb 2022',
+            image: '/projects/mr.png',
+            links: [
+                {
+                    name: 'Demo video',
+                    url: 'https://drive.google.com/file/d/1uZj4i39yiIOtS0jNR3HCVpkMTWRHNIDq/view?usp=sharing',
+                },
+            ],
+            description: `I developed a Mixed Reality applications for the Faculty of Life Science and the Faculty of Art at the Chinese University of Hong Kong. The application was built with Unity Engine(Mixed Reality ToolKit) and Visual Studio, then was deployed to Hololens 2. I was responsible for the whole process of the development, including the 3D modelling, game logic programming and scripting.
+            
+            The laboratory game was used to help students in the Faculty of Life Science to learn about the process of developing cell culture. For the Faculty of Art, I mentored the students in building a virtual art piece using the Mixed Reality technology.`,
         },
     ],
 };
