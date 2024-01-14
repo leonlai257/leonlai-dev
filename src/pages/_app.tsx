@@ -13,6 +13,7 @@ import Project from './projects/[...project]';
 import ProjectCNS from './projects/cns';
 import { baseConfig } from '@src/config/app';
 import ProjectFoodiverse from './projects/foodiverse';
+import ProjectMR from './projects/mr';
 
 export default function App({ pageProps }: AppProps) {
     const globalStates = {};
@@ -74,6 +75,9 @@ export default function App({ pageProps }: AppProps) {
                     </Route>
                     <Route path="/projects/foodiverse">
                         <ProjectFoodiverse {...pageProps} />
+                    </Route>
+                    <Route path="/projects/mr">
+                        <ProjectMR {...pageProps} />
                     </Route>
                     <Route path="/projects/:project">
                         <Project {...pageProps} />

@@ -191,9 +191,9 @@ export const baseConfig = {
             ],
         },
         {
-            navTitle: 'Mixed Reality laboratory',
-            title: 'Mixed Reality laboratory',
-            to: 'mr-lab',
+            navTitle: 'Mixed Reality Development',
+            title: 'Mixed Reality Development',
+            to: 'mr',
             role: 'Mixed Reality Developer',
             date: 'Oct 2019 - Feb 2022',
         },
