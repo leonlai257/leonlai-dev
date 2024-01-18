@@ -92,6 +92,22 @@ export const baseConfig = {
     ],
     projects: [
         {
+            navTitle: 'Sidan Lab website',
+            title: 'Sidan.io',
+            description: `Sidan is a cryptocurrency startup that aims to make blockchain accessible and transformative. I was responsible for the majority of the frontend development. The fully-responsive website is built with Tailwindcss and Next.js. 
+            It provided a gateway for users to get in touch and contact with the company, including a function that allows them to stake in to the company's Cardano pool for support.`,
+            to: 'sidan',
+            role: 'Full Stack Developer',
+            date: 'Nov 2023 - Present',
+            image: '/projects/sidan.png',
+            links: [
+                {
+                    name: 'Live site',
+                    url: 'https://sidan.io',
+                },
+            ],
+        },
+        {
             navTitle: 'MeshJS contribution',
             title: 'MeshJS',
             to: 'mesh',
