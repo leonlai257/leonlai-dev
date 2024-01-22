@@ -24,6 +24,9 @@
   .btn {
       @apply hover:opacity-hover cursor-pointer;
   }
+  .bloom {
+    @apply absolute left-0 top-0 z-[-1] h-full w-full blur-sm;
+}
 }
 
 :root {

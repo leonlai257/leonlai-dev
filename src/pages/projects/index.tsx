@@ -84,7 +84,7 @@ const ProjectList = ({ projects = [], color }: ProjectProps) => {
 
     return (
         <>
-            <group position={[0.2, 0, 0]}>
+            <group position={[0.2, 0.4, 0]}>
                 {projects.map((project, i) => (
                     <ProjectItem
                         key={i}

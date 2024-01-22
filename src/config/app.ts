@@ -100,6 +100,7 @@ export const baseConfig = {
             role: 'Full Stack Developer',
             date: 'Nov 2023 - Present',
             image: '/projects/sidan.png',
+            tags: ['Next.js', 'Tailwindcss', 'React', 'Typescript', 'Web3'],
             links: [
                 {
                     name: 'Live site',
@@ -110,10 +111,12 @@ export const baseConfig = {
         {
             navTitle: 'MeshJS contribution',
             title: 'MeshJS',
+            description: `MeshJs is a open-source library for users to build applications on Cardano blockchain easily. I developed the frontend document, detailing all APIs and examples, for the Mesh Tx Builder, a feature that enable users to utilize low level functions to build transaction.`,
             to: 'mesh',
             role: 'Contributor - Frontend',
             date: 'Nov 2023',
             image: '/projects/mesh.png',
+            tags: ['Web3'],
             links: [
                 {
                     name: 'Live site',
@@ -128,12 +131,12 @@ export const baseConfig = {
         {
             navTitle: 'Cardano Naming Service',
             title: 'Cardano Naming Service',
-            description:
-                'Cardano Naming Service (CNS) is a domain name service built on the Cardano network. I was responsible for the majority (95%+) of the frontend development.',
+            description: `Cardano Naming Service (CNS) is a domain name service built on the Cardano network. I was responsible for the majority (95%+) of the frontend development.`,
             to: 'cns',
             role: 'Full Stack Developer',
             date: 'May 2023 - Nov 2023',
             image: '/projects/cns.png',
+            tags: ['Next.js', 'Tailwindcss', 'React', 'Web3', 'Redis'],
             links: [
                 {
                     name: 'Live site',
@@ -148,8 +151,8 @@ export const baseConfig = {
             role: 'Full Stack Developer',
             date: 'Feb 2023 - May 2023',
             image: '/projects/bubstal.png',
-            description:
-                'Bubstal is a Hong Kong Metaverse startup. I developed majority of their company website and some of the gameplay logic using Babylon.js.',
+            description: `Bubstal is a Hong Kong Metaverse startup. I developed majority of their company website using Vue.js and some of the gameplay logic using Babylon.js.`,
+            tags: ['Vue', 'Tailwindcss', 'Babylon.js'],
             links: [
                 {
                     name: 'Live site',
@@ -160,6 +163,7 @@ export const baseConfig = {
         {
             navTitle: 'Foodiverse',
             title: 'Foodiverse',
+            description: `Foodiverse is a limited time lucky draw event launched by the 7-Eleven Hong Kong during 5-14 July 2023. I was responsible for the majority of the frontend development. The fully-responsive website is built with Stitches(CSS library) and Next.js. The animation used in the application utilized GSAP and Lottie.`,
             to: 'foodiverse',
             role: 'Full Stack Developer',
             date: 'May 2023 - July 2023',

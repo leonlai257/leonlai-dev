@@ -44,13 +44,32 @@ const ProjectFoodiverse = ({ projects }: ProjectProps) => {
                                     key={link.name}
                                     href={link.url}
                                     target="_blank"
-                                    className="hover:opacity-hover text-label uppercase bg-white text-primary rounded-lg px-2 py-1"
+                                    className="relative hover:opacity-hover text-label uppercase bg-white text-primary rounded-lg px-2 py-1"
                                 >
                                     {link.name}
+                                    <div className="absolute bloom top-0 bg-white rounded-lg px-2 py-1">
+                                        {link.name}
+                                    </div>
                                 </a>
                             );
                         })}
+                        <div className="flex gap-x-2 items-center w-fit">
+                            {tags.map((tag) => {
+                                return (
+                                    <div
+                                        key={tag}
+                                        className="relative text-label uppercase bg-accent text-white rounded-lg px-2 py-1 h-fit"
+                                    >
+                                        {tag}
+                                        <div className="absolute bloom top-0 bg-accent rounded-lg px-2 py-1 h-fit">
+                                            {tag}
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </div>
+
                     <div className="flex justify-center gap-x-8 h-[70vh]">
                         {image && (
                             <div className="flex flex-col justify-center">

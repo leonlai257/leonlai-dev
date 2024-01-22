@@ -181,7 +181,7 @@ module.exports = {
                     DEFAULT: '#ACB1D6',
                 },
                 accent: {
-                    DEFAULT: '#C9E8E5',
+                    DEFAULT: '#93d1cb',
                 },
             },
         },
