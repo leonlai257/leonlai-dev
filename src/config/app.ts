@@ -203,12 +203,23 @@ export const baseConfig = {
             to: 'jarvix-pay',
             role: 'Full Stack Developer',
             date: 'Sep 2021 - Oct 2022',
+            tags: [
+                'React',
+                'Tailwindcss',
+                'Express',
+                'Vue.js',
+                'NestJs',
+                'pm2',
+                'mySQL',
+            ],
             links: [
                 {
                     name: 'Live site',
                     url: 'https://www.jarvixhk.com/en-us',
                 },
             ],
+            description: `Jarvix Pay is a mobile payment gateway that allows merchants to accept payments from customers using all kind of payment methods. I built the application from the ground up in 3 months, responsible for majority of the frontend (Vue.js) and backend development(NestJs).
+            The application launched and retained 5000+ concurrent merchants in the first month. It is one of the top credit card payment applications in Hong Kong.`,
         },
         {
             navTitle: 'Mixed Reality Development',
