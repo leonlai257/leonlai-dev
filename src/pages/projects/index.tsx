@@ -89,17 +89,19 @@ const ProjectList = ({ projects = [], color }: ProjectProps) => {
         <>
             <Html zIndexRange={[0, 100]} fullscreen>
                 <div className="w-full h-full flex flex-col justify-end pb-[88px]">
-                    <div className="flex overflow-hidden w-full h-full p-12 justify-center relative z-10">
+                    <div className="flex overflow-hidden w-full h-full p-12 justify-center relative z-10 object-cover">
                         {selected && (
-                            <div className="flex w-full h-full justify-center relative z-10">
+                            <div className="flex w-full h-full justify-center relative z-10 object-cover">
                                 <Image
                                     src={selected}
                                     alt={'previewImage'}
                                     width={2000}
                                     height={2000}
                                     style={{
-                                        width: 'auto',
-                                        height: '100%',
+                                        width: '100%',
+                                        height: 'auto',
+                                        borderRadius: '1rem',
+                                        objectFit: 'cover',
                                     }}
                                 />
                                 <Image
@@ -111,7 +113,7 @@ const ProjectList = ({ projects = [], color }: ProjectProps) => {
                                         filter: 'blur(20px)',
                                         zIndex: -1,
                                         position: 'absolute',
-                                        width: 'auto',
+                                        width: '100%',
                                         height: '100%',
                                     }}
                                 />

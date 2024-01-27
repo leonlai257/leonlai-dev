@@ -1,13 +1,6 @@
 import { CoreConfig } from '@config/app';
-import {
-    Html,
-    PerspectiveCamera,
-    Scroll,
-    ScrollControls,
-    useCursor,
-} from '@react-three/drei';
-import { TransitionWord } from '@src/components';
-import { RenderSocialMediaLogo } from '@src/libs';
+import { PerspectiveCamera, useCursor } from '@react-three/drei';
+import { ContactTransition } from '@src/components';
 import { Suspense, useState } from 'react';
 
 export interface ContactProps extends CoreConfig {}
@@ -24,7 +17,7 @@ const Contact = (props: ContactProps) => {
 
     return (
         <>
-            <Suspense fallback={<Html></Html>}>
+            <Suspense fallback={<group></group>}>
                 <group position={[0, 0.2, 0]}>
                     <group
                         position={[
@@ -37,21 +30,20 @@ const Contact = (props: ContactProps) => {
                     >
                         {contact.map((item, index) => {
                             return (
-                                <TransitionWord
-                                    key={`${item.name}`}
-                                    onClick={() =>
-                                        window.open(item.url, '_blank')
-                                    }
-                                    originalColor={primaryColor}
-                                    transitionColor={secondaryColor}
-                                    fontSize={0.4}
-                                    position={[0, 0 - gapHeight * index, 0]}
-                                >
-                                    {/* <Html>
-                                        {RenderSocialMediaLogo(item.name)}
-                                    </Html> */}
-                                    {item.name}
-                                </TransitionWord>
+                                <>
+                                    <ContactTransition
+                                        key={`${item.name}`}
+                                        onClick={() =>
+                                            window.open(item.url, '_blank')
+                                        }
+                                        originalColor={primaryColor}
+                                        transitionColor={secondaryColor}
+                                        fontSize={0.4}
+                                        position={[0, 0 - gapHeight * index, 0]}
+                                    >
+                                        {item.name}
+                                    </ContactTransition>
+                                </>
                             );
                         })}
                     </group>
