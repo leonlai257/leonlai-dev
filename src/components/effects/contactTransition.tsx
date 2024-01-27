@@ -17,7 +17,6 @@ export const ContactTransition = ({
 } & any) => {
     const color = new THREE.Color();
     const ref = useRef<any>();
-    const imageRef = useRef<any>();
     const [hovered, setHovered] = useState(false);
     const over = (e: any) => (e.stopPropagation(), setHovered(true));
     const out = () => setHovered(false);
@@ -41,16 +40,6 @@ export const ContactTransition = ({
             ),
             0.1
         );
-        // imageRef.current.material.color.lerp(
-        //     color.set(
-        //         hovered
-        //             ? transitionColor
-        //                 ? transitionColor
-        //                 : originalColor
-        //             : originalColor
-        //     ),
-        //     0.1
-        // );
     });
 
     return (
@@ -59,12 +48,6 @@ export const ContactTransition = ({
             onPointerOut={out}
             onClick={() => console.log('clicked')}
         >
-            {/* <Image
-                ref={imageRef}
-                url={'/icons/GithubIcon.svg'}
-                scale={0.3}
-                transparent
-            /> */}
             <Text ref={ref} font={'/fonts/NotoSans-Regular.ttf'} {...props}>
                 {children}
             </Text>
