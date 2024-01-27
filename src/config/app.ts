@@ -195,6 +195,8 @@ export const baseConfig = {
             title: 'CoReality',
             to: 'coreality',
             role: 'Full Stack Developer (Lead)',
+            image: '/projects/coreality.png',
+            gif: '/projects/coreality-demo.gif',
             date: 'Feb 2023 - May 2023',
         },
         {
@@ -202,6 +204,7 @@ export const baseConfig = {
             title: 'Jarvix Pay',
             to: 'jarvix-pay',
             role: 'Full Stack Developer',
+            image: '/projects/jarvix.png',
             date: 'Sep 2021 - Oct 2022',
             tags: [
                 'React',

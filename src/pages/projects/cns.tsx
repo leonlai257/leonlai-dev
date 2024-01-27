@@ -33,7 +33,7 @@ const ProjectCNS = ({ projects }: ProjectProps) => {
                             <div className="text-title uppercase italic text-secondary">
                                 Full Stack Developer
                             </div>
-                            <div className="text-label uppercase italic text-secondary">
+                            <div className="text-label uppercase italic text-secondary w-fit whitespace-nowrap">
                                 May 2023 - Nov 2023
                             </div>
                         </div>
@@ -45,7 +45,7 @@ const ProjectCNS = ({ projects }: ProjectProps) => {
                                     key={link.name}
                                     href={link.url}
                                     target="_blank"
-                                    className="relative hover:opacity-hover text-label uppercase bg-white text-primary rounded-lg px-2 py-1"
+                                    className="relative hover:opacity-hover text-label uppercase bg-white text-primary rounded-lg px-2 py-1 whitespace-nowrap"
                                 >
                                     {link.name}
                                     <div className="absolute bloom top-0 bg-white rounded-lg px-2 py-1">
@@ -59,7 +59,7 @@ const ProjectCNS = ({ projects }: ProjectProps) => {
                                 return (
                                     <div
                                         key={tag}
-                                        className="relative text-label uppercase bg-accent text-white rounded-lg px-2 py-1 h-fit"
+                                        className="relative text-label uppercase bg-accent text-white rounded-lg px-2 py-1 h-fit whitespace-nowrap"
                                     >
                                         {tag}
                                         <div className="absolute bloom top-0 bg-accent rounded-lg px-2 py-1 h-fit">

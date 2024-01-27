@@ -98,8 +98,8 @@ const ProjectList = ({ projects = [], color }: ProjectProps) => {
                                     width={2000}
                                     height={2000}
                                     style={{
-                                        width: '100%',
-                                        height: 'auto',
+                                        width: 'auto',
+                                        height: '100%',
                                         borderRadius: '1rem',
                                         objectFit: 'cover',
                                     }}
@@ -113,7 +113,7 @@ const ProjectList = ({ projects = [], color }: ProjectProps) => {
                                         filter: 'blur(20px)',
                                         zIndex: -1,
                                         position: 'absolute',
-                                        width: '100%',
+                                        width: 'auto',
                                         height: '100%',
                                     }}
                                 />
