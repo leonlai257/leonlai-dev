@@ -6,11 +6,6 @@ module.exports = {
         fontFamily: {
             sans: ["'Noto Sans'", 'sans-serif'],
         },
-        neumorphismColor: {
-            white: {
-                100: '#E3E7F0',
-            },
-        },
         extend: {
             borderRadius: {
                 xs: '4px',
@@ -25,79 +20,73 @@ module.exports = {
                 'welcome-lg': [
                     '110px',
                     {
-                        fontWeight: '600',
+                        fontWeight: '700',
                     },
                 ],
                 'welcome-md': [
                     '72px',
                     {
-                        fontWeight: '600',
+                        fontWeight: '700',
                     },
                 ],
                 'welcome-sm': [
                     '32px',
                     {
-                        fontWeight: '600',
-                    },
-                ],
-                'display-xl': [
-                    '80px',
-                    {
-                        fontWeight: '600',
+                        fontWeight: '700',
                     },
                 ],
                 'display-lg': [
-                    '56px',
+                    '56x',
                     {
-                        fontWeight: '600',
+                        fontWeight: '700',
                     },
                 ],
                 'display-md': [
                     '44px',
                     {
-                        fontWeight: '600',
+                        fontWeight: '700',
                     },
                 ],
                 'display-sm': [
                     '36px',
                     {
-                        fontWeight: '600',
+                        fontWeight: '700',
                     },
                 ],
                 'headline-lg': [
                     '32px',
                     {
-                        fontWeight: '600',
+                        fontWeight: '700',
                     },
                 ],
                 'headline-md': [
                     '28px',
                     {
-                        fontWeight: '600',
+                        fontWeight: '700',
                     },
                 ],
                 'headline-sm': [
                     '24px',
                     {
-                        fontWeight: '600',
+                        fontWeight: '700',
                     },
                 ],
                 'title-lg': [
-                    '22px',
+                    '24px',
                     {
-                        fontWeight: '600',
+                        fontWeight: '700',
                     },
                 ],
                 'title-md': [
                     '16px',
                     {
-                        fontWeight: '600',
+                        fontWeight: '700',
                     },
                 ],
                 'title-sm': [
                     '14px',
                     {
-                        fontWeight: '600',
+                        fontWeight: '700',
                     },
                 ],
                 'label-lg': [
@@ -121,19 +110,19 @@ module.exports = {
                 'body-lg': [
                     '16px',
                     {
-                        fontWeight: '500',
+                        fontWeight: '400',
                     },
                 ],
                 'body-md': [
                     '14px',
                     {
-                        fontWeight: '500',
+                        fontWeight: '400',
                     },
                 ],
                 'body-sm': [
                     '12px',
                     {
-                        fontWeight: '500',
+                        fontWeight: '400',
                     },
                 ],
             },
