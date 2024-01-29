@@ -40,7 +40,7 @@ const About = (props: AboutProps) => {
                                 About Me
                             </div>
                             <div className="text-body bg-accent p-4 text-shadow-sm shadow-black-textShadow">
-                                I'm a Software Engineer based in Toronto,
+                                I am a Software Engineer based in Toronto,
                                 Canada. I had 4+ years of industry experience
                                 with expertise in Full Stack Development. I am
                                 highly motivated and versatile with strong
