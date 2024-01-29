@@ -60,7 +60,7 @@ export default function App({ pageProps }: AppProps) {
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
                 <link
-                    href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto+Mono:wght@600&display=swap"
+                    href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap"
                     rel="stylesheet"
                 />
             </Head>

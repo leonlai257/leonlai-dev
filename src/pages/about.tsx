@@ -34,12 +34,12 @@ const About = (props: AboutProps) => {
                         />
                         <div className="absolute top-[4%] z-[-1] left-[4%] h-auto w-full bg-accent aspect-[8/12]" />
                     </div>
-                    <div className="flex flex-col justify-center gap-y-4 text-white pointer-events-auto">
+                    <div className="flex flex-col justify-center gap-y-4 text-white pointer-events-auto ">
                         <div className="flex flex-col justify-center ">
                             <div className="text-title text-secondary uppercase ml-1">
                                 About Me
                             </div>
-                            <div className="text-body bg-accent p-4">
+                            <div className="text-body bg-accent p-4 text-shadow-sm shadow-black-textShadow">
                                 I'm a Software Engineer with 4+ years of
                                 industry experience and expertise in the MERN
                                 stack. I am highly motivated and versatile with
@@ -52,20 +52,21 @@ const About = (props: AboutProps) => {
                             <div className="text-title text-secondary uppercase ml-1">
                                 Contact
                             </div>
-                            <div className="text-body flex flex-col bg-accent p-4 gap-y-1">
-                                <div>
-                                    Feel free to reach out to me at through any
-                                    of the following:
+                            <div className="text-body flex flex-col bg-accent p-4 gap-y-1 ">
+                                <div className="text-shadow-sm shadow-black-textShadow">
+                                    Feel free to reach out to me through any of
+                                    the following:
                                 </div>
                                 <div className="flex flex-col gap-y-2">
                                     {contact.map((c) => {
                                         return (
-                                            <Link
-                                                href={'/contact'}
+                                            <a
+                                                href={c.url}
+                                                target="_blank"
                                                 className="btn relative z-10 text-label uppercase bg-white text-accent px-2 py-1 w-fit h-fit whitespace-nowrap"
                                             >
                                                 {c.name}: {c.alias}
-                                            </Link>
+                                            </a>
                                         );
                                     })}
                                 </div>
@@ -76,7 +77,7 @@ const About = (props: AboutProps) => {
                                 Projects
                             </div>
                             <div className="text-body flex flex-col bg-accent p-4 gap-y-1">
-                                <div>
+                                <div className="text-shadow-sm shadow-black-textShadow">
                                     I have worked on a great variety of projects
                                     in my career, ranging from web applications
                                     for industry-leading company to Mixed

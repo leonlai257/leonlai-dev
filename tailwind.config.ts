@@ -1,10 +1,13 @@
 /** @type {import('tailwindcss').Config} */
+import type { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
+
 module.exports = {
     mode: 'jit',
     content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
     theme: {
         fontFamily: {
-            sans: ["'Noto Sans'", 'sans-serif'],
+            sans: ["'Ubuntu'", 'sans-serif'],
         },
         extend: {
             borderRadius: {
@@ -15,6 +18,11 @@ module.exports = {
                 xl: '28px',
                 '2xl': '42px',
                 circle: '50%',
+            },
+            textShadow: {
+                sm: '0 1px 2px var(--tw-shadow-color)',
+                DEFAULT: '0 2px 4px var(--tw-shadow-color)',
+                lg: '0 8px 16px var(--tw-shadow-color)',
             },
             fontSize: {
                 'welcome-lg': [
@@ -90,19 +98,19 @@ module.exports = {
                     },
                 ],
                 'label-lg': [
-                    '14px',
+                    '16px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'label-md': [
-                    '12px',
+                    '14px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'label-sm': [
-                    '11px',
+                    '12px',
                     {
                         fontWeight: '700',
                     },
@@ -154,6 +162,7 @@ module.exports = {
                     DEFAULT: '#1F1E24',
                     light: '#333333',
                     pure: '#000000',
+                    textShadow: 'rgba(0, 0, 0, 0.15)',
                 },
                 text: {
                     DEFAULT: '#090a06',
@@ -175,4 +184,16 @@ module.exports = {
             },
         },
     },
+    plugins: [
+        plugin(({ matchUtilities, theme }) => {
+            matchUtilities(
+                {
+                    'text-shadow': (value) => ({
+                        textShadow: value,
+                    }),
+                },
+                { values: theme('textShadow') }
+            );
+        }),
+    ],
 };
