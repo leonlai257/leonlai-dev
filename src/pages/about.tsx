@@ -40,11 +40,12 @@ const About = (props: AboutProps) => {
                                 About Me
                             </div>
                             <div className="text-body bg-accent p-4 text-shadow-sm shadow-black-textShadow">
-                                I'm a Software Engineer with 4+ years of
-                                industry experience and expertise in the MERN
-                                stack. I am highly motivated and versatile with
-                                strong problem-solving and communication skills.
-                                Adept at delivering robust solutions and
+                                I'm a Software Engineer based in Toronto,
+                                Canada. I had 4+ years of industry experience
+                                with expertise in Full Stack Development. I am
+                                highly motivated and versatile with strong
+                                problem-solving and communication skills. I am
+                                also great at delivering robust solutions and
                                 visually stunning website.
                             </div>
                         </div>
@@ -61,6 +62,7 @@ const About = (props: AboutProps) => {
                                     {contact.map((c) => {
                                         return (
                                             <a
+                                                key={c.name}
                                                 href={c.url}
                                                 target="_blank"
                                                 className="btn relative z-10 text-label uppercase bg-white text-accent px-2 py-1 w-fit h-fit whitespace-nowrap"

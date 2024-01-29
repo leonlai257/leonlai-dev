@@ -49,7 +49,7 @@ export const TransitionWord = ({
     return (
         <Text
             ref={ref}
-            font={'/fonts/NotoSans-Regular.ttf'}
+            font={'/fonts/Ubuntu-Regular.ttf'}
             onPointerOver={over}
             onPointerOut={out}
             onClick={() => console.log('clicked')}
@@ -62,7 +62,7 @@ export const TransitionWord = ({
 
 export const Word = ({ children, ...props }: { children: ReactNode } & any) => {
     return (
-        <Text font={'/fonts/NotoSans-Regular.ttf'} {...props}>
+        <Text font={'/fonts/Ubuntu-Regular.ttf'} {...props}>
             {children}
         </Text>
     );

@@ -48,7 +48,7 @@ export const ContactTransition = ({
             onPointerOut={out}
             onClick={() => console.log('clicked')}
         >
-            <Text ref={ref} font={'/fonts/NotoSans-Regular.ttf'} {...props}>
+            <Text ref={ref} font={'/fonts/Ubuntu-Regular.ttf'} {...props}>
                 {children}
             </Text>
         </group>
