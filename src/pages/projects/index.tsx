@@ -83,7 +83,7 @@ const ProjectList = ({ projects = [], color }: ProjectProps) => {
     const textSize = 0.24;
 
     const camera = useThree((state) => state.camera);
-    const [selected, setSelected] = useState('');
+    const [selected, setSelected] = useState('/projects/sidan.png');
 
     return (
         <>

@@ -68,19 +68,19 @@ export const baseConfig = {
             name: 'GAME DEV',
             skills: ['Unity', 'C#', 'Java', 'Mrtk'],
         },
-        // {
-        //     name: 'WEB3',
-        //     skills: ['Cardano', 'Blockchain'],
-        // },
+        {
+            name: 'WEB3',
+            skills: ['Cardano', 'Blockchain', 'FinTech'],
+        },
     ],
     contact: [
         {
-            name: 'Github',
+            name: 'GitHub',
             url: 'https://github.com/leonlai257',
             alias: 'leonlai257',
         },
         {
-            name: 'Linkedin',
+            name: 'LinkedIn',
             url: 'https://www.linkedin.com/in/leonlai257/',
             alias: 'leonlai257',
         },
@@ -111,7 +111,7 @@ export const baseConfig = {
         {
             navTitle: 'MeshJS contribution',
             title: 'MeshJS',
-            description: `MeshJs is a open-source library for users to build applications on Cardano blockchain easily. I developed the frontend document, detailing all APIs and examples, for the Mesh Tx Builder, a feature that enable users to utilize low level functions to build transaction.`,
+            description: `MeshJs is a open-source library that provide tools for users to build powerful applications on the Cardano blockchain with ease. I developed the frontend document, detailing all APIs and examples, for the Mesh Tx Builder, a feature that enable users to utilize low level functions to build transaction.`,
             to: 'mesh',
             role: 'Contributor - Frontend',
             date: 'Nov 2023',

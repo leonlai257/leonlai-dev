@@ -14,6 +14,7 @@ import ProjectCNS from './projects/cns';
 import { baseConfig } from '@src/config/app';
 import ProjectFoodiverse from './projects/foodiverse';
 import ProjectMR from './projects/mr';
+import About from './about';
 
 export default function App({ pageProps }: AppProps) {
     const globalStates = {};
@@ -81,6 +82,9 @@ export default function App({ pageProps }: AppProps) {
                     </Route>
                     <Route path="/contact">
                         <Contact {...pageProps} />
+                    </Route>
+                    <Route path="/about">
+                        <About {...pageProps} />
                     </Route>
                     <Route path="/projects">
                         <Projects {...pageProps} />

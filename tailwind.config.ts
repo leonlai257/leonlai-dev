@@ -72,19 +72,19 @@ module.exports = {
                     },
                 ],
                 'title-lg': [
-                    '24px',
+                    '28px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'title-md': [
-                    '16px',
+                    '24px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'title-sm': [
-                    '14px',
+                    '20px',
                     {
                         fontWeight: '700',
                     },
@@ -108,19 +108,19 @@ module.exports = {
                     },
                 ],
                 'body-lg': [
-                    '16px',
+                    '18px',
                     {
                         fontWeight: '400',
                     },
                 ],
                 'body-md': [
-                    '14px',
+                    '16px',
                     {
                         fontWeight: '400',
                     },
                 ],
                 'body-sm': [
-                    '12px',
+                    '14px',
                     {
                         fontWeight: '400',
                     },
