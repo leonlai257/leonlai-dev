@@ -41,8 +41,8 @@ const About = (props: AboutProps) => {
                             </div>
                             <div className="text-body bg-accent p-4 text-shadow-sm shadow-black-textShadow">
                                 I am a Software Engineer based in Toronto,
-                                Canada. I had 4+ years of industry experience
-                                with expertise in Full Stack Development. I am
+                                Canada, with 4+ years of industry experience and
+                                expertise in Full Stack Web Development. I am
                                 highly motivated and versatile with strong
                                 problem-solving and communication skills. I am
                                 also great at delivering robust solutions and
