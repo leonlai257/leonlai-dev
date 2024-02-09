@@ -83,7 +83,7 @@ const About = (props: AboutProps) => {
                                     I have worked on a great variety of projects
                                     in my career, ranging from web applications
                                     for industry-leading company to Mixed
-                                    Reality game for the Hololens 2:
+                                    Reality game for the Hololens:
                                 </div>
                                 <div className="flex flex-col gap-y-2 w-full items-end">
                                     <Link
