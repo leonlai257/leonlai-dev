@@ -100,7 +100,15 @@ export const baseConfig = {
             role: 'Full Stack Developer',
             date: 'Nov 2023 - Present',
             image: '/projects/sidan.png',
-            tags: ['Next.js', 'Tailwindcss', 'React', 'Typescript', 'Web3'],
+            tags: [
+                'Next.js',
+                'Tailwindcss',
+                'React',
+                'Redux',
+                'Typescript',
+                'Web3',
+                'Cardano(ADA)',
+            ],
             links: [
                 {
                     name: 'Live site',
@@ -116,7 +124,7 @@ export const baseConfig = {
             role: 'Contributor - Frontend',
             date: 'Nov 2023',
             image: '/projects/mesh.png',
-            tags: ['Web3'],
+            tags: ['Web3', 'Cardano(ADA)'],
             links: [
                 {
                     name: 'Live site',
@@ -136,7 +144,16 @@ export const baseConfig = {
             role: 'Full Stack Developer',
             date: 'May 2023 - Nov 2023',
             image: '/projects/cns.png',
-            tags: ['Next.js', 'Tailwindcss', 'React', 'Web3', 'Redis'],
+            tags: [
+                'Next.js',
+                'Tailwindcss',
+                'React',
+                'Redux',
+                'Web3',
+                'Redis',
+                'Cardano(ADA)',
+                'PostgresQL',
+            ],
             links: [
                 {
                     name: 'Live site',
@@ -152,7 +169,13 @@ export const baseConfig = {
             date: 'Feb 2023 - May 2023',
             image: '/projects/bubstal.png',
             description: `Bubstal is a Hong Kong Metaverse startup. I developed majority of their company website using Vue.js and some of the gameplay logic using Babylon.js.`,
-            tags: ['Vue', 'Tailwindcss', 'Babylon.js'],
+            tags: [
+                'Vue',
+                'Tailwindcss',
+                'Babylon.js',
+                'Tensorflow',
+                'Metaverse',
+            ],
             links: [
                 {
                     name: 'Live site',
@@ -169,6 +192,7 @@ export const baseConfig = {
             date: 'May 2023 - July 2023',
             image: '/projects/foodiverse.jpg',
             gif: '/projects/foodiverse.gif',
+            tags: ['Next.js', 'Stitches', 'GSAP', 'Lottie', 'Node.js', 'Redis'],
             links: [
                 {
                     name: 'News article',
@@ -183,6 +207,7 @@ export const baseConfig = {
             role: 'Full Stack Developer',
             date: 'March 2023 - July 2023',
             image: '/projects/gusto.png',
+            tags: ['php', 'WordPress', 'jQuery', 'Angular', 'GSAP'],
             links: [
                 {
                     name: 'Live site',
@@ -198,6 +223,7 @@ export const baseConfig = {
             image: '/projects/coreality.png',
             gif: '/projects/coreality-demo.gif',
             date: 'Feb 2023 - May 2023',
+            tags: ['React', 'Tailwindcss', 'Node.js', 'Next.js', 'Three.js'],
         },
         {
             navTitle: 'Jarvix Pay',
@@ -231,6 +257,16 @@ export const baseConfig = {
             role: 'Mixed Reality Developer',
             date: 'Oct 2019 - Feb 2022',
             image: '/projects/mr.png',
+            tags: [
+                'Unity',
+                'C#',
+                'MRTK',
+                'Hololens',
+                'Java',
+                '3ds Max',
+                'Blender',
+                'Visual Studio',
+            ],
             links: [
                 {
                     name: 'Demo video',
