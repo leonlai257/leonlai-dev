@@ -234,6 +234,9 @@ export const baseConfig = {
             date: 'Sep 2021 - Oct 2022',
             tags: [
                 'React',
+                'React Native',
+                'Android Studio',
+                'iOS',
                 'Tailwindcss',
                 'Express',
                 'Vue.js',
