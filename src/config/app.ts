@@ -224,6 +224,7 @@ export const baseConfig = {
             gif: '/projects/coreality-demo.gif',
             date: 'Feb 2023 - May 2023',
             tags: ['React', 'Tailwindcss', 'Node.js', 'Next.js', 'Three.js'],
+            description: `Coreality is a Software as a Service application for advanced e-commerce, aimed to provide a 3D panoramic storeroom environment to users to enhance their shopping experience. I led the development and added a config system, allowing non-developers to add or design their own storeroom experience without codes. The application was built with Next.js and Three.js. The applications allows 4K quality graphic to be viewed on mobile with constant 30+FPS.`,
         },
         {
             navTitle: 'Jarvix Pay',
