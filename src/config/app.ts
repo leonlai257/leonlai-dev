@@ -186,7 +186,7 @@ export const baseConfig = {
         {
             navTitle: 'Foodiverse',
             title: 'Foodiverse',
-            description: `Foodiverse is a limited time lucky draw event launched by the 7-Eleven Hong Kong during 5-14 July 2023. I developed 95% of the frontend and part of the backend. The fully-responsive website is built with Stitches(CSS library) and Next.js. The animation used in the application utilized GSAP and Lottie.`,
+            description: `Foodiverse is a limited time lucky draw event launched by the 7-Eleven Hong Kong during 5-14 July 2023. I developed 95% of the frontend and part of the backend. The fully-responsive website is built with Stitches(CSS library) and Next.js. The animation utilized GSAP and Lottie.`,
             to: 'foodiverse',
             role: 'Full Stack Developer',
             date: 'May 2023 - July 2023',
