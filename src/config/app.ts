@@ -107,7 +107,7 @@ export const baseConfig = {
                 'Redux',
                 'Typescript',
                 'Web3',
-                'Cardano(ADA)',
+                'Cardano(.ada)',
             ],
             links: [
                 {
@@ -124,7 +124,7 @@ export const baseConfig = {
             role: 'Contributor - Frontend',
             date: 'Nov 2023',
             image: '/projects/mesh.png',
-            tags: ['Web3', 'Cardano(ADA)'],
+            tags: ['Web3', 'Cardano(.ada)'],
             links: [
                 {
                     name: 'Live site',
@@ -151,7 +151,7 @@ export const baseConfig = {
                 'Redux',
                 'Web3',
                 'Redis',
-                'Cardano(ADA)',
+                'Cardano(.ada)',
                 'PostgresQL',
             ],
             links: [
