@@ -61,6 +61,16 @@ export const TransitionWord = ({
 };
 
 export const Word = ({ children, ...props }: { children: ReactNode } & any) => {
+    const { color, categories } = props;
+
+    const {
+        textColor,
+        backgroundColor,
+        primaryColor,
+        secondaryColor,
+        accentColor,
+    } = color;
+
     return (
         <Text font={'/fonts/Ubuntu-Regular.ttf'} {...props}>
             {children}

@@ -4,6 +4,7 @@ import { useFrame, useThree } from '@react-three/fiber';
 import { Category, TransitionWord, Word } from '@src/components';
 import { Suspense, useRef, useState } from 'react';
 import * as THREE from 'three';
+import { useLocation } from 'wouter';
 
 export interface MainProps extends CoreConfig {}
 
@@ -24,6 +25,7 @@ const Main = (props: MainProps) => {
     const [wiggle, setWiggle] = useState(false);
 
     useCursor(hovered);
+    const [_, push] = useLocation();
 
     const groupRef = useRef<THREE.Group>(null!);
     const postRef = useRef<THREE.Group>(null!);
@@ -151,6 +153,30 @@ const Main = (props: MainProps) => {
                         </Word>
                     </group>
                 </group>
+
+                <TransitionWord
+                    onClick={() => {
+                        push('/about');
+                    }}
+                    scale={0.4}
+                    position={[-1.6, -2.0, 0]}
+                    originalColor={primaryColor}
+                    transitionColor={secondaryColor}
+                >
+                    About Me
+                </TransitionWord>
+
+                <TransitionWord
+                    onClick={() => {
+                        push('/projects');
+                    }}
+                    scale={0.4}
+                    position={[1.6, -2.0, 0]}
+                    originalColor={primaryColor}
+                    transitionColor={secondaryColor}
+                >
+                    What I Do
+                </TransitionWord>
 
                 {transition && (
                     <group>
