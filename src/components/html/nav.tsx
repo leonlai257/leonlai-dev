@@ -22,7 +22,7 @@ const nav = [
 export const NavBar = () => {
     return (
         <>
-            <div className="absolute z-[999] flex h-full w-full flex-col justify-end pointer-events-none bg-transparent">
+            <div className="absolute z-[999] flex h-full w-full flex-col justify-start pointer-events-none bg-transparent text-body">
                 <div className="flex w-full justify-end p-8 gap-6 pointer-events-auto">
                     {nav &&
                         nav.map((item) => {
