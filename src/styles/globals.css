@@ -21,6 +21,9 @@
   .text-body {
       @apply text-body-sm md:text-body-md lg:text-body-lg;
   }
+  .text-navigation {
+      @apply text-navigation-sm md:text-navigation-md lg:text-navigation-lg;
+  }
   .btn {
       @apply hover:opacity-hover cursor-pointer;
   }

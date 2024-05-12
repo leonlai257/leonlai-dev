@@ -133,6 +133,24 @@ module.exports = {
                         fontWeight: '400',
                     },
                 ],
+                'navigation-lg': [
+                    '20px',
+                    {
+                        fontWeight: '400',
+                    },
+                ],
+                'navigation-md': [
+                    '18px',
+                    {
+                        fontWeight: '400',
+                    },
+                ],
+                'navigation-sm': [
+                    '16px',
+                    {
+                        fontWeight: '400',
+                    },
+                ],
             },
             keyframes: {
                 projectFade: {

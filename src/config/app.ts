@@ -1,21 +1,11 @@
 import { type } from 'os';
-import * as THREE from 'three';
 
 export interface CoreConfig {
-    color: ColorProfile;
     categories: CategoryItem[];
     nav: NavItem[];
     contact: ContactItem[];
     projects: ProjectItem[];
 }
-export type ColorProfile = {
-    textColor: THREE.Color;
-    backgroundColor: THREE.Color;
-    backgroundDark: THREE.Color;
-    primaryColor: THREE.Color;
-    secondaryColor: THREE.Color;
-    accentColor: THREE.Color;
-};
 
 export type CategoryItem = {
     name: string;
