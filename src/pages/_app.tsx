@@ -2,17 +2,14 @@ import { NavBar } from '@src/components';
 import { baseConfig } from '@src/config/app';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import Main from '.';
 import '../styles/globals.css';
-import About from './about';
-import Contact from './contact';
-import Projects from './projects';
-import Project from './projects/[...project]';
-import ProjectCNS from './projects/cns';
-import ProjectFoodiverse from './projects/foodiverse';
-import ProjectMR from './projects/mr';
 
 export default function App({ Component, pageProps }: AppProps) {
+    const config = {
+        ...baseConfig,
+        pageProps,
+    };
+
     return (
         <div
             style={{
@@ -22,7 +19,6 @@ export default function App({ Component, pageProps }: AppProps) {
                 width: '100%',
                 minHeight: '100vh',
                 height: '100%',
-                overflow: 'hidden',
             }}
         >
             <Head>
@@ -55,9 +51,9 @@ export default function App({ Component, pageProps }: AppProps) {
             </Head>
 
             <NavBar />
-            <div className="relative inset-x-0 m-auto flex w-full flex-col items-center justify-center overflow-x-hidden overflow-y-hidden pt-[32px] md:pt-[53px] lg:pt-[59px]">
-                <div className="relative min-h-screen w-full max-w-[1440px]">
-                    <Component {...pageProps} />
+            <div className="relative inset-x-0 m-auto flex w-full flex-col items-center justify-center overflow-x-hidden overflow-y-scroll bg-background pt-10 md:pt-[64px]">
+                <div className="relative min-h-screen w-full max-w-[1440px] text-primary px-4">
+                    <Component {...config} />
                     {/* <Footer /> */}
                 </div>
             </div>

@@ -6,6 +6,9 @@
   .text-welcome {
       @apply text-welcome-sm md:text-welcome-md lg:text-welcome-lg;
   }
+  .text-welcome-outline {
+      @apply text-welcome-outline-sm md:text-welcome-outline-md lg:text-welcome-outline-lg;
+  }
   .text-display {
       @apply text-display-sm md:text-display-md lg:text-display-lg;
   }
@@ -27,9 +30,21 @@
   .btn {
       @apply hover:opacity-hover cursor-pointer;
   }
+  .btn-primary {
+    @apply btn bg-primary rounded-button py-1 px-4 lg:px-6 lg:py-2 gap-2 lg:gap-4;
+  }
+  .btn-secondary {
+    @apply btn bg-secondary rounded-button py-1 px-4 lg:px-6 lg:py-2 gap-2 lg:gap-4;
+  }
+  .btn-outline {
+    @apply btn bg-transparent border border-black-outline rounded-button py-1 px-4 lg:px-6 lg:py-2 gap-2 lg:gap-4 text-black-outline;
+  }
   .bloom {
     @apply absolute left-0 top-0 z-[-1] h-full w-full blur-sm;
-}
+  }
+  .text-stroke {
+    text-shadow: -2px -2px 0 #8294C4, 2px -2px 0 #8294C4, -2px 2px 0 #8294C4, 2px 2px 0 #8294C4;
+  }
 }
 
 :root {
@@ -63,4 +78,9 @@ body {
   /* Hide scrollbar for IE, Edge and Firefox */
   --ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: 'none'; /* Remove scrollbar in Safari and Chrome */
+  width: 0; /* Remove scrollbar in Safari and Chrome */
 }

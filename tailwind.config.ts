@@ -26,7 +26,7 @@ module.exports = {
             },
             fontSize: {
                 'welcome-lg': [
-                    '110px',
+                    '112px',
                     {
                         fontWeight: '700',
                     },
@@ -38,6 +38,24 @@ module.exports = {
                     },
                 ],
                 'welcome-sm': [
+                    '32px',
+                    {
+                        fontWeight: '700',
+                    },
+                ],
+                'welcome-outline-lg': [
+                    '108px',
+                    {
+                        fontWeight: '700',
+                    },
+                ],
+                'welcome-outline-md': [
+                    '72px',
+                    {
+                        fontWeight: '700',
+                    },
+                ],
+                'welcome-outline-sm': [
                     '32px',
                     {
                         fontWeight: '700',
@@ -183,21 +201,21 @@ module.exports = {
                     textShadow: 'rgba(0, 0, 0, 0.15)',
                 },
                 text: {
-                    DEFAULT: '#090a06',
+                    DEFAULT: '#F0EADB',
                     grayscale: '#A292A4',
                 },
                 background: {
-                    DEFAULT: '#FFEAD2',
+                    DEFAULT: '#515D80',
                     dark: '#222232',
                 },
                 primary: {
-                    DEFAULT: '#8294C4',
+                    DEFAULT: '#EDEDC7',
                 },
                 secondary: {
-                    DEFAULT: '#ACB1D6',
+                    DEFAULT: '#08083F',
                 },
                 accent: {
-                    DEFAULT: '#93d1cb',
+                    DEFAULT: '#CAEAE7',
                 },
             },
         },
