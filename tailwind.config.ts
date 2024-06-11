@@ -171,10 +171,6 @@ module.exports = {
                 ],
             },
             keyframes: {
-                projectFade: {
-                    '0%': { backgroundColor: '#8294C4' },
-                    '100%': { backgroundColor: 'transparent', color: 'white' },
-                },
                 fadeOut: {
                     '0%': { opacity: 1 },
                     '100%': { opacity: 0 },
@@ -183,12 +179,17 @@ module.exports = {
                     '0%': { opacity: 0 },
                     '100%': { opacity: 1 },
                 },
+                float: {
+                    '0%': {
+                        transform: 'translateY(0) translateX(0)',
+                    },
+                    '100%': { transform: 'translateY(-2%) translateX(-2%)' },
+                },
             },
             animation: {
-                projectFade: 'projectFade 0.24s ease-in-out forwards',
-                bgFadeOut: 'fadeOut 3s forwards',
-                textBgFadeOut: 'fadeOut 1s forwards',
-                textFadeIn: 'fadeIn 1s forwards',
+                fadeOut: 'fadeOut 1s forwards',
+                fadeIn: 'fadeIn 1s forwards',
+                float: 'float 0.6s forwards',
             },
             opacity: {
                 hover: 0.8,
@@ -215,21 +216,9 @@ module.exports = {
                     DEFAULT: '#08083F',
                 },
                 accent: {
-                    DEFAULT: '#CAEAE7',
+                    DEFAULT: '#D8E4F8',
                 },
             },
         },
     },
-    plugins: [
-        plugin(({ matchUtilities, theme }) => {
-            matchUtilities(
-                {
-                    'text-shadow': (value) => ({
-                        textShadow: value,
-                    }),
-                },
-                { values: theme('textShadow') }
-            );
-        }),
-    ],
 };

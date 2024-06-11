@@ -45,6 +45,9 @@
   .text-stroke {
     text-shadow: -2px -2px 0 #8294C4, 2px -2px 0 #8294C4, -2px 2px 0 #8294C4, 2px 2px 0 #8294C4;
   }
+  .as-shadow-text {
+    @apply absolute left-[2.8%] top-[3.6%] z-[-1] text-secondary cursor-none
+  }
 }
 
 :root {

@@ -10,7 +10,7 @@ const Main = (props: MainProps) => {
 
     return (
         <div className="flex flex-col w-full h-full z-50">
-            <div className="flex flex-col w-full items-center">
+            <div className="flex flex-col w-full items-center  my-20">
                 <div className="relative flex z-10 text-welcome w-fit h-fit">
                     <div className="">Leon Lai</div>
                     <div className="absolute whitespace-nowrap left-[1.2%] top-[2.4%] text-secondary z-[-1] cursor-none">
@@ -23,7 +23,7 @@ const Main = (props: MainProps) => {
             </div>
 
             <div className="p-20 w-full h-full flex flex-col lg:flex-row gap-16 items-center justify-center">
-                <div className="w-[80%] max-w-[680px] relative z-10">
+                <div className="max-w-[50vw]  relative z-10">
                     <Image
                         src="/photo.jpeg"
                         alt="photo"
@@ -38,9 +38,15 @@ const Main = (props: MainProps) => {
                 </div>
                 <div className="flex flex-col justify-center gap-y-4 text-white pointer-events-auto ">
                     <div className="flex flex-col justify-center ">
-                        <div className="text-title text-primary uppercase ml-1">
-                            About Me
+                        <div className="relative z-10 text-title">
+                            <div className="text-accent uppercase ml-1">
+                                About Me
+                            </div>
+                            <div className="as-shadow-text uppercase ml-1 left-[0.4%] top-[4.2%]">
+                                About Me
+                            </div>
                         </div>
+
                         <div className="text-body bg-secondary p-4 text-shadow-sm shadow-black-textShadow">
                             I am a Software Engineer based in Toronto, Canada,
                             with 5 years of industry experience and expertise in
@@ -51,15 +57,20 @@ const Main = (props: MainProps) => {
                         </div>
                     </div>
                     <div className="flex flex-col justify-center ">
-                        <div className="text-title text-primary uppercase ml-1">
-                            Contact
+                        <div className="relative z-10 text-title">
+                            <div className="text-accent uppercase ml-1">
+                                Contact
+                            </div>
+                            <div className="as-shadow-text uppercase ml-1 left-[0.4%] top-[4.2%]">
+                                Contact
+                            </div>
                         </div>
-                        <div className="text-body flex flex-col bg-secondary p-4 gap-y-1 ">
+                        <div className="text-body flex flex-col bg-secondary p-4 gap-2">
                             <div className="text-shadow-sm shadow-black-textShadow">
                                 Feel free to reach out to me through any of the
                                 following:
                             </div>
-                            <div className="flex flex-col gap-y-2">
+                            <div className="flex flex-col gap-2">
                                 {contact.map((c) => {
                                     return (
                                         <a
@@ -76,8 +87,13 @@ const Main = (props: MainProps) => {
                         </div>
                     </div>
                     <div className="flex flex-col justify-center">
-                        <div className="text-title text-primary uppercase ml-1">
-                            Projects
+                        <div className="relative z-10 text-title">
+                            <div className="text-accent uppercase ml-1">
+                                Projects
+                            </div>
+                            <div className="as-shadow-text uppercase ml-1 left-[0.4%] top-[4.2%]">
+                                Projects
+                            </div>
                         </div>
                         <div className="text-body flex flex-col bg-secondary p-4 gap-y-1">
                             <div className="text-shadow-sm shadow-black-textShadow">
@@ -89,7 +105,7 @@ const Main = (props: MainProps) => {
                             <div className="flex flex-col gap-y-2 w-full items-end">
                                 <Link
                                     href={'/projects'}
-                                    className="btn relative z-10 text-label uppercase bg-white text-secondary px-2 py-1 w-fit h-fit whitespace-nowrap"
+                                    className="btn relative z-10 text-label uppercase bg-primary text-secondary px-2 py-1 w-fit h-fit whitespace-nowrap"
                                 >
                                     Learn More!
                                 </Link>
@@ -98,7 +114,6 @@ const Main = (props: MainProps) => {
                     </div>
                 </div>
             </div>
-            <div className="h-[2000px] bg-white"></div>
         </div>
     );
 };
