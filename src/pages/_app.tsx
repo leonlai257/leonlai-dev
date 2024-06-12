@@ -51,7 +51,7 @@ export default function App({ Component, pageProps }: AppProps) {
             </Head>
 
             <NavBar />
-            <div className="relative inset-x-0 m-auto flex w-full flex-col items-center justify-center overflow-x-hidden overflow-y-scroll bg-background pt-10 md:pt-[64px]">
+            <div className="relative inset-x-0 m-auto flex w-full flex-col items-center justify-center overflow-x-hidden overflow-y-scroll bg-background pt-10 md:pt-[64px] pb-[100px]">
                 <div className="relative min-h-screen w-full max-w-[1440px] text-primary px-4">
                     <Component {...config} />
                     {/* <Footer /> */}

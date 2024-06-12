@@ -6,9 +6,6 @@ import { useState } from 'react';
 export interface ProjectProps extends CoreConfig {}
 
 const ProjectList = ({ projects = [] }: ProjectProps) => {
-    const gap = 0.2;
-    const textSize = 0.24;
-
     const [selected, setSelected] = useState('/projects/sidan.png');
 
     return (

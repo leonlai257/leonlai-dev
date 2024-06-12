@@ -34,9 +34,7 @@ export const NavBar = () => {
                                     <div className="btn hover:animate-float">
                                         <Link href={item.url}>{item.name}</Link>
                                     </div>
-                                    <div className="as-shadow-text">
-                                        {item.name}
-                                    </div>
+                                    <div className="as-shadow">{item.name}</div>
                                 </div>
                             );
                         })}

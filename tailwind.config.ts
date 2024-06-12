@@ -38,7 +38,7 @@ module.exports = {
                     },
                 ],
                 'welcome-sm': [
-                    '32px',
+                    '60px',
                     {
                         fontWeight: '700',
                     },
@@ -68,85 +68,85 @@ module.exports = {
                     },
                 ],
                 'display-md': [
-                    '44px',
+                    '48px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'display-sm': [
-                    '36px',
+                    '40px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'headline-lg': [
-                    '32px',
+                    '44px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'headline-md': [
-                    '28px',
+                    '36px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'headline-sm': [
-                    '24px',
+                    '32px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'title-lg': [
-                    '28px',
+                    '32px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'title-md': [
-                    '24px',
+                    '28px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'title-sm': [
-                    '20px',
+                    '24px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'label-lg': [
-                    '16px',
+                    '22px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'label-md': [
-                    '14px',
+                    '20px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'label-sm': [
-                    '12px',
+                    '18px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'body-lg': [
-                    '18px',
+                    '20px',
                     {
                         fontWeight: '400',
                     },
                 ],
                 'body-md': [
-                    '16px',
+                    '18px',
                     {
                         fontWeight: '400',
                     },
                 ],
                 'body-sm': [
-                    '14px',
+                    '18px',
                     {
                         fontWeight: '400',
                     },
