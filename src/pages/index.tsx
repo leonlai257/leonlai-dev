@@ -6,7 +6,7 @@ import Link from 'next/link';
 export interface MainProps extends CoreConfig {}
 
 const Main = (props: MainProps) => {
-    const { contact = [], projects = [] } = props;
+    const { contact = [], projects = [], experiences = [] } = props;
     const [selected, setSelected] = useState('/projects/sidan.png');
 
     return (
@@ -117,22 +117,52 @@ const Main = (props: MainProps) => {
                     </div>
                 </div>
                 <div className="w-full h-full flex items-start gap-4">
-                    <div className="flex gap-2 flex-col justify-center items-start basis-1/3 minghja px-4 py-2">
+                    <div className="flex gap-2 w-full flex-col items-start px-4 py-1">
+                        {experiences.map((experience, i) => (
+                            <div
+                                key={i}
+                                className={`w-full px-4 py-2 h-fit relative text-title uppercase z-10 whitespace-nowrap`}
+                            >
+                                <div className="flex w-full justify-between">
+                                    <div className="">{experience.title}</div>
+                                    <div className="">{experience.date}</div>
+                                </div>
+                                <div className="flex w-full justify-start">
+                                    <div className="">{experience.company}</div>
+                                </div>
+
+                                {/* {project.image === selected || (
+                                    <div className="as-shadow hover:hidden">
+                                        {project.navTitle}
+                                    </div>
+                                )} */}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div className="w-full h-full flex items-start gap-4">
+                    <div className="flex gap-2 flex-col justify-center items-start basis-1/3 px-4 py-1">
                         {projects.map((project, i) => (
                             <Link
                                 key={i}
-                                className="w-full btn h-fit relative text-title uppercase z-10"
+                                className={`w-fit px-4 py-2 h-fit relative text-title uppercase z-10 
+                                whitespace-nowrap ${
+                                    project.image === selected
+                                        ? 'text-background bg-primary'
+                                        : 'text-primary'
+                                }`}
                                 href={'/projects/' + project.to}
                                 onMouseOver={() =>
                                     setSelected(project.image || '')
                                 }
                             >
-                                <div className="text-primary">
-                                    {project.navTitle}
-                                </div>
-                                <div className="as-shadow z-[-1] left-[0.8%]">
-                                    {project.navTitle}
-                                </div>
+                                {project.navTitle}
+
+                                {/* {project.image === selected || (
+                                    <div className="as-shadow hover:hidden">
+                                        {project.navTitle}
+                                    </div>
+                                )} */}
                             </Link>
                         ))}
                     </div>

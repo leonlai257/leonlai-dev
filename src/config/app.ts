@@ -1,15 +1,22 @@
-import { type } from 'os';
-
 export interface CoreConfig {
     categories: CategoryItem[];
     nav: NavItem[];
     contact: ContactItem[];
+    experiences: ExperienceItem[];
     projects: ProjectItem[];
 }
 
 export type CategoryItem = {
     name: string;
     skills: string[];
+};
+
+export type ExperienceItem = {
+    title: string;
+    company: string;
+    date: string;
+    description: string;
+    tags: string[];
 };
 
 export type ProjectItem = {
@@ -78,6 +85,20 @@ export const baseConfig = {
             name: 'Email',
             url: 'mailto:leonlai257@gmail.com',
             alias: 'leonlai257@gmail.com',
+        },
+    ],
+    experiences: [
+        {
+            title: 'Full Stack Developer',
+            company: 'Freelance',
+            date: 'Feb 2023 - Present',
+            description: `-  Developed highly responsive web applications and robust backend:	
+            - Bubstal: Vue, Babylon, Tensorflow (bubstal.io)	
+            - Gusto Collective: React, php (thisisgusto.com, foodiverse)
+            - Cardano Naming Service: React, blockchain, Redis, AWS, docker  (cns.space)
+            - MeshJS: refactored blockchain wallet hooks (meshjs.dev)
+            - Sidan Lab: React, blockchain (sidan.io)
+            - Confidential crypto exchange project`,
         },
     ],
     projects: [
