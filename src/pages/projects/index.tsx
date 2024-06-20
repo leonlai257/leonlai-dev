@@ -9,9 +9,43 @@ const ProjectList = ({ projects = [] }: ProjectProps) => {
     const [selected, setSelected] = useState('/projects/sidan.png');
 
     return (
-        <>
-            <div className="w-full h-full flex flex-col justify-end pb-[88px]">
-                <div className="flex overflow-hidden w-full h-full p-12 justify-center relative z-10 object-cover">
+        <div className="w-full h-full flex flex-col justify-end gap-4 pb-[88px]">
+            <div className="flex flex-col">
+                <div className="relative z-10 text-headline">
+                    <div className="text-accent uppercase ml-1">Projects</div>
+                    <div className="as-shadow uppercase ml-1 left-[0.4%] top-[4.2%]">
+                        Projects
+                    </div>
+                </div>
+                <div className="flex flex-col bg-secondary p-4 gap-y-1">
+                    <div className="text-shadow-sm shadow-black-textShadow">
+                        I have worked on a great variety of projects in my
+                        career, ranging from web applications for
+                        industry-leading company to Mixed Reality game for the
+                        Hololens:
+                    </div>
+                </div>
+            </div>
+
+            <div className="w-full h-full flex items-start gap-4">
+                <div className="flex gap-2 flex-col justify-center items-start basis-1/3 px-4 py-1">
+                    {projects.map((project, i) => (
+                        <Link
+                            key={i}
+                            className={`w-fit px-4 py-2 h-fit relative text-title uppercase z-10
+                                whitespace-nowrap ${
+                                    project.image === selected
+                                        ? 'text-background bg-primary'
+                                        : 'text-primary'
+                                }`}
+                            href={'/projects/' + project.to}
+                            onMouseOver={() => setSelected(project.image || '')}
+                        >
+                            {project.navTitle}
+                        </Link>
+                    ))}
+                </div>
+                <div className="flex overflow-hidden aspect-square flex-col basis-2/3 justify-center relative z-10 object-cover">
                     {selected && (
                         <div className="flex w-full h-full justify-center relative z-10 object-cover">
                             <Image
@@ -26,44 +60,12 @@ const ProjectList = ({ projects = [] }: ProjectProps) => {
                                     objectFit: 'cover',
                                 }}
                             />
-                            <Image
-                                src={selected}
-                                alt={'bloomImage'}
-                                width={200}
-                                height={200}
-                                style={{
-                                    filter: 'blur(20px)',
-                                    zIndex: -1,
-                                    position: 'absolute',
-                                    width: 'auto',
-                                    height: '100%',
-                                }}
-                            />
+                            {/* <div className="as-shadow h-full w-full"></div> */}
                         </div>
                     )}
                 </div>
-
-                <div className="flex flex-wrap px-8 gap-4 justify-center items-start">
-                    {projects.map((project, i) => (
-                        <Link
-                            key={i}
-                            className="w-fit btn rounded-lg bg-secondary p-2 px-4 h-fit relative"
-                            href={'/projects/' + project.to}
-                            onMouseOver={() => setSelected(project.image || '')}
-                        >
-                            <div className="absolute w-fit btn rounded-lg bg-accent p-2 px-4 h-fit bloom">
-                                <div className="text-headline uppercase text-white">
-                                    {project.navTitle}
-                                </div>
-                            </div>
-                            <div className="text-headline uppercase text-black">
-                                {project.navTitle}
-                            </div>
-                        </Link>
-                    ))}
-                </div>
             </div>
-        </>
+        </div>
     );
 };
 

@@ -92,13 +92,44 @@ export const baseConfig = {
             title: 'Full Stack Developer',
             company: 'Freelance',
             date: 'Feb 2023 - Present',
-            description: `-  Developed highly responsive web applications and robust backend:	
-            - Bubstal: Vue, Babylon, Tensorflow (bubstal.io)	
-            - Gusto Collective: React, php (thisisgusto.com, foodiverse)
-            - Cardano Naming Service: React, blockchain, Redis, AWS, docker  (cns.space)
-            - MeshJS: refactored blockchain wallet hooks (meshjs.dev)
-            - Sidan Lab: React, blockchain (sidan.io)
-            - Confidential crypto exchange project`,
+            description: `Developed highly responsive web applications and robust backend for:
+            Bubstal (bubstal.io), Foodiverse (7-Eleven HK), Gusto Collective (thisisgusto.com), Cardano Naming Service (cns.space), MeshJS (meshjs.dev), Sidan Lab (sidan.io), Confidential crypto exchange project`,
+            tags: [
+                'Vue',
+                'React',
+                'Angular',
+                'php',
+                'three.js',
+                'Babylon',
+                'Tensorflow',
+                'AWS',
+                'Docker',
+                'Blockchain',
+                'Redis',
+                'Web3',
+            ],
+        },
+        {
+            title: 'Full Stack Developer',
+            company: 'Gusto Collective',
+            date: 'Oct 2022 - May 2023',
+            description: `- Built RESTful API endpoints with serverless AWS Lambda and CMS using React for an mobile AR application with 20k+ concurrent users.
+            - Led and developed CoReality, a 3D online store SaaS, using React and three.js.`,
+        },
+        {
+            title: 'Software Engineer',
+            company: 'Aigniter Technology Limited',
+            date: 'Sep 2021 - Oct 2022',
+            description: `- Developed Jarvix Pay, a mobile B2C payment application from scratch using Vue, React, React Native and NestJs, with transactions from 5000+ registered merchant.
+            - Wrote extensive integration and E2E test cases in Jest, Cypress, with code coverage of 90+%.`,
+        },
+        {
+            title: 'Mixed Reality Developer',
+            company: 'The Chinese University of Hong Kong',
+            date: 'Oct 2019 - Feb 2022',
+            description: `Developed Mixed Reality games for Hololens 2 with spatial awareness and interactive elements: 
+            - MR laboratory simulations for the Faculty of Science 
+            - MR art contest mentor for the Faculty of Fine Arts`,
         },
     ],
     projects: [

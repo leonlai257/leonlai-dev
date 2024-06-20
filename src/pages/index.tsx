@@ -89,9 +89,74 @@ const Main = (props: MainProps) => {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col gap-8 w-full">
+            <div className="flex flex-col gap-4 w-full">
+                <div className="w-full h-full flex items-start gap-4 flex-col">
+                    <div className="flex flex-col justify-center w-2/3">
+                        <div className="relative z-10 text-headline flex gap-4 items-center">
+                            <div className="text-accent uppercase ml-1">
+                                Past Experience
+                            </div>
+                            <div className="as-shadow uppercase ml-1 left-[0.4%] top-[4.2%]">
+                                Past Experience
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-y-2 w-full items-start px-1">
+                            <div className="relative z-10 text-label uppercase bg-primary text-secondary px-2 py-0 w-fit h-fit whitespace-nowrap">
+                                Click to expand to learn more!
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex gap-2 w-full flex-col items-start px-4 py-1">
+                        {experiences.map((experience, i) => {
+                            const [expand, setExpand] = useState(false);
+
+                            return (
+                                <div
+                                    key={i}
+                                    className={`btn hover:opacity-100 hover:shadow-sm w-full px-4 py-2 h-fit relative text-title z-10 whitespace-nowrap flex flex-col bg-secondary gap-4`}
+                                    onClick={() => setExpand(!expand)}
+                                >
+                                    <div className="flex w-full justify-start flex-col">
+                                        <div className="flex w-full justify-between">
+                                            <div className="">
+                                                {experience.title}
+                                            </div>
+                                            <div className="text-label">
+                                                {experience.date}
+                                            </div>
+                                        </div>
+                                        <div className="italic text-label">
+                                            {experience.company}
+                                        </div>
+                                    </div>
+                                    {experience.tags && (
+                                        <div className="flex gap-1">
+                                            {experience.tags.map((tag, i) => {
+                                                return (
+                                                    <div
+                                                        key={i}
+                                                        className="text-background text-sm rounded-lg bg-accent px-2 py-1"
+                                                    >
+                                                        {tag}
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    )}
+                                    {expand && (
+                                        <div className="flex w-full justify-start bg-background px-4 py-2">
+                                            <div className="text-body whitespace-pre-line">
+                                                {experience.description}
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
                 <div className="flex flex-col justify-center w-2/3">
-                    <div className="relative z-10 text-title">
+                    <div className="relative z-10 text-headline flex gap-4 items-center">
                         <div className="text-accent uppercase ml-1">
                             Projects
                         </div>
@@ -106,46 +171,20 @@ const Main = (props: MainProps) => {
                             industry-leading company to Mixed Reality game for
                             the Hololens:
                         </div>
-                        <div className="flex flex-col gap-y-2 w-full items-end">
-                            <Link
-                                href={'/projects'}
-                                className="btn relative z-10 text-label uppercase bg-primary text-secondary px-2 py-1 w-fit h-fit whitespace-nowrap"
-                            >
-                                Learn More!
-                            </Link>
+                        <div className="flex flex-col gap-y-2 w-full items-end px-1">
+                            <div className="relative z-10 text-label uppercase bg-primary text-secondary px-2 py-0 w-fit h-fit whitespace-nowrap">
+                                Hover & Click to learn more!
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className="w-full h-full flex items-start gap-4">
-                    <div className="flex gap-2 w-full flex-col items-start px-4 py-1">
-                        {experiences.map((experience, i) => (
-                            <div
-                                key={i}
-                                className={`w-full px-4 py-2 h-fit relative text-title uppercase z-10 whitespace-nowrap`}
-                            >
-                                <div className="flex w-full justify-between">
-                                    <div className="">{experience.title}</div>
-                                    <div className="">{experience.date}</div>
-                                </div>
-                                <div className="flex w-full justify-start">
-                                    <div className="">{experience.company}</div>
-                                </div>
 
-                                {/* {project.image === selected || (
-                                    <div className="as-shadow hover:hidden">
-                                        {project.navTitle}
-                                    </div>
-                                )} */}
-                            </div>
-                        ))}
-                    </div>
-                </div>
                 <div className="w-full h-full flex items-start gap-4">
                     <div className="flex gap-2 flex-col justify-center items-start basis-1/3 px-4 py-1">
                         {projects.map((project, i) => (
                             <Link
                                 key={i}
-                                className={`w-fit px-4 py-2 h-fit relative text-title uppercase z-10 
+                                className={`w-fit px-4 py-2 h-fit relative text-title uppercase z-10
                                 whitespace-nowrap ${
                                     project.image === selected
                                         ? 'text-background bg-primary'
@@ -157,12 +196,6 @@ const Main = (props: MainProps) => {
                                 }
                             >
                                 {project.navTitle}
-
-                                {/* {project.image === selected || (
-                                    <div className="as-shadow hover:hidden">
-                                        {project.navTitle}
-                                    </div>
-                                )} */}
                             </Link>
                         ))}
                     </div>

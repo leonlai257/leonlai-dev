@@ -10,10 +10,6 @@ const nav = [
         url: '/contact',
     },
     {
-        name: 'About',
-        url: '/about',
-    },
-    {
         name: 'Projects',
         url: '/projects',
     },
