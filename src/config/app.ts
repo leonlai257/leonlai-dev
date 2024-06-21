@@ -99,10 +99,12 @@ export const baseConfig = {
                 'React',
                 'Angular',
                 'php',
+                'WordPress',
                 'three.js',
                 'Babylon',
                 'Tensorflow',
                 'AWS',
+                'Rust',
                 'Docker',
                 'Blockchain',
                 'Redis',
@@ -115,6 +117,18 @@ export const baseConfig = {
             date: 'Oct 2022 - May 2023',
             description: `- Built RESTful API endpoints with serverless AWS Lambda and CMS using React for an mobile AR application with 20k+ concurrent users.
             - Led and developed CoReality, a 3D online store SaaS, using React and three.js.`,
+            tags: [
+                'React',
+                'php',
+                'WordPress',
+                'three.js',
+                '8th Wall',
+                'AWS',
+                'serverless',
+                'Rust',
+                'Docker',
+                'Web3',
+            ],
         },
         {
             title: 'Software Engineer',
@@ -122,6 +136,18 @@ export const baseConfig = {
             date: 'Sep 2021 - Oct 2022',
             description: `- Developed Jarvix Pay, a mobile B2C payment application from scratch using Vue, React, React Native and NestJs, with transactions from 5000+ registered merchant.
             - Wrote extensive integration and E2E test cases in Jest, Cypress, with code coverage of 90+%.`,
+            tags: [
+                'React',
+                'Vue',
+                'pm2',
+                'NestJs',
+                'AWS',
+                'Docker',
+                'React Native',
+                'ionic',
+                'iOS',
+                'Android',
+            ],
         },
         {
             title: 'Mixed Reality Developer',
@@ -130,6 +156,15 @@ export const baseConfig = {
             description: `Developed Mixed Reality games for Hololens 2 with spatial awareness and interactive elements: 
             - MR laboratory simulations for the Faculty of Science 
             - MR art contest mentor for the Faculty of Fine Arts`,
+            tags: [
+                'Unity',
+                'C#',
+                'MRTK',
+                'Hololens',
+                'Java',
+                '3ds Max',
+                'Blender',
+            ],
         },
     ],
     projects: [
