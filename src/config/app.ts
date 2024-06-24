@@ -279,7 +279,7 @@ export const baseConfig = {
             links: [
                 {
                     name: 'News article',
-                    url: 'https://metrodaily.hk/posts/52505',
+                    url: 'https://www.jetsotoday.com/7-eleven-dee-20230714/',
                 },
             ],
         },
