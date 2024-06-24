@@ -1,211 +1,227 @@
 import { CoreConfig } from '@config/app';
-import { Html, Line, PerspectiveCamera, useCursor } from '@react-three/drei';
-import { useFrame, useThree } from '@react-three/fiber';
-import { Category, TransitionWord, Word } from '@src/components';
-import { Suspense, useRef, useState } from 'react';
-import * as THREE from 'three';
-import { useLocation } from 'wouter';
+import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export interface MainProps extends CoreConfig {}
 
 const Main = (props: MainProps) => {
-    const { color, categories } = props;
-
-    const {
-        textColor,
-        backgroundColor,
-        primaryColor,
-        secondaryColor,
-        accentColor,
-    } = color;
-
-    const [hovered, setHoverStatus] = useState(false);
-    const [clicked, setClicked] = useState(false);
-    const [transition, setTransition] = useState(false);
-    const [wiggle, setWiggle] = useState(false);
-
-    useCursor(hovered);
-    const [_, push] = useLocation();
-
-    const groupRef = useRef<THREE.Group>(null!);
-    const postRef = useRef<THREE.Group>(null!);
-
-    const { height, width } = useThree((state) => state.viewport);
-
-    const textX = -width / 4.4;
-    const textY = height / 3.4;
-    const postY = -0.8;
-    const postX = 0.5;
-    const transitionSpeed = 0.1;
-    const offset = 0.02;
-
-    useFrame(() => {
-        // if (clicked && camera.position.z < 12) {
-        if (clicked) {
-            if (postRef.current.position.y < postY) {
-                postRef.current.position.y = THREE.MathUtils.lerp(
-                    postRef.current.position.y,
-                    postY,
-                    transitionSpeed / 2
-                );
-                if (postRef.current.position.y + offset >= postY) {
-                    postRef.current.position.y = postY;
-                }
-            } else if (groupRef.current.position.x > textX) {
-                if (postRef.current.position.x < postX) {
-                    postRef.current.position.x = THREE.MathUtils.lerp(
-                        postRef.current.position.x,
-                        postX,
-                        transitionSpeed / 2
-                    );
-                    if (postRef.current.position.x + offset >= postX) {
-                        postRef.current.position.x = postX;
-                    }
-                }
-                groupRef.current.position.x = THREE.MathUtils.lerp(
-                    groupRef.current.position.x,
-                    textX,
-                    transitionSpeed
-                );
-                if (groupRef.current.position.x - offset <= textX) {
-                    groupRef.current.position.x = textX;
-                }
-            } else if (groupRef.current.position.y < textY) {
-                groupRef.current.position.y = THREE.MathUtils.lerp(
-                    groupRef.current.position.y,
-                    textY,
-                    transitionSpeed
-                );
-                if (groupRef.current.position.y + offset >= textY) {
-                    groupRef.current.position.y = textY;
-                    setTransition(true);
-                }
-            }
-
-            // ref.current.rotation.x = THREE.MathUtils.lerp(
-            //     ref.current.rotation.x,
-            //     Math.PI / 16,
-            //     0.02
-            // );
-            // ref.current.rotation.y = THREE.MathUtils.lerp(
-            //     ref.current.rotation.x,
-            //     Math.PI / 16,
-            //     0.02
-            // );
-            // ref.current.rotation.z = THREE.MathUtils.lerp(
-            //     ref.current.rotation.x,
-            //     Math.PI / 16,
-            //     0.02
-            // );
-        }
-    });
+    const { contact = [], projects = [], experiences = [] } = props;
+    const [selected, setSelected] = useState('/thumbnail/cns.png');
 
     return (
-        <>
-            <Suspense fallback={<Html></Html>}>
-                <group
-                    ref={groupRef}
-                    position={[0, 0.8, 0]}
-                    onClick={() => {
-                        if (transition) {
-                            setWiggle(true);
-                        } else {
-                            setClicked(true);
-                        }
-                    }}
-                    onPointerOver={(e) => setHoverStatus(true)}
-                    onPointerOut={(e) => setHoverStatus(false)}
-                >
-                    <group scale={1.2}>
-                        <TransitionWord
-                            originalColor={primaryColor}
-                            transitionColor={secondaryColor}
-                        >
-                            Leon Lai
-                        </TransitionWord>
+        <div className="flex flex-col w-full h-full z-50 gap-8">
+            <div className="flex flex-col w-full items-center my-20">
+                <div className="relative flex z-10 text-welcome w-fit h-fit">
+                    <div className="">Leon Lai</div>
+                    <div className="absolute whitespace-nowrap left-[1.2%] top-[2.4%] text-secondary z-[-1] cursor-none">
+                        Leon Lai
+                    </div>
+                </div>
+                <div className="bg-primary text-background text-display px-4 py-2">
+                    Full Stack Developer
+                </div>
+            </div>
 
-                        <group position={[0.05, 0.05, 0.02]}>
-                            <Word
-                                color={backgroundColor}
-                                outlineWidth={0.02}
-                                outlineColor={
-                                    hovered ? secondaryColor : primaryColor
-                                }
-                            >
-                                Leon Lai
-                            </Word>
-                        </group>
-                        {clicked || (
-                            <Line
-                                points={[
-                                    [2.4, -0.5, 0],
-                                    [-2.4, -0.5, 0],
-                                ]}
-                                color={secondaryColor}
-                                lineWidth={1.4}
-                            />
-                        )}
-                    </group>
+            <div className="p-20 w-full h-full flex flex-col lg:flex-row gap-16 items-center justify-center">
+                <div className="max-w-[50vw]  relative z-10">
+                    <Image
+                        src="/photo.jpeg"
+                        alt="photo"
+                        width={1920}
+                        height={1080}
+                        style={{
+                            height: 'auto',
+                            width: '100%',
+                        }}
+                    />
+                    <div className="absolute top-[4%] z-[-1] left-[4%] h-auto w-full bg-secondary aspect-[8/12]" />
+                </div>
+                <div className="flex flex-col justify-center gap-y-4 text-white pointer-events-auto text-body">
+                    <div className="flex flex-col justify-center">
+                        <div className="relative z-10 text-title uppercase ml-1">
+                            <div className="text-accent">About Me</div>
+                            <div className="as-shadow left-[0.4%] top-[4.2%]">
+                                About Me
+                            </div>
+                        </div>
 
-                    <group ref={postRef} scale={0.6} position={[0, -1, -0.2]}>
-                        <Word color={hovered ? secondaryColor : primaryColor}>
-                            Full Stack Developer
-                        </Word>
-                    </group>
-                </group>
+                        <div className="bg-secondary p-4 text-shadow-sm shadow-black-textShadow">
+                            I am a Software Engineer based in Toronto, Canada,
+                            with 5 years of industry experience and expertise in
+                            Full Stack Web Development. I am highly motivated
+                            and versatile with strong problem-solving and
+                            communication skills. I am also great at delivering
+                            robust solutions and visually stunning website.
+                        </div>
+                    </div>
+                    <div className="flex flex-col justify-center ">
+                        <div className="relative z-10 text-title">
+                            <div className="text-accent uppercase ml-1">
+                                Contact
+                            </div>
+                            <div className="as-shadow uppercase ml-1 left-[0.4%] top-[4.2%]">
+                                Contact
+                            </div>
+                        </div>
+                        <div className="flex flex-col bg-secondary p-4 gap-2">
+                            <div className="text-shadow-sm shadow-black-textShadow">
+                                Feel free to reach out to me through any of the
+                                following:
+                            </div>
+                            <div className="flex flex-col gap-2">
+                                {contact.map((c) => {
+                                    return (
+                                        <a
+                                            key={c.name}
+                                            href={c.url}
+                                            target="_blank"
+                                            className="btn relative z-10 text-label uppercase bg-primary text-secondary px-2 py-1 w-fit h-fit whitespace-nowrap"
+                                        >
+                                            {c.name}: {c.alias}
+                                        </a>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="flex flex-col gap-4 w-full">
+                <div className="w-full h-full flex items-start gap-4 flex-col">
+                    <div className="flex flex-col justify-center w-2/3">
+                        <div className="relative z-10 text-headline flex gap-4 items-center uppercase ml-1">
+                            <div className="text-accent">Past Experience</div>
+                            <div className="as-shadow left-[0.4%] top-[4.2%]">
+                                Past Experience
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-y-2 w-full items-start px-1">
+                            <div className="relative z-10 text-label uppercase bg-primary text-secondary px-2 py-0 w-fit h-fit whitespace-nowrap">
+                                Hover to expand & learn more!
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex gap-2 w-full flex-col items-start px-4 py-1">
+                        {experiences.map((experience, i) => {
+                            const [expand, setExpand] = useState(false);
 
-                <TransitionWord
-                    onClick={() => {
-                        push('/about');
-                    }}
-                    scale={0.4}
-                    position={[-1.6, -2.0, 0]}
-                    originalColor={primaryColor}
-                    transitionColor={secondaryColor}
-                >
-                    About Me
-                </TransitionWord>
-
-                <TransitionWord
-                    onClick={() => {
-                        push('/projects');
-                    }}
-                    scale={0.4}
-                    position={[1.6, -2.0, 0]}
-                    originalColor={primaryColor}
-                    transitionColor={secondaryColor}
-                >
-                    What I Do
-                </TransitionWord>
-
-                {transition && (
-                    <group>
-                        {categories.map((category, index) => {
                             return (
-                                <Category
-                                    key={category.name}
-                                    display={category.name}
-                                    color={color}
-                                    offset={textX * 2}
-                                    position={[-textX, 0.5 - index * 0.5, 0]}
+                                <div
+                                    key={i}
+                                    className={`hover:shadow-sm w-full px-4 py-4 h-fit relative text-title z-10 whitespace-nowrap flex flex-col bg-secondary gap-4`}
+                                    onMouseOver={() => setExpand(true)}
+                                    onMouseOut={() => setExpand(false)}
                                 >
-                                    {category.skills.map((skill) => {
-                                        return `${skill}|`;
-                                    })}
-                                </Category>
+                                    <div className="flex w-full justify-start flex-col">
+                                        <div className="flex w-full justify-between">
+                                            <div className="w-fit px-2 bg-primary text-secondary">
+                                                {experience.title}
+                                            </div>
+                                            <div className="text-label">
+                                                {experience.date}
+                                            </div>
+                                        </div>
+                                        <div className="italic text-label w-fit px-1">
+                                            {experience.company}
+                                        </div>
+                                    </div>
+                                    {experience.tags && (
+                                        <div className="flex gap-1">
+                                            {experience.tags.map((tag, i) => {
+                                                return (
+                                                    <div
+                                                        key={i}
+                                                        className="text-background text-sm rounded-lg bg-accent px-2 py-1"
+                                                    >
+                                                        {tag}
+                                                    </div>
+                                                );
+                                            })}
+                                        </div>
+                                    )}
+                                    {expand && (
+                                        <div className="flex w-full justify-start bg-background px-4 py-2">
+                                            <div className="text-body whitespace-pre-line">
+                                                {experience.description}
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
                             );
                         })}
-                    </group>
-                )}
+                    </div>
+                </div>
+                <div className="flex flex-col justify-center w-2/3">
+                    <div className="relative z-10 text-headline flex gap-4 items-center uppercase ml-1">
+                        <div className="text-accent">Projects</div>
+                        <div className="as-shadow left-[0.4%] top-[4.2%]">
+                            Projects
+                        </div>
+                    </div>
+                    <div className="flex flex-col bg-secondary p-4 gap-y-1">
+                        <div className="text-shadow-sm shadow-black-textShadow">
+                            I have worked on a great variety of projects in my
+                            career, ranging from web applications for
+                            industry-leading company to Mixed Reality game for
+                            the Hololens:
+                        </div>
+                        <div className="flex flex-col gap-y-2 w-full items-end px-1">
+                            <div className="relative z-10 text-label uppercase bg-primary text-secondary px-2 py-0 w-fit h-fit whitespace-nowrap">
+                                Hover & Click to learn more!
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                <PerspectiveCamera
-                    makeDefault
-                    near={0.1}
-                    far={1000}
-                    position={[0, 0, 10]}
-                />
-            </Suspense>
-        </>
+                <div className="w-full h-full flex items-start gap-4">
+                    <div className="flex gap-2 flex-col justify-center items-start basis-1/3 px-4 py-1">
+                        {projects.map((project, i) => (
+                            <Link
+                                key={i}
+                                className={`w-fit px-4 py-2 h-fit relative text-title uppercase z-10 focus:outline-none
+                                whitespace-nowrap ${
+                                    project.thumbnail === selected
+                                        ? 'text-background bg-primary'
+                                        : 'text-primary'
+                                }`}
+                                href={'/projects/' + project.to}
+                                onMouseOver={() =>
+                                    setSelected(project.thumbnail || '')
+                                }
+                            >
+                                {project.navTitle}
+
+                                {selected == project.thumbnail || (
+                                    <div className="as-shadow px-4 py-2">
+                                        {project.navTitle}
+                                    </div>
+                                )}
+                            </Link>
+                        ))}
+                    </div>
+                    <div className="flex overflow-hidden aspect-square flex-col basis-2/3 justify-center relative z-10 object-cover">
+                        {selected && (
+                            <div className="flex w-full h-full justify-center relative z-10 object-cover">
+                                <Image
+                                    src={selected}
+                                    alt={'previewImage'}
+                                    width={2000}
+                                    height={2000}
+                                    style={{
+                                        width: 'auto',
+                                        height: '100%',
+                                        borderRadius: '1rem',
+                                        objectFit: 'cover',
+                                        objectPosition: '0 0',
+                                    }}
+                                />
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 };
 

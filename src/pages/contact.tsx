@@ -1,57 +1,41 @@
 import { CoreConfig } from '@config/app';
-import { PerspectiveCamera, useCursor } from '@react-three/drei';
-import { ContactTransition } from '@src/components';
-import { Suspense, useState } from 'react';
+import { useState } from 'react';
 
 export interface ContactProps extends CoreConfig {}
 
 const Contact = (props: ContactProps) => {
-    const { color, contact } = props;
-
-    const { primaryColor, secondaryColor } = color;
-
-    const [hovered, setHoverStatus] = useState(false);
-    useCursor(hovered);
-
-    const gapHeight = 0.6;
+    const { contact } = props;
 
     return (
-        <>
-            <Suspense fallback={<group></group>}>
-                <group position={[0, 0.2, 0]}>
-                    <group
-                        position={[
-                            0,
-                            ((contact.length - 1) * gapHeight) / 2,
-                            0,
-                        ]}
-                        onPointerOver={(e) => setHoverStatus(true)}
-                        onPointerOut={(e) => setHoverStatus(false)}
-                    >
-                        {contact.map((item, index) => {
-                            return (
-                                <>
-                                    <ContactTransition
-                                        key={`${item.name}`}
-                                        onClick={() =>
-                                            window.open(item.url, '_blank')
-                                        }
-                                        originalColor={primaryColor}
-                                        transitionColor={secondaryColor}
-                                        fontSize={0.4}
-                                        position={[0, 0 - gapHeight * index, 0]}
-                                    >
-                                        {item.name}
-                                    </ContactTransition>
-                                </>
-                            );
-                        })}
-                    </group>
-                </group>
+        <div className="w-full flex justify-center h-[90vh] items-center text-display">
+            <div className="flex gap-4 flex-col justify-center items-center px-4 py-1">
+                {contact.map((item, i) => {
+                    const [hovered, setHoverStatus] = useState(false);
 
-                <PerspectiveCamera near={0.1} far={1000} />
-            </Suspense>
-        </>
+                    return (
+                        <div
+                            key={i}
+                            className={`cursor-pointer w-fit h-fit px-4 py-2 relative uppercase z-10 focus:outline-none
+                                whitespace-nowrap ${
+                                    hovered
+                                        ? 'text-background bg-primary'
+                                        : 'text-primary'
+                                }`}
+                            onClick={() => window.open(item.url, '_blank')}
+                            onMouseEnter={() => setHoverStatus(true)}
+                            onMouseLeave={() => setHoverStatus(false)}
+                        >
+                            {item.name}
+                            {hovered || (
+                                <div className="as-shadow px-4 py-2">
+                                    {item.name}
+                                </div>
+                            )}
+                        </div>
+                    );
+                })}
+            </div>
+        </div>
     );
 };
 

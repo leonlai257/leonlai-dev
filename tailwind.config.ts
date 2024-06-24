@@ -26,7 +26,7 @@ module.exports = {
             },
             fontSize: {
                 'welcome-lg': [
-                    '110px',
+                    '112px',
                     {
                         fontWeight: '700',
                     },
@@ -38,107 +38,139 @@ module.exports = {
                     },
                 ],
                 'welcome-sm': [
+                    '60px',
+                    {
+                        fontWeight: '700',
+                    },
+                ],
+                'welcome-outline-lg': [
+                    '108px',
+                    {
+                        fontWeight: '700',
+                    },
+                ],
+                'welcome-outline-md': [
+                    '72px',
+                    {
+                        fontWeight: '700',
+                    },
+                ],
+                'welcome-outline-sm': [
                     '32px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'display-lg': [
-                    '56x',
+                    '72x',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'display-md': [
-                    '44px',
+                    '64px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'display-sm': [
-                    '36px',
+                    '56px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'headline-lg': [
-                    '32px',
+                    '44px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'headline-md': [
-                    '28px',
+                    '36px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'headline-sm': [
-                    '24px',
+                    '32px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'title-lg': [
-                    '28px',
+                    '32px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'title-md': [
-                    '24px',
+                    '28px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'title-sm': [
-                    '20px',
+                    '24px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'label-lg': [
-                    '16px',
+                    '22px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'label-md': [
-                    '14px',
+                    '20px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'label-sm': [
-                    '12px',
+                    '18px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'body-lg': [
-                    '18px',
+                    '20px',
                     {
                         fontWeight: '400',
                     },
                 ],
                 'body-md': [
-                    '16px',
+                    '18px',
                     {
                         fontWeight: '400',
                     },
                 ],
                 'body-sm': [
-                    '14px',
+                    '18px',
+                    {
+                        fontWeight: '400',
+                    },
+                ],
+                'navigation-lg': [
+                    '20px',
+                    {
+                        fontWeight: '400',
+                    },
+                ],
+                'navigation-md': [
+                    '18px',
+                    {
+                        fontWeight: '400',
+                    },
+                ],
+                'navigation-sm': [
+                    '16px',
                     {
                         fontWeight: '400',
                     },
                 ],
             },
             keyframes: {
-                projectFade: {
-                    '0%': { backgroundColor: '#8294C4' },
-                    '100%': { backgroundColor: 'transparent', color: 'white' },
-                },
                 fadeOut: {
                     '0%': { opacity: 1 },
                     '100%': { opacity: 0 },
@@ -147,12 +179,17 @@ module.exports = {
                     '0%': { opacity: 0 },
                     '100%': { opacity: 1 },
                 },
+                float: {
+                    '0%': {
+                        transform: 'translateY(0) translateX(0)',
+                    },
+                    '100%': { transform: 'translateY(-2%) translateX(-2%)' },
+                },
             },
             animation: {
-                projectFade: 'projectFade 0.24s ease-in-out forwards',
-                bgFadeOut: 'fadeOut 3s forwards',
-                textBgFadeOut: 'fadeOut 1s forwards',
-                textFadeIn: 'fadeIn 1s forwards',
+                fadeOut: 'fadeOut 1s forwards',
+                fadeIn: 'fadeIn 1s forwards',
+                float: 'float 0.6s forwards',
             },
             opacity: {
                 hover: 0.8,
@@ -165,35 +202,23 @@ module.exports = {
                     textShadow: 'rgba(0, 0, 0, 0.15)',
                 },
                 text: {
-                    DEFAULT: '#090a06',
+                    DEFAULT: '#F0EADB',
                     grayscale: '#A292A4',
                 },
                 background: {
-                    DEFAULT: '#FFEAD2',
+                    DEFAULT: '#515D80',
                     dark: '#222232',
                 },
                 primary: {
-                    DEFAULT: '#8294C4',
+                    DEFAULT: '#EDEDC7',
                 },
                 secondary: {
-                    DEFAULT: '#ACB1D6',
+                    DEFAULT: '#08083F',
                 },
                 accent: {
-                    DEFAULT: '#93d1cb',
+                    DEFAULT: '#D8E4F8',
                 },
             },
         },
     },
-    plugins: [
-        plugin(({ matchUtilities, theme }) => {
-            matchUtilities(
-                {
-                    'text-shadow': (value) => ({
-                        textShadow: value,
-                    }),
-                },
-                { values: theme('textShadow') }
-            );
-        }),
-    ],
 };
