@@ -40,9 +40,7 @@ const Main = (props: MainProps) => {
                     <div className="flex flex-col justify-center">
                         <div className="relative z-10 text-title uppercase ml-1">
                             <div className="text-accent">About Me</div>
-                            <div className="as-shadow left-[0.4%] top-[4.2%]">
-                                About Me
-                            </div>
+                            <div className="as-shadow">About Me</div>
                         </div>
 
                         <div className="bg-secondary p-4 text-shadow-sm shadow-black-textShadow">
@@ -55,13 +53,9 @@ const Main = (props: MainProps) => {
                         </div>
                     </div>
                     <div className="flex flex-col justify-center ">
-                        <div className="relative z-10 text-title">
-                            <div className="text-accent uppercase ml-1">
-                                Contact
-                            </div>
-                            <div className="as-shadow uppercase ml-1 left-[0.4%] top-[4.2%]">
-                                Contact
-                            </div>
+                        <div className="relative z-10 text-title uppercase ml-1">
+                            <div className="text-accent">Contact</div>
+                            <div className="as-shadow">Contact</div>
                         </div>
                         <div className="flex flex-col bg-secondary p-4 gap-2">
                             <div className="text-shadow-sm shadow-black-textShadow">
@@ -91,9 +85,7 @@ const Main = (props: MainProps) => {
                     <div className="flex flex-col justify-center w-2/3">
                         <div className="relative z-10 text-headline flex gap-4 items-center uppercase ml-1">
                             <div className="text-accent">Past Experience</div>
-                            <div className="as-shadow left-[0.4%] top-[4.2%]">
-                                Past Experience
-                            </div>
+                            <div className="as-shadow">Past Experience</div>
                         </div>
                         <div className="flex flex-col gap-y-2 w-full items-start px-1">
                             <div className="relative z-10 text-label uppercase bg-primary text-secondary px-2 py-0 w-fit h-fit whitespace-nowrap">
@@ -115,9 +107,7 @@ const Main = (props: MainProps) => {
                 <div className="flex flex-col justify-center w-2/3">
                     <div className="relative z-10 text-headline flex gap-4 items-center uppercase ml-1">
                         <div className="text-accent">Projects</div>
-                        <div className="as-shadow left-[0.4%] top-[4.2%]">
-                            Projects
-                        </div>
+                        <div className="as-shadow">Projects</div>
                     </div>
                     <div className="flex flex-col bg-secondary p-4 gap-y-1">
                         <div className="text-shadow-sm shadow-black-textShadow">
