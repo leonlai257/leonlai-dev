@@ -7,7 +7,7 @@ export interface MainProps extends CoreConfig {}
 
 const Main = (props: MainProps) => {
     const { contact = [], projects = [], experiences = [] } = props;
-    const [selected, setSelected] = useState('/projects/sidan.png');
+    const [selected, setSelected] = useState('/thumbnail/cns.png');
 
     return (
         <div className="flex flex-col w-full h-full z-50 gap-8">
@@ -39,11 +39,9 @@ const Main = (props: MainProps) => {
                 </div>
                 <div className="flex flex-col justify-center gap-y-4 text-white pointer-events-auto text-body">
                     <div className="flex flex-col justify-center">
-                        <div className="relative z-10 text-title">
-                            <div className="text-accent uppercase ml-1">
-                                About Me
-                            </div>
-                            <div className="as-shadow uppercase ml-1 left-[0.4%] top-[4.2%]">
+                        <div className="relative z-10 text-title uppercase ml-1">
+                            <div className="text-accent">About Me</div>
+                            <div className="as-shadow left-[0.4%] top-[4.2%]">
                                 About Me
                             </div>
                         </div>
@@ -92,17 +90,15 @@ const Main = (props: MainProps) => {
             <div className="flex flex-col gap-4 w-full">
                 <div className="w-full h-full flex items-start gap-4 flex-col">
                     <div className="flex flex-col justify-center w-2/3">
-                        <div className="relative z-10 text-headline flex gap-4 items-center">
-                            <div className="text-accent uppercase ml-1">
-                                Past Experience
-                            </div>
-                            <div className="as-shadow uppercase ml-1 left-[0.4%] top-[4.2%]">
+                        <div className="relative z-10 text-headline flex gap-4 items-center uppercase ml-1">
+                            <div className="text-accent">Past Experience</div>
+                            <div className="as-shadow left-[0.4%] top-[4.2%]">
                                 Past Experience
                             </div>
                         </div>
                         <div className="flex flex-col gap-y-2 w-full items-start px-1">
                             <div className="relative z-10 text-label uppercase bg-primary text-secondary px-2 py-0 w-fit h-fit whitespace-nowrap">
-                                Click to expand to learn more!
+                                Hover to expand & learn more!
                             </div>
                         </div>
                     </div>
@@ -113,19 +109,20 @@ const Main = (props: MainProps) => {
                             return (
                                 <div
                                     key={i}
-                                    className={`btn hover:opacity-100 hover:shadow-sm w-full px-4 py-2 h-fit relative text-title z-10 whitespace-nowrap flex flex-col bg-secondary gap-4`}
-                                    onClick={() => setExpand(!expand)}
+                                    className={`hover:shadow-sm w-full px-4 py-4 h-fit relative text-title z-10 whitespace-nowrap flex flex-col bg-secondary gap-4`}
+                                    onMouseOver={() => setExpand(true)}
+                                    onMouseOut={() => setExpand(false)}
                                 >
                                     <div className="flex w-full justify-start flex-col">
                                         <div className="flex w-full justify-between">
-                                            <div className="">
+                                            <div className="w-fit px-2 bg-primary text-secondary">
                                                 {experience.title}
                                             </div>
                                             <div className="text-label">
                                                 {experience.date}
                                             </div>
                                         </div>
-                                        <div className="italic text-label">
+                                        <div className="italic text-label w-fit px-1">
                                             {experience.company}
                                         </div>
                                     </div>
@@ -156,11 +153,9 @@ const Main = (props: MainProps) => {
                     </div>
                 </div>
                 <div className="flex flex-col justify-center w-2/3">
-                    <div className="relative z-10 text-headline flex gap-4 items-center">
-                        <div className="text-accent uppercase ml-1">
-                            Projects
-                        </div>
-                        <div className="as-shadow uppercase ml-1 left-[0.4%] top-[4.2%]">
+                    <div className="relative z-10 text-headline flex gap-4 items-center uppercase ml-1">
+                        <div className="text-accent">Projects</div>
+                        <div className="as-shadow left-[0.4%] top-[4.2%]">
                             Projects
                         </div>
                     </div>
@@ -184,22 +179,28 @@ const Main = (props: MainProps) => {
                         {projects.map((project, i) => (
                             <Link
                                 key={i}
-                                className={`w-fit px-4 py-2 h-fit relative text-title uppercase z-10
+                                className={`w-fit px-4 py-2 h-fit relative text-title uppercase z-10 focus:outline-none
                                 whitespace-nowrap ${
-                                    project.image === selected
+                                    project.thumbnail === selected
                                         ? 'text-background bg-primary'
                                         : 'text-primary'
                                 }`}
                                 href={'/projects/' + project.to}
                                 onMouseOver={() =>
-                                    setSelected(project.image || '')
+                                    setSelected(project.thumbnail || '')
                                 }
                             >
                                 {project.navTitle}
+
+                                {selected == project.thumbnail || (
+                                    <div className="as-shadow px-4 py-2">
+                                        {project.navTitle}
+                                    </div>
+                                )}
                             </Link>
                         ))}
                     </div>
-                    <div className="flex overflow-hidden flex-col basis-2/3 h-full p-4 justify-center relative z-10 object-cover">
+                    <div className="flex overflow-hidden aspect-square flex-col basis-2/3 justify-center relative z-10 object-cover">
                         {selected && (
                             <div className="flex w-full h-full justify-center relative z-10 object-cover">
                                 <Image
@@ -212,9 +213,9 @@ const Main = (props: MainProps) => {
                                         height: '100%',
                                         borderRadius: '1rem',
                                         objectFit: 'cover',
+                                        objectPosition: '0 0',
                                     }}
                                 />
-                                {/* <div className="as-shadow h-full w-full"></div> */}
                             </div>
                         )}
                     </div>

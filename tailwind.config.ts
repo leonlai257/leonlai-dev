@@ -62,19 +62,19 @@ module.exports = {
                     },
                 ],
                 'display-lg': [
-                    '56x',
+                    '72x',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'display-md': [
-                    '48px',
+                    '64px',
                     {
                         fontWeight: '700',
                     },
                 ],
                 'display-sm': [
-                    '40px',
+                    '56px',
                     {
                         fontWeight: '700',
                     },

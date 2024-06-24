@@ -28,6 +28,7 @@ export type ProjectItem = {
     links?: NavItem[];
     description?: string;
     image?: string;
+    thumbnail?: string;
     gif?: string;
     tags?: string[];
 };
@@ -93,7 +94,7 @@ export const baseConfig = {
             company: 'Freelance',
             date: 'Feb 2023 - Present',
             description: `Developed highly responsive web applications and robust backend for:
-            Bubstal (bubstal.io), Foodiverse (7-Eleven HK), Gusto Collective (thisisgusto.com), Cardano Naming Service (cns.space), MeshJS (meshjs.dev), Sidan Lab (sidan.io), Confidential crypto exchange project`,
+            - Bubstal (bubstal.io), Foodiverse (7-Eleven HK), Gusto Collective (thisisgusto.com), Cardano Naming Service (cns.space), MeshJS (meshjs.dev), Sidan Lab (sidan.io), Confidential crypto exchange project`,
             tags: [
                 'Vue',
                 'React',
@@ -177,6 +178,7 @@ export const baseConfig = {
             role: 'Full Stack Developer',
             date: 'Nov 2023 - Present',
             image: '/projects/sidan.png',
+            thumbnail: '/thumbnail/sidan.png',
             tags: [
                 'Next.js',
                 'Tailwindcss',
@@ -201,6 +203,7 @@ export const baseConfig = {
             role: 'Contributor - Frontend',
             date: 'Nov 2023',
             image: '/projects/mesh.png',
+            thumbnail: '/thumbnail/mesh.png',
             tags: ['Web3', 'Cardano(.ada)'],
             links: [
                 {
@@ -221,6 +224,7 @@ export const baseConfig = {
             role: 'Full Stack Developer',
             date: 'May 2023 - Nov 2023',
             image: '/projects/cns.png',
+            thumbnail: '/thumbnail/cns.png',
             tags: [
                 'Next.js',
                 'Tailwindcss',
@@ -245,6 +249,7 @@ export const baseConfig = {
             role: 'Full Stack Developer',
             date: 'Feb 2023 - May 2023',
             image: '/projects/bubstal.png',
+            thumbnail: '/thumbnail/bubstal.png',
             description: `Bubstal is a Hong Kong Metaverse startup. I developed majority of their company website using Vue.js and some of the gameplay logic using Babylon.js.`,
             tags: [
                 'Vue',
@@ -268,6 +273,7 @@ export const baseConfig = {
             role: 'Full Stack Developer',
             date: 'May 2023 - July 2023',
             image: '/projects/foodiverse.jpg',
+            thumbnail: '/thumbnail/foodiverse.jpg',
             gif: '/projects/foodiverse.gif',
             tags: ['Next.js', 'Stitches', 'GSAP', 'Lottie', 'Node.js', 'Redis'],
             links: [
@@ -284,6 +290,7 @@ export const baseConfig = {
             role: 'Full Stack Developer',
             date: 'March 2023 - July 2023',
             image: '/projects/gusto.png',
+            thumbnail: '/thumbnail/gusto.png',
             tags: ['php', 'WordPress', 'jQuery', 'Angular', 'GSAP'],
             links: [
                 {
@@ -298,6 +305,7 @@ export const baseConfig = {
             to: 'coreality',
             role: 'Full Stack Developer (Lead)',
             image: '/projects/coreality.png',
+            thumbnail: '/thumbnail/coreality.png',
             gif: '/projects/coreality-demo.gif',
             date: 'Feb 2023 - May 2023',
             tags: ['React', 'Tailwindcss', 'Node.js', 'Next.js', 'Three.js'],
@@ -309,6 +317,7 @@ export const baseConfig = {
             to: 'jarvix-pay',
             role: 'Full Stack Developer',
             image: '/projects/jarvix.png',
+            thumbnail: '/thumbnail/jarvix.png',
             date: 'Sep 2021 - Oct 2022',
             tags: [
                 'React',
@@ -338,6 +347,7 @@ export const baseConfig = {
             role: 'Mixed Reality Developer',
             date: 'Oct 2019 - Feb 2022',
             image: '/projects/mr.png',
+            thumbnail: '/thumbnail/mr.png',
             tags: [
                 'Unity',
                 'C#',

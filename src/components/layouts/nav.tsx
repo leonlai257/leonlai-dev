@@ -19,7 +19,7 @@ export const NavBar = () => {
     return (
         <>
             <div className="fixed z-[999] flex h-full w-full flex-col justify-start pointer-events-none bg-transparent text-navigation text-primary">
-                <div className="flex w-full justify-end py-2 px-4 md:py-4 md:px-8 gap-4 lg:gap-6 pointer-events-auto">
+                <div className="flex w-full justify-end py-2 px-4 md:py-4 md:px-8 gap-4 lg:gap-6 pointer-events-auto bg-background">
                     {nav &&
                         nav.map((item) => {
                             return (
@@ -30,7 +30,9 @@ export const NavBar = () => {
                                     <div className="btn hover:animate-float">
                                         <Link href={item.url}>{item.name}</Link>
                                     </div>
-                                    <div className="as-shadow">{item.name}</div>
+                                    <div className="as-shadow left-[2px] top-[2px]">
+                                        {item.name}
+                                    </div>
                                 </div>
                             );
                         })}

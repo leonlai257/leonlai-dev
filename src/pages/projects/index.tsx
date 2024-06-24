@@ -11,9 +11,9 @@ const ProjectList = ({ projects = [] }: ProjectProps) => {
     return (
         <div className="w-full h-full flex flex-col justify-end gap-4 pb-[88px]">
             <div className="flex flex-col">
-                <div className="relative z-10 text-headline">
-                    <div className="text-accent uppercase ml-1">Projects</div>
-                    <div className="as-shadow uppercase ml-1 left-[0.4%] top-[4.2%]">
+                <div className="relative z-10 text-headline uppercase ml-1">
+                    <div className="text-accent">Projects</div>
+                    <div className="as-shadow left-[0.4%] top-[4.2%]">
                         Projects
                     </div>
                 </div>
@@ -34,12 +34,14 @@ const ProjectList = ({ projects = [] }: ProjectProps) => {
                             key={i}
                             className={`w-fit px-4 py-2 h-fit relative text-title uppercase z-10
                                 whitespace-nowrap ${
-                                    project.image === selected
+                                    project.thumbnail === selected
                                         ? 'text-background bg-primary'
                                         : 'text-primary'
                                 }`}
                             href={'/projects/' + project.to}
-                            onMouseOver={() => setSelected(project.image || '')}
+                            onMouseOver={() =>
+                                setSelected(project.thumbnail || '')
+                            }
                         >
                             {project.navTitle}
                         </Link>
@@ -58,9 +60,9 @@ const ProjectList = ({ projects = [] }: ProjectProps) => {
                                     height: '100%',
                                     borderRadius: '1rem',
                                     objectFit: 'cover',
+                                    objectPosition: '0 0',
                                 }}
                             />
-                            {/* <div className="as-shadow h-full w-full"></div> */}
                         </div>
                     )}
                 </div>
