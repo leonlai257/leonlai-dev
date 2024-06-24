@@ -6,7 +6,7 @@ import { useState } from 'react';
 export interface ProjectProps extends CoreConfig {}
 
 const ProjectList = ({ projects = [] }: ProjectProps) => {
-    const [selected, setSelected] = useState('/projects/sidan.png');
+    const [selected, setSelected] = useState('/projects/cns.png');
 
     return (
         <div className="w-full h-full flex flex-col justify-end gap-4 pb-[88px]">
@@ -32,7 +32,7 @@ const ProjectList = ({ projects = [] }: ProjectProps) => {
                     {projects.map((project, i) => (
                         <Link
                             key={i}
-                            className={`w-fit px-4 py-2 h-fit relative text-title uppercase z-10
+                            className={`w-fit px-4 py-2 h-fit relative text-title uppercase z-10 focus:outline-none
                                 whitespace-nowrap ${
                                     project.thumbnail === selected
                                         ? 'text-background bg-primary'
@@ -44,6 +44,12 @@ const ProjectList = ({ projects = [] }: ProjectProps) => {
                             }
                         >
                             {project.navTitle}
+
+                            {selected == project.thumbnail || (
+                                <div className="as-shadow px-4 py-2">
+                                    {project.navTitle}
+                                </div>
+                            )}
                         </Link>
                     ))}
                 </div>
