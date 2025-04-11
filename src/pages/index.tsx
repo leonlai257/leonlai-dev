@@ -3,7 +3,7 @@ import { ProjectNavigation } from '@src/components';
 import { ExperienceLink } from '@src/components/ExperienceItem';
 import Image from 'next/image';
 
-export interface MainProps extends CoreConfig {}
+export interface MainProps extends CoreConfig { }
 
 const Main = (props: MainProps) => {
     const { contact = [], projects = [], experiences = [] } = props;
@@ -17,13 +17,13 @@ const Main = (props: MainProps) => {
                         Leon Lai
                     </div>
                 </div>
-                <div className="bg-primary text-background text-display px-4 py-2">
+                <div className="bg-primary text-background text-display px-4 py-2 text-center w-full">
                     Full Stack Developer
                 </div>
             </div>
 
             <div className="p-20 w-full h-full flex flex-col lg:flex-row gap-16 items-center justify-center">
-                <div className="max-w-[50vw]  relative z-10">
+                <div className="w-[50vw] relative z-[10]">
                     <Image
                         src="/photo.jpeg"
                         alt="photo"
@@ -104,7 +104,7 @@ const Main = (props: MainProps) => {
                         })}
                     </div>
                 </div>
-                <div className="flex flex-col justify-center w-2/3">
+                <div className="flex flex-col justify-center w-full md:w-2/3">
                     <div className="relative z-10 text-headline flex gap-4 items-center uppercase ml-1">
                         <div className="text-accent">Projects</div>
                         <div className="as-shadow">Projects</div>
