@@ -1,7 +1,7 @@
-import { CoreConfig } from '@config/app';
+import { CoreConfig } from '@src/libs/config';
 import { ProjectIntroduction, ProjectNavigation } from '@src/components';
 
-export interface ProjectProps extends CoreConfig {}
+export interface ProjectProps extends CoreConfig { }
 
 const ProjectList = ({ projects = [] }: ProjectProps) => {
     return (

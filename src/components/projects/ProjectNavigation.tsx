@@ -1,6 +1,6 @@
-import { ProjectItem } from '@src/config/app';
-import Link from 'next/link';
+import { ProjectItem } from '@src/libs/config';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export interface ProjectNavigationProps {

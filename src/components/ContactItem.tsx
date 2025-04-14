@@ -1,4 +1,4 @@
-import { ContactItem } from '@config/app';
+import { ContactItem } from '@src/libs/config';
 import { useState } from 'react';
 
 export interface ContactItemProps {
@@ -11,8 +11,7 @@ export const ContactLink = ({ item }: ContactItemProps) => {
     return (
         <div
             className={`cursor-pointer w-fit h-fit px-4 py-2 relative uppercase z-10 focus:outline-none
-                whitespace-nowrap ${
-                    hovered ? 'text-background bg-primary' : 'text-primary'
+                whitespace-nowrap ${hovered ? 'text-background bg-primary' : 'text-primary'
                 }`}
             onClick={() => window.open(item.url, '_blank')}
             onMouseEnter={() => setHoverStatus(true)}

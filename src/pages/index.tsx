@@ -1,4 +1,4 @@
-import { CoreConfig } from '@config/app';
+import { CoreConfig } from '@src/libs/config';
 import { ProjectNavigation } from '@src/components';
 import { ExperienceLink } from '@src/components/ExperienceItem';
 import Image from 'next/image';

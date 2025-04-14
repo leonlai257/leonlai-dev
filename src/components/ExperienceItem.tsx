@@ -1,4 +1,4 @@
-import { ExperienceItem } from '@config/app';
+import { ExperienceItem } from '@src/libs/config';
 import { useState } from 'react';
 
 export interface ExperienceItemProps {

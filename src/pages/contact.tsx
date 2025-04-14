@@ -1,7 +1,7 @@
-import { CoreConfig } from '@config/app';
+import { CoreConfig } from '@src/libs/config';
 import { ContactLink } from '@src/components';
 
-export interface ContactProps extends CoreConfig {}
+export interface ContactProps extends CoreConfig { }
 
 const Contact = (props: ContactProps) => {
     const { contact } = props;
