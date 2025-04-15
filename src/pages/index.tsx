@@ -104,7 +104,7 @@ const Main = (props: MainProps) => {
                         })}
                     </div>
                 </div>
-                <div className="flex flex-col justify-center w-full md:w-2/3">
+                <div className="flex flex-col justify-center w-full md:w-2/3 z-50   ">
                     <div className="relative z-10 text-headline flex gap-4 items-center uppercase ml-1">
                         <div className="text-accent">Projects</div>
                         <div className="as-shadow">Projects</div>

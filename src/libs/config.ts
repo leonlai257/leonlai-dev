@@ -177,8 +177,8 @@ export const baseConfig = {
             to: 'sidan',
             role: 'Full Stack Developer',
             date: 'Nov 2023 - Present',
-            image: '/projects/sidan.png',
-            thumbnail: '/thumbnail/sidan.png',
+            image: '/images/projects/sidan.png',
+            thumbnail: '/images/square-thumbnail/sidan.png',
             tags: [
                 'Next.js',
                 'Tailwindcss',
@@ -202,8 +202,8 @@ export const baseConfig = {
             to: 'mesh',
             role: 'Contributor - Frontend',
             date: 'Nov 2023',
-            image: '/projects/mesh.png',
-            thumbnail: '/thumbnail/mesh.png',
+            image: '/images/projects/mesh.png',
+            thumbnail: '/images/square-thumbnail/mesh.png',
             tags: ['Web3', 'Cardano(.ada)'],
             links: [
                 {
@@ -223,8 +223,8 @@ export const baseConfig = {
             to: 'cns',
             role: 'Full Stack Developer',
             date: 'May 2023 - Nov 2023',
-            image: '/projects/cns.png',
-            thumbnail: '/thumbnail/cns.png',
+            image: '/images/projects/cns.png',
+            thumbnail: '/images/square-thumbnail/cns.png',
             tags: [
                 'Next.js',
                 'Tailwindcss',
@@ -248,8 +248,8 @@ export const baseConfig = {
             to: 'bubstal',
             role: 'Full Stack Developer',
             date: 'Feb 2023 - May 2023',
-            image: '/projects/bubstal.png',
-            thumbnail: '/thumbnail/bubstal.png',
+            image: '/images/projects/bubstal.png',
+            thumbnail: '/images/square-thumbnail/bubstal.png',
             description: `Bubstal is a Hong Kong Metaverse startup. I developed majority of their company website using Vue.js and some of the gameplay logic using Babylon.js.`,
             tags: [
                 'Vue',
@@ -272,9 +272,9 @@ export const baseConfig = {
             to: 'foodiverse',
             role: 'Full Stack Developer',
             date: 'May 2023 - July 2023',
-            image: '/projects/foodiverse.jpg',
-            thumbnail: '/thumbnail/foodiverse.jpg',
-            gif: '/projects/foodiverse.gif',
+            image: '/images/projects/foodiverse.jpg',
+            thumbnail: '/images/square-thumbnail/foodiverse.jpg',
+            gif: '/images/projects/foodiverse.gif',
             tags: ['Next.js', 'Stitches', 'GSAP', 'Lottie', 'Node.js', 'Redis'],
             links: [
                 {
@@ -289,8 +289,8 @@ export const baseConfig = {
             to: 'gusto',
             role: 'Full Stack Developer',
             date: 'March 2023 - July 2023',
-            image: '/projects/gusto.png',
-            thumbnail: '/thumbnail/gusto.png',
+            image: '/images/projects/gusto.png',
+            thumbnail: '/images/square-thumbnail/gusto.png',
             tags: ['php', 'WordPress', 'jQuery', 'Angular', 'GSAP'],
             links: [
                 {
@@ -304,9 +304,9 @@ export const baseConfig = {
             title: 'CoReality',
             to: 'coreality',
             role: 'Full Stack Developer (Lead)',
-            image: '/projects/coreality.png',
-            thumbnail: '/thumbnail/coreality.png',
-            gif: '/projects/coreality-demo.gif',
+            image: '/images/projects/coreality.png',
+            thumbnail: '/images/square-thumbnail/coreality.png',
+            gif: '/images/projects/coreality-demo.gif',
             date: 'Feb 2023 - May 2023',
             tags: ['React', 'Tailwindcss', 'Node.js', 'Next.js', 'Three.js'],
             description: `Coreality is a Software as a Service application for advanced e-commerce, aimed to provide a 3D panoramic storeroom environment to users to enhance their shopping experience. I led the development and added a config system, allowing non-developers to add or design their own storeroom experience without codes. The application was built with Next.js and Three.js. The applications allows 4K quality graphic to be viewed on mobile with constant 30+FPS.`,
@@ -316,8 +316,8 @@ export const baseConfig = {
             title: 'Jarvix Pay',
             to: 'jarvix-pay',
             role: 'Full Stack Developer',
-            image: '/projects/jarvix.png',
-            thumbnail: '/thumbnail/jarvix.png',
+            image: '/images/projects/jarvix.png',
+            thumbnail: '/images/square-thumbnail/jarvix.png',
             date: 'Sep 2021 - Oct 2022',
             tags: [
                 'React',
@@ -346,8 +346,8 @@ export const baseConfig = {
             to: 'mr',
             role: 'Mixed Reality Developer',
             date: 'Oct 2019 - Feb 2022',
-            image: '/projects/mr.png',
-            thumbnail: '/thumbnail/mr.png',
+            image: '/images/projects/mr.png',
+            thumbnail: '/images/square-thumbnail/mr.png',
             tags: [
                 'Unity',
                 'C#',

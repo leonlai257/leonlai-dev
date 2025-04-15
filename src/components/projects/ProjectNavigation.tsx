@@ -12,11 +12,11 @@ export const ProjectNavigation = ({ projects }: ProjectNavigationProps) => {
 
     return (
         <div className="w-full h-full flex items-start gap-4 flex-col md:flex-row">
-            <div className="flex gap-2 flex-col justify-center items-start md:basis-1/3 px-4 py-1">
+            <div className="flex gap-2 flex-col justify-center items-start md:basis-1/3 px-4 py-1 z-[50]">
                 {projects.map((project, i) => (
                     <Link
                         key={i}
-                        className={`w-fit px-4 py-2 h-fit relative text-title uppercase z-10 focus:outline-none
+                        className={`w-fit px-4 py-2 h-fit relative text-title uppercase focus:outline-none
                 whitespace-nowrap ${project.thumbnail === selected
                                 ? 'text-background bg-primary'
                                 : 'text-primary'
@@ -34,25 +34,41 @@ export const ProjectNavigation = ({ projects }: ProjectNavigationProps) => {
                     </Link>
                 ))}
             </div>
-            <div className="flex overflow-hidden aspect-square flex-col md:basis-2/3 w-full justify-center relative z-10 object-cover">
+            <div className="relative flex aspect-square flex-col md:basis-2/3 w-fit justify-center object-cover">
                 {selected && (
-                    <div className="flex w-full h-full justify-center relative z-10 object-cover">
-                        <Image
-                            src={selected}
-                            alt={'previewImage'}
-                            width={2000}
-                            height={2000}
-                            style={{
-                                width: 'auto',
-                                height: '100%',
-                                borderRadius: '1rem',
-                                objectFit: 'cover',
-                                objectPosition: '0 0',
-                            }}
-                        />
-                    </div>
+                    <>
+                        <div className="relative flex h-full justify-center z-10 object-cover sepia border border-4  border-secondary rounded-[1.25rem] w-fit">
+                            <Image
+                                src={selected}
+                                alt={'previewImage'}
+                                width={2000}
+                                height={2000}
+                                style={{
+                                    width: 'auto',
+                                    height: '100%',
+                                    borderRadius: '1rem',
+                                    objectFit: 'cover',
+                                    objectPosition: '0 0',
+                                }}
+                            />
+                        </div>
+                        {/* <div className="absolute top-0 left-0 flex h-full border border-4 border-primary rounded-[1rem] w-fit animate-[spin_60s_linear_infinite]">
+                            <Image
+                                src={selected}
+                                alt={'previewImage-border'}
+                                width={20}
+                                height={20}
+                                style={{
+                                    width: 'auto',
+                                    height: '100%',
+                                    borderRadius: '1rem',
+                                    opacity: 0
+                                }}
+                            />
+                        </div> */}
+                    </>
                 )}
             </div>
-        </div>
+        </div >
     );
 };
