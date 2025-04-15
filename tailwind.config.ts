@@ -1,6 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-import type { Config } from 'tailwindcss';
-import plugin from 'tailwindcss/plugin';
 
 module.exports = {
     mode: 'jit',
