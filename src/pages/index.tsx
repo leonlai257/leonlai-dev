@@ -2,23 +2,71 @@ import { CoreConfig } from '@src/libs/config';
 import { ProjectNavigation } from '@src/components';
 import { ExperienceLink } from '@src/components/ExperienceItem';
 import Image from 'next/image';
+import { useEffect } from 'react';
+import gsap from 'gsap';
+import { SplitText } from 'gsap/dist/SplitText';
+import { ScrambleTextPlugin } from 'gsap/dist/ScrambleTextPlugin';
 
-export interface MainProps extends CoreConfig { }
+export interface MainProps extends CoreConfig {}
 
 const Main = (props: MainProps) => {
     const { contact = [], projects = [], experiences = [] } = props;
+    gsap.registerPlugin(ScrambleTextPlugin);
+    useEffect(() => {
+        gsap.to('#name', {
+            duration: 1.2,
+            scrambleText: {
+                text: 'Leon Lai',
+                chars: 'lowercase',
+            },
+        });
+
+        gsap.fromTo(
+            '#name-shadow',
+
+            {
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+                delay: 1.4,
+                duration: 1.4,
+            }
+        );
+
+        // split elements with the class "split" into words and characters
+        let split_title = SplitText.create('#title', {
+            type: 'words, chars',
+        });
+
+        // now animate the characters in a staggered fashion
+        gsap.from(split_title.words, {
+            delay: 0.5,
+            duration: 1,
+            x: -40,
+            y: 80, // animate from 100px below
+            autoAlpha: 0, // fade in from opacity: 0 and visibility: hidden
+            stagger: 0.02, // 0.05 seconds between each
+        });
+    });
 
     return (
         <div className="flex flex-col w-full h-full z-50 gap-8">
             <div className="flex flex-col w-full items-center my-20">
-                <div className="relative flex z-10 text-welcome w-fit h-fit">
-                    <div className="">Leon Lai</div>
-                    <div className="absolute whitespace-nowrap left-[1.2%] top-[2.4%] text-secondary z-[-1] cursor-none">
+                <div className="relative flex z-10 text-welcome w-fit h-fit whitespace-nowrap">
+                    <div id="name">Leon Lai</div>
+                    <div
+                        id="name-shadow"
+                        className="absolute left-[1.2%] top-[2.4%] text-secondary z-[-1] cursor-none"
+                    >
                         Leon Lai
                     </div>
                 </div>
-                <div className="bg-primary text-background text-display px-4 py-2 text-center w-full">
-                    Full Stack Developer
+                <div
+                    id="title"
+                    className="bg-primary text-background text-display px-4 py-2 text-center w-full"
+                >
+                    Senior Full Stack Developer
                 </div>
             </div>
 
